@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Cyberpunk Neon — dark navy base, cyan/magenta neon, glow shadows. */
+:root {
+  --background: #0a0e1a;
+  --foreground: #e2e8f0;
+  --card: #111827;
+  --card-foreground: #e2e8f0;
+  --primary: #22d3ee;
+  --primary-foreground: #0a0e1a;
+  --secondary: #1e293b;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #e2e8f0;
+  --destructive: #f43f5e;
+  --border: #273449;
+  --input: #273449;
+  --ring: #22d3ee;
+  --radius: 0.25rem;
+  --font-heading: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --hero-h: 420px;
+}
+.dark {
+  --background: #07090f;
+  --foreground: #dbe4f0;
+  --card: #0f1626;
+  --card-foreground: #dbe4f0;
+  --primary: #38e1f7;
+  --primary-foreground: #07090f;
+  --secondary: #172033;
+  --secondary-foreground: #dbe4f0;
+  --muted: #172033;
+  --muted-foreground: #8fa3bf;
+  --accent: #172033;
+  --accent-foreground: #dbe4f0;
+  --destructive: #fb7185;
+  --border: #273449;
+  --input: #273449;
+  --ring: #38e1f7;
+}
+
+body { font-size: 1.0625rem; line-height: 1.65; }
+
+/* Neon utilities (plain CSS — colors come from theme settings at runtime) */
+.neon-text { text-shadow: 0 0 14px color-mix(in srgb, var(--primary) 55%, transparent); }
+.neon-glow { box-shadow: 0 0 22px color-mix(in srgb, var(--primary) 30%, transparent); }
+.cyber-hero { position: relative; min-height: var(--hero-h, 420px); display: flex; align-items: flex-end; }
+.cyber-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  background:
+    linear-gradient(to top, color-mix(in srgb, var(--background) 92%, transparent) 8%, transparent 70%),
+    linear-gradient(120deg, color-mix(in srgb, var(--primary) 26%, transparent), color-mix(in srgb, var(--accent-2) 26%, transparent));
+}
+.cyber-overlay { position: absolute; inset: 0; background: linear-gradient(120deg, color-mix(in srgb, var(--primary) 14%, transparent), color-mix(in srgb, var(--accent-2) 20%, transparent)); }

@@ -1,0 +1,45 @@
+name: publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ">=1.25.0"
+      - name: Build zips and index
+        run: go run ./build --inplace
+      - name: Commit regenerated index
+        run: |
+          git config user.name "goblog-themes bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.json
+          if git diff --cached --quiet; then
+            echo "index.json unchanged"
+          else
+            git commit -m "regenerate index.json"
+            git push
+          fi
+      - name: Upload release zips
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          for z in zips/*.zip; do
+            base="$(basename "$z" .zip)"       # <slug>-<version>
+            tag="$base"
+            if gh release view "$tag" >/dev/null 2>&1; then
+              gh release upload "$tag" "$z" --clobber
+            else
+              gh release create "$tag" "$z" --title "$base" --notes "Theme archive $base"
+            fi
+          done

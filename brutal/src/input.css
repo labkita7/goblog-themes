@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Neo Brutal — "neo brutalism"/"MX-Brutalist": saturated primaries on white,
+   pure black text, hard offset shadows. Dark inverts to black cards on neon. */
+
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/archivo-black-400.woff2") format("woff2");
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #ffd400;
+  --secondary-foreground: #000000;
+  --muted: #f5f0d8;
+  --muted-foreground: #3f3f46;
+  --accent: #ffd400;
+  --accent-foreground: #000000;
+  --destructive: #d90429;
+  --border: #000000;
+  --input: #000000;
+  --ring: #2563eb;
+  --radius: 0rem;
+  --font-heading: "Archivo Black", "Arial Black", ui-sans-serif, system-ui, sans-serif;
+  --brutal-shadow: 4px;
+}
+.dark {
+  --background: #f5d90a;
+  --foreground: #000000;
+  --card: #000000;
+  --card-foreground: #ffffff;
+  --primary: #d90429;
+  --primary-foreground: #ffffff;
+  --secondary: #ffffff;
+  --secondary-foreground: #000000;
+  --muted: #fff3b0;
+  --muted-foreground: #3f3f46;
+  --accent: #ffffff;
+  --accent-foreground: #000000;
+  --destructive: #d90429;
+  --border: #000000;
+  --input: #000000;
+  --ring: #d90429;
+}
+
+body { font-size: 1.0625rem; line-height: 1.65; }
+
+/* Hard offset shadow cards with hover lift */
+.brutal-card {
+  background: var(--card); color: var(--card-foreground);
+  border: 2px solid #000;
+  box-shadow: var(--brutal-shadow) var(--brutal-shadow) 0 #000;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.brutal-card:hover { transform: translate(-2px, -2px); box-shadow: calc(var(--brutal-shadow) + 2px) calc(var(--brutal-shadow) + 2px) 0 #000; }
+
+/* Chunky uppercase tag chips */
+.brutal-tag {
+  display: inline-block; border: 2px solid #000;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.6875rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--secondary); color: var(--secondary-foreground);
+}

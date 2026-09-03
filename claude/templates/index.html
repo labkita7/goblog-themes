@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+  {{if and (setting "show_author_header") .Posts}}{{with index .Posts 0}}
+  <section class="mt-12 flex items-center gap-4 rounded-lg border border-border bg-card p-5">
+    <span class="author-avatar" aria-hidden="true">{{slice .Author.Name 0 1}}</span>
+    <div>
+      <p class="font-heading text-lg font-semibold leading-tight">
+        <a class="hover:text-primary" href="{{.Author.URL}}">{{.Author.Name}}</a>
+      </p>
+      <p class="text-sm text-muted-foreground">{{$.Site.Description}}</p>
+    </div>
+  </section>
+  {{end}}{{end}}
+  <h1 class="mt-12 font-heading text-4xl font-bold tracking-tight">Latest writing</h1>
+  <div class="mt-10 flex flex-col">
+    {{range .Posts}}
+    <article class="flex flex-col gap-2 border-b border-border py-8 first:pt-0 last:border-b-0">
+      <h2 class="font-heading text-2xl font-semibold leading-snug tracking-tight">
+        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+      </h2>
+      <p class="text-sm text-muted-foreground">
+        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+        <span aria-hidden="true">·</span> {{.ReadingMinutes}} min read
+        {{if .Tags}}<span aria-hidden="true">·</span>
+        {{range $i, $t := .Tags}}{{if $i}}, {{end}}<a class="hover:text-foreground" href="{{$t.URL}}">#{{$t.Name}}</a>{{end}}{{end}}
+      </p>
+      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

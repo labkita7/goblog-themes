@@ -1,0 +1,14 @@
+{
+  "slug": "graphite",
+  "name": "Graphite Dev",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Dark-first developer blog — zinc ramp, cyan accent, sticky table of contents and code blocks with a language header bar.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#22d3ee" },
+    { "key": "default_mode", "label": "Default color mode", "type": "select", "options": ["dark", "light"], "default": "dark" },
+    { "key": "show_toc", "label": "Show table of contents on posts", "type": "bool", "default": true }
+  ]
+}

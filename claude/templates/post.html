@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headPost" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+  <article>
+    <header class="pt-12">
+      <h1 class="font-heading text-4xl font-bold leading-tight tracking-tight">{{.Post.Title}}</h1>
+      <div class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+        <a class="hover:text-foreground" href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a>
+        <span aria-hidden="true">·</span>
+        <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>
+        <span aria-hidden="true">·</span><span>{{.Post.ReadingMinutes}} min read</span>
+      </div>
+      {{if or .Post.CoverURL .Post.OGImageURL}}
+      <img class="mt-8 w-full rounded-lg border border-border" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1200" height="630">
+      {{end}}
+    </header>
+    <div class="prose mt-10">{{.Post.HTML}}</div>
+    {{if .Post.Tags}}
+    <ul class="mt-10 flex flex-wrap gap-2 text-sm">
+      {{range .Post.Tags}}<li><a class="rounded-full bg-secondary px-3 py-1 text-secondary-foreground hover:bg-accent" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
+    </ul>
+    {{end}}
+  </article>
+  {{if or .Prev .Next}}
+  <nav class="mt-16 grid gap-6 border-t border-border pt-8 sm:grid-cols-2" aria-label="Post navigation">
+    <div>
+      {{if .Prev}}<p class="text-sm text-muted-foreground">Previous</p>
+      <a class="line-clamp-2 font-heading text-lg font-semibold hover:text-primary" href="{{.Prev.URL}}" rel="prev">{{.Prev.Title}}</a>{{end}}
+    </div>
+    <div class="sm:text-right">
+      {{if .Next}}<p class="text-sm text-muted-foreground">Next</p>
+      <a class="line-clamp-2 font-heading text-lg font-semibold hover:text-primary" href="{{.Next.URL}}" rel="next">{{.Next.Title}}</a>{{end}}
+    </div>
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

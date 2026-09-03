@@ -1,0 +1,14 @@
+{
+  "slug": "brutal",
+  "name": "Neo Brutal",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Neo-brutalist card grid — 2px black borders, hard offset shadows, chunky uppercase tags and heavy grotesque display type.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Neon accent (dark mode)", "type": "color", "default": "#ffd400" },
+    { "key": "shadow_size", "label": "Shadow offset (px)", "type": "number", "default": 4 },
+    { "key": "card_columns", "label": "Card columns", "type": "select", "options": ["2", "3"], "default": "3" }
+  ]
+}

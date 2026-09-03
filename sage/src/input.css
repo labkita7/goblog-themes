@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Sage Garden — tweakcn "Sage Green": moss greens, off-white, deep-forest dark. */
+:root {
+  --background: #f8f7f3;
+  --foreground: #243026;
+  --card: #ffffff;
+  --card-foreground: #243026;
+  --primary: #588157;
+  --primary-foreground: #ffffff;
+  --secondary: #eaefe4;
+  --secondary-foreground: #2c3a2e;
+  --muted: #edf0e7;
+  --muted-foreground: #5c6b5e;
+  --accent: #eaefe4;
+  --accent-foreground: #2c3a2e;
+  --destructive: #b3492f;
+  --border: #dde3d4;
+  --input: #dde3d4;
+  --ring: #588157;
+  --radius: 0.75rem;
+  --font-body: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-body);
+}
+.dark {
+  --background: #16211b;
+  --foreground: #e4e9e2;
+  --card: #1d2b22;
+  --card-foreground: #e4e9e2;
+  --primary: #a3c2a5;
+  --primary-foreground: #16211b;
+  --secondary: #223028;
+  --secondary-foreground: #e4e9e2;
+  --muted: #223028;
+  --muted-foreground: #96a497;
+  --accent: #223028;
+  --accent-foreground: #e4e9e2;
+  --destructive: #e07a5f;
+  --border: #2c3c31;
+  --input: #2c3c31;
+  --ring: #a3c2a5;
+}
+
+body { font-size: 1.0625rem; line-height: 1.65; }

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-5xl px-6 pb-24">
+  {{/* Magazine masthead — blog26 pattern: giant wordmark, tagline, author chip. */}}
+  <section class="border-b border-border pb-8 pt-14">
+    {{$brand := .Site.Title}}
+    {{with setting "masthead_text"}}{{$brand = .}}{{end}}
+    <h1 class="text-6xl font-bold leading-none tracking-tighter sm:text-7xl">{{$brand}}</h1>
+    <div class="mt-4 flex flex-wrap items-center justify-between gap-4">
+      <p class="text-lg text-muted-foreground">{{.Site.Description}}</p>
+      {{if .Posts}}{{with index .Posts 0}}
+      <a class="flex items-center gap-2 rounded-full border border-border py-1 pl-1 pr-4 text-sm font-medium hover:bg-muted" href="{{.Author.URL}}">
+        <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground" aria-hidden="true">{{slice .Author.Name 0 1}}</span>
+        {{.Author.Name}}
+      </a>
+      {{end}}{{end}}
+    </div>
+  </section>
+
+  {{if .Posts}}
+  <div class="mt-12 grid gap-12 lg:grid-cols-2">
+    {{with index .Posts 0}}
+    {{/* Lead story: 16:9 cover, big headline, summary. */}}
+    <article class="flex flex-col gap-4">
+      {{if or .CoverURL .OGImageURL}}
+      <a class="overflow-hidden rounded-lg border border-border" href="{{.URL}}" aria-hidden="true" tabindex="-1">
+        <img class="aspect-video w-full object-cover" src="{{if .CoverURL}}{{.CoverURL}}{{else}}{{.OGImageURL}}{{end}}" alt="" width="1200" height="675">
+      </a>
+      {{end}}
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary">Lead story</p>
+      <h2 class="text-3xl font-bold leading-tight tracking-tight">
+        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+      </h2>
+      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time> · {{.ReadingMinutes}} min read</p>
+      {{if .Excerpt}}<p class="text-lg leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
+    </article>
+    {{end}}
+
+    <section aria-label="Latest posts">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Latest</h2>
+      <div class="mt-2 flex flex-col">
+        {{range $i, $p := .Posts}}{{if $i}}
+        <article class="flex flex-col gap-1 border-b border-border py-5 first:border-t-0 last:border-b-0">
+          <h3 class="text-lg font-semibold leading-snug tracking-tight">
+            <a class="hover:text-primary" href="{{$p.URL}}">{{$p.Title}}</a>
+          </h3>
+          <p class="text-sm text-muted-foreground"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></p>
+          {{if eq (setting "list_style") "detailed"}}
+          {{if $p.Excerpt}}<p class="mt-1 leading-relaxed text-muted-foreground">{{$p.Excerpt}}</p>{{end}}
+          <p class="mt-1 text-xs uppercase tracking-wide text-muted-foreground">{{$p.ReadingMinutes}} min read</p>
+          {{end}}
+        </article>
+        {{end}}{{end}}
+      </div>
+    </section>
+  </div>
+  {{end}}
+
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

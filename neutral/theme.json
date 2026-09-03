@@ -1,0 +1,14 @@
+{
+  "slug": "neutral",
+  "name": "Neutral",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Minimal single-column blog theme — true grays, near-white background, generous whitespace, one accent.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#2563eb" },
+    { "key": "font_heading", "label": "Heading font", "type": "select", "options": ["Inter", "Georgia"], "default": "Inter" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

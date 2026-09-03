@@ -1,0 +1,14 @@
+{
+  "slug": "slate",
+  "name": "Clean Slate Magazine",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Magazine split layout — oversized masthead, lead story with 16:9 cover, and a hairline latest list on cool professional blues.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#0070f3" },
+    { "key": "masthead_text", "label": "Masthead wordmark", "type": "text", "default": "Blog" },
+    { "key": "list_style", "label": "Latest list style", "type": "select", "options": ["compact", "detailed"], "default": "compact" }
+  ]
+}

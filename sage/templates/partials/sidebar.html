@@ -1,0 +1,57 @@
+{{/* Right sidebar for list pages — works with every list data type
+     (IndexData, TagData, ArchiveData all expose .Site, .Nav, .Posts).
+     Widgets: search box, recent posts, topics, about card.
+     There is no site-wide tag/recent data in v1, so recent posts and
+     topics derive from the current page's .Posts. */}}
+
+{{define "sidebar"}}
+{{$w := "search,recent,topics,about"}}
+{{with setting "sidebar_widgets"}}{{$w = .}}{{end}}
+<aside class="flex flex-col gap-8 lg:sticky lg:top-8 lg:self-start">
+  {{/* Search route renders SearchData; box gated by show_search + widget list. */}}
+  {{if and (setting "show_search") (or (eq $w "search,recent,topics,about") (eq $w "search,recent,about"))}}
+  <section class="rounded-lg border border-border bg-card p-5">
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Search</h2>
+    <form class="mt-3 flex gap-2" role="search" action="/search" method="get">
+      <label class="sr-only" for="sidebar-q">Search posts</label>
+      <input id="sidebar-q" type="search" name="q" placeholder="Search posts…"
+             class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none">
+      <button type="submit" class="rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">Go</button>
+    </form>
+  </section>
+  {{end}}
+
+  {{if .Posts}}
+  <section class="rounded-lg border border-border bg-card p-5">
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Recent posts</h2>
+    <ul class="mt-3 flex flex-col gap-3">
+      {{range $i, $p := .Posts}}{{if lt $i 5}}
+      <li>
+        <a class="text-sm font-medium leading-snug hover:text-primary" href="{{$p.URL}}">{{$p.Title}}</a>
+        <p class="text-xs text-muted-foreground"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></p>
+      </li>
+      {{end}}{{end}}
+    </ul>
+  </section>
+
+  {{if or (eq $w "search,recent,topics,about") (eq $w "recent,topics,about")}}
+  <section class="rounded-lg border border-border bg-card p-5">
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Topics</h2>
+    <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+      {{range .Site.Tags}}
+      <li><a class="rounded-full bg-secondary px-3 py-1 text-secondary-foreground hover:bg-accent" href="{{.URL}}">{{.Name}}</a></li>
+      {{end}}
+    </ul>
+  </section>
+  {{end}}
+
+  <section class="rounded-lg border border-border bg-card p-5">
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-muted-foreground">About</h2>
+    {{with index .Posts 0}}
+    <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{{$.Site.Description}}</p>
+    <p class="mt-3 text-sm">Written by <a class="font-medium text-primary hover:underline" href="{{.Author.URL}}">{{.Author.Name}}</a></p>
+    {{end}}
+  </section>
+  {{end}}
+</aside>
+{{end}}

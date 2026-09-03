@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headTag" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-3xl px-6 pb-24">
+  <h1 class="mt-16 font-mono text-3xl font-bold tracking-tight"><span class="text-primary">tag:</span>#{{.Tag.Name}}</h1>
+  <p class="mt-3 font-mono text-xs uppercase tracking-wide text-muted-foreground">{{len .Posts}} result{{if ne (len .Posts) 1}}s{{end}}</p>
+  <div class="mt-10 flex flex-col gap-8">
+    {{range .Posts}}
+    <article class="flex flex-col gap-2 border-l-2 border-border pl-5">
+      <h2 class="text-xl font-semibold leading-snug tracking-tight">
+        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+      </h2>
+      <p class="font-mono text-xs uppercase tracking-wide text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
+      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -1,0 +1,12 @@
+{{define "footer"}}
+<footer class="border-t border-border">
+  <div class="mx-auto flex w-full max-w-2xl flex-col gap-2 px-6 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+    <p>© {{.Site.Year}} {{.Site.Title}} — written warmly.</p>
+    <ul class="flex gap-4">
+      <li><a class="hover:text-foreground" href="/rss.xml">RSS</a></li>
+      <li><a class="hover:text-foreground" href="/atom.xml">Atom</a></li>
+      <li><a class="hover:text-foreground" href="/feed.json">JSON</a></li>
+    </ul>
+  </div>
+</footer>
+{{end}}

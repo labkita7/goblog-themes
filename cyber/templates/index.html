@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-6xl px-6 pb-24">
+  {{with index .Posts 0}}
+  <section class="neon-glow relative mt-12 overflow-hidden rounded-lg border border-border" style="{{if eq (setting "hero_height") "lg"}}--hero-h:560px{{else}}--hero-h:420px{{end}}">
+    {{if or .CoverURL .OGImageURL}}
+    <img class="absolute inset-0 h-full w-full object-cover opacity-60" src="{{if .CoverURL}}{{.CoverURL}}{{else}}{{.OGImageURL}}{{end}}" alt="" width="1600" height="900">
+    {{end}}
+    <div class="cyber-overlay" aria-hidden="true"></div>
+    <div class="relative z-10 flex min-h-56 flex-col justify-end gap-3 p-6 sm:p-10" style="min-height:var(--hero-h,420px)">
+      <p class="font-mono text-xs uppercase tracking-widest text-primary">Featured transmission</p>
+      <h2 class="neon-text max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+      </h2>
+      <p class="font-mono text-xs uppercase tracking-wide text-muted-foreground">
+        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time> · {{.ReadingMinutes}} min read
+      </p>
+    </div>
+  </section>
+  {{end}}
+
+  <section aria-label="Recent posts" class="mt-14 grid gap-10 sm:grid-cols-2">
+    <h1 class="sr-only">Recent posts</h1>
+    {{range $i, $p := .Posts}}{{if gt $i 0}}
+    <article class="flex flex-col gap-2 border-l-2 border-primary/60 pl-4">
+      <h2 class="text-xl font-semibold leading-snug tracking-tight">
+        <a class="hover:text-primary" href="{{$p.URL}}">{{$p.Title}}</a>
+      </h2>
+      <p class="font-mono text-xs uppercase tracking-wide text-muted-foreground">
+        <time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time> · {{$p.ReadingMinutes}} min
+      </p>
+      {{if $p.Excerpt}}<p class="leading-relaxed text-muted-foreground">{{$p.Excerpt}}</p>{{end}}
+    </article>
+    {{end}}{{end}}
+  </section>
+
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

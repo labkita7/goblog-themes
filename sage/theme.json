@@ -1,0 +1,14 @@
+{
+  "slug": "sage",
+  "name": "Sage Garden",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Classic blog layout with a right sidebar — search, recent posts and an about card on soft forest greens.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#588157" },
+    { "key": "sidebar_widgets", "label": "Sidebar widgets", "type": "select", "options": ["search,recent,topics,about", "search,recent,about", "recent,topics,about"], "default": "search,recent,topics,about" },
+    { "key": "show_search", "label": "Show search box", "type": "bool", "default": true }
+  ]
+}

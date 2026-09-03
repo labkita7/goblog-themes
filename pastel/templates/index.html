@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+  {{if .Posts}}{{with index .Posts 0}}
+  <section class="mt-12 flex items-center gap-4 rounded-xl border border-border bg-card p-5">
+    <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground" aria-hidden="true">{{slice .Author.Name 0 1}}</span>
+    <div>
+      <p class="font-semibold leading-tight"><a class="hover:text-primary" href="{{.Author.URL}}">{{.Author.Name}}</a></p>
+      <p class="text-sm text-muted-foreground">{{$.Site.Description}}</p>
+    </div>
+  </section>
+  {{end}}{{end}}
+
+  <section class="mt-8 rounded-xl border border-primary/40 bg-card p-6" aria-label="Subscribe">
+    <h2 class="text-lg font-semibold tracking-tight">Subscribe to {{.Site.Title}}</h2>
+    <p class="mt-1 text-sm text-muted-foreground">New letters land softly in your inbox. No spam, ever.</p>
+    {{if setting "subscribe_url"}}
+    <form class="mt-4 flex flex-col gap-2 sm:flex-row" action="{{setting "subscribe_url"}}" method="post">
+      <label class="sr-only" for="subscribe-email">Email address</label>
+      <input id="subscribe-email" type="email" name="email" required placeholder="you@example.com"
+             class="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none">
+      <button type="submit" class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">Subscribe</button>
+    </form>
+    {{else}}
+    <p class="mt-4 text-sm">Prefer feeds? <a class="font-medium text-primary hover:underline" href="/rss.xml">Grab the RSS feed</a> instead.</p>
+    {{end}}
+  </section>
+
+  <h1 class="mt-12 text-2xl font-semibold tracking-tight">Latest entries</h1>
+  <div class="mt-6 flex flex-col">
+    {{range .Posts}}
+    <article class="flex flex-col gap-2 border-b border-border py-7 first:pt-0 last:border-b-0">
+      <h2 class="text-xl font-semibold leading-snug tracking-tight">
+        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+      </h2>
+      {{if setting "show_dates"}}<p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>{{end}}
+      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "slug": "paper",
+  "name": "Vintage Paper",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Personal journal — cream paper texture, ink-brown serif text, left archive sidebar and italic pull-quotes.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#a83e29" },
+    { "key": "show_dropcap", "label": "Drop cap on post pages", "type": "bool", "default": true },
+    { "key": "archive_depth", "label": "Archive sidebar depth", "type": "select", "options": ["year", "month"], "default": "year" }
+  ]
+}

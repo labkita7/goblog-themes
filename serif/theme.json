@@ -1,0 +1,14 @@
+{
+  "slug": "serif",
+  "name": "Elegant Editorial",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Newspaper-style editorial — centered serif masthead with rules, dateline, and a featured grid on ivory with muted gold.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#b08d57" },
+    { "key": "columns", "label": "Featured grid columns", "type": "select", "options": ["2", "3"], "default": "3" },
+    { "key": "show_dateline", "label": "Show dateline", "type": "bool", "default": true }
+  ]
+}

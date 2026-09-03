@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headPost" .}}
+<body class="paper-texture">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+  <article>
+    <header class="pt-12 border-b border-border pb-6">
+      <h1 class="font-heading text-4xl font-bold leading-tight tracking-tight">{{.Post.Title}}</h1>
+      <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm italic text-muted-foreground">
+        <a class="hover:text-foreground" href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a>
+        <span aria-hidden="true">·</span>
+        <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>
+        <span aria-hidden="true">·</span><span>{{.Post.ReadingMinutes}} min read</span>
+      </div>
+      {{if or .Post.CoverURL .Post.OGImageURL}}
+      <img class="mt-8 w-full border-2 border-foreground" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1200" height="630">
+      {{end}}
+    </header>
+    <div class="prose mt-10{{if setting "show_dropcap"}} dropcap{{end}}">{{.Post.HTML}}</div>
+    {{if .Post.Tags}}
+    <p class="mt-10 border-t border-border pt-4 text-sm italic text-muted-foreground">filed under
+      {{range $i, $t := .Post.Tags}}{{if $i}}, {{end}}<a class="text-primary hover:underline" href="{{$t.URL}}">{{$t.Name}}</a>{{end}}
+    </p>
+    {{end}}
+  </article>
+  {{if or .Prev .Next}}
+  <nav class="mt-14 grid gap-6 sm:grid-cols-2" aria-label="Post navigation">
+    <div>
+      {{if .Prev}}<p class="text-xs uppercase tracking-widest text-muted-foreground">Previous</p>
+      <a class="line-clamp-2 font-heading text-lg font-bold hover:text-primary" href="{{.Prev.URL}}" rel="prev">{{.Prev.Title}}</a>{{end}}
+    </div>
+    <div class="sm:text-right">
+      {{if .Next}}<p class="text-xs uppercase tracking-widest text-muted-foreground">Next</p>
+      <a class="line-clamp-2 font-heading text-lg font-bold hover:text-primary" href="{{.Next.URL}}" rel="next">{{.Next.Title}}</a>{{end}}
+    </div>
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

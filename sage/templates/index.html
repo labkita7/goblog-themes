@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-6xl px-6 pb-24">
+  <div class="mt-12 flex flex-col gap-12 lg:grid lg:grid-cols-5 lg:gap-10">
+    <div class="lg:col-span-3">
+      <h1 class="text-3xl font-bold tracking-tight">Latest posts</h1>
+      <div class="mt-8 flex flex-col gap-10">
+        {{range .Posts}}
+        <article class="flex flex-col gap-2">
+          <h2 class="text-2xl font-semibold leading-snug tracking-tight">
+            <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+          </h2>
+          <p class="text-sm text-muted-foreground">
+            <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+            <span aria-hidden="true">·</span> {{.ReadingMinutes}} min read
+          </p>
+          {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
+          {{if .Tags}}
+          <ul class="flex flex-wrap gap-2 text-sm">
+            {{range .Tags}}<li><a class="rounded-full bg-secondary px-3 py-1 text-secondary-foreground hover:bg-accent" href="{{.URL}}">{{.Name}}</a></li>{{end}}
+          </ul>
+          {{end}}
+        </article>
+        {{end}}
+      </div>
+      {{if or .PrevURL .NextURL}}
+      <nav class="pagination" aria-label="Pagination">
+        {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+        {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+      </nav>
+      {{end}}
+    </div>
+    {{template "sidebar" .}}
+  </div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

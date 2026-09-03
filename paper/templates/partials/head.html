@@ -1,0 +1,142 @@
+{{/* Reference partial: the SEO-complete head, shared by all ten launch themes.
+     Defines one entry point per page data type — html/template cannot safely
+     branch on optional fields across different data structs, so each page
+     includes the variant that matches its dot:
+
+       index.html   -> {{template "headIndex" .}}   (IndexData)
+       post.html    -> {{template "headPost" .}}    (PostData)
+       page.html    -> {{template "headPage" .}}    (PageData)
+       tag.html     -> {{template "headTag" .}}     (TagData)
+       archive.html -> {{template "headArchive" .}} (ArchiveData)
+       404.html     -> {{template "headError" .}}   (ErrorData)
+
+     headCore emits charset, viewport, feeds, the dark-mode bootstrap,
+     {{asset "theme.css"}} and the settings style block. Only contract
+     fields are used. */}}
+
+{{define "headCore"}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="goblog">
+{{/* Dark-mode bootstrap: set the .dark class before first paint (≤ 1 KB,
+     no required JS — content and navigation work without it). */}}
+<script>
+(function(){var s=null;try{s=localStorage.getItem("goblog-theme")}catch(e){}
+var d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;
+document.documentElement.classList.toggle("dark",d)})();
+</script>
+<meta property="og:site_name" content="{{.Site.Title}}">
+<link rel="alternate" type="application/rss+xml" title="{{.Site.Title}} — RSS" href="/rss.xml">
+<link rel="alternate" type="application/atom+xml" title="{{.Site.Title}} — Atom" href="/atom.xml">
+<link rel="alternate" type="application/json" title="{{.Site.Title}} — JSON Feed" href="/feed.json">
+<link rel="stylesheet" href="{{asset "theme.css"}}">
+{{/* Theme settings arrive as CSS custom properties; accent is a hex color.
+     Declared after the stylesheet so saved settings win over manifest
+     defaults; repeated under .dark because themes lighten accents there. */}}
+<style>
+:root{--primary:{{setting "accent"}};}
+.dark{--primary:{{setting "accent"}};}
+</style>
+{{end}}
+
+{{define "headIndex"}}
+<head>
+{{template "headCore" .}}
+<title>{{.Site.Title}}</title>
+<meta name="description" content="{{.Site.Description}}">
+<link rel="canonical" href="{{.Site.URL}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{.Site.Title}}">
+<meta property="og:description" content="{{.Site.Description}}">
+<meta property="og:url" content="{{.Site.URL}}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{.Site.Title}}">
+<meta name="twitter:description" content="{{.Site.Description}}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":{{.Site.Title}},"url":{{.Site.URL}}}</script>
+</head>
+{{end}}
+
+{{define "headPost"}}
+<head>
+{{template "headCore" .}}
+{{$title := .Post.Title}}
+{{if .Post.MetaTitle}}{{$title = .Post.MetaTitle}}{{end}}
+{{$desc := .Post.Excerpt}}
+{{if .Post.MetaDescription}}{{$desc = .Post.MetaDescription}}{{end}}
+<title>{{$title}}</title>
+<meta name="description" content="{{$desc}}">
+<link rel="canonical" href="{{.Head.Canonical}}">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{isoDate .Post.PublishedAt}}">
+<meta property="article:modified_time" content="{{isoDate .Post.UpdatedAt}}">
+<meta property="og:title" content="{{$title}}">
+<meta property="og:description" content="{{$desc}}">
+<meta property="og:url" content="{{.Head.Canonical}}">
+{{if .Post.OGImageURL}}<meta property="og:image" content="{{.Post.OGImageURL}}">
+{{else if .Post.CoverURL}}<meta property="og:image" content="{{.Post.CoverURL}}">{{end}}
+<meta name="twitter:card" content="{{if or .Post.OGImageURL .Post.CoverURL}}summary_large_image{{else}}summary{{end}}">
+<meta name="twitter:title" content="{{$title}}">
+<meta name="twitter:description" content="{{$desc}}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{.Post.Title}},"description":{{$desc}},"author":{"@type":"Person","name":{{.Post.Author.Name}}},"mainEntityOfPage":{"@type":"WebPage","@id":{{.Head.Canonical}}},"datePublished":{{isoDate .Post.PublishedAt}},"dateModified":{{isoDate .Post.UpdatedAt}}{{if or .Post.OGImageURL .Post.CoverURL}},"image":{{if .Post.OGImageURL}}{{.Post.OGImageURL}}{{else}}{{.Post.CoverURL}}{{end}}{{end}}}</script>
+</head>
+{{end}}
+
+{{define "headPage"}}
+<head>
+{{template "headCore" .}}
+{{$title := .Post.Title}}
+{{if .Post.MetaTitle}}{{$title = .Post.MetaTitle}}{{end}}
+{{$desc := .Post.Excerpt}}
+{{if .Post.MetaDescription}}{{$desc = .Post.MetaDescription}}{{end}}
+<title>{{$title}}</title>
+<meta name="description" content="{{$desc}}">
+<link rel="canonical" href="{{.Head.Canonical}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{$title}}">
+<meta property="og:description" content="{{$desc}}">
+<meta property="og:url" content="{{.Head.Canonical}}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{$title}}">
+<meta name="twitter:description" content="{{$desc}}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":{{.Post.Title}},"url":{{.Head.Canonical}}}</script>
+</head>
+{{end}}
+
+{{define "headTag"}}
+<head>
+{{template "headCore" .}}
+<title>{{.Tag.Name}} · {{.Site.Title}}</title>
+<meta name="description" content="Posts tagged {{.Tag.Name}} on {{.Site.Title}}.">
+<link rel="canonical" href="{{.Tag.URL}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{.Tag.Name}}">
+<meta property="og:description" content="Posts tagged {{.Tag.Name}} on {{.Site.Title}}.">
+<meta property="og:url" content="{{.Tag.URL}}">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":{{.Tag.Name}},"url":{{.Tag.URL}}}</script>
+</head>
+{{end}}
+
+{{define "headArchive"}}
+<head>
+{{template "headCore" .}}
+<title>Archive · {{.Site.Title}}</title>
+<meta name="description" content="All posts on {{.Site.Title}}, newest first.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Archive — {{.Site.Title}}">
+<meta property="og:description" content="All posts on {{.Site.Title}}, newest first.">
+<meta name="twitter:card" content="summary">
+</head>
+{{end}}
+
+{{define "headError"}}
+<head>
+{{template "headCore" .}}
+<title>{{.Message}} · {{.Site.Title}}</title>
+<meta name="description" content="{{.Message}}">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{.Message}}">
+<meta name="twitter:card" content="summary">
+</head>
+{{end}}

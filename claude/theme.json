@@ -1,0 +1,14 @@
+{
+  "slug": "claude",
+  "name": "Claude Warm",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Warm cream-and-terracotta single column with a friendly author header, hairline post dividers and serif headings.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#d97757" },
+    { "key": "show_author_header", "label": "Show author header on the home page", "type": "bool", "default": true },
+    { "key": "posts_per_page", "label": "Posts per page", "type": "number", "default": 8 }
+  ]
+}

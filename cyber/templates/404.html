@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headError" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-3xl px-6 pb-24 pt-24">
+  <p class="neon-text font-mono text-7xl font-bold tracking-tight text-primary">{{.Code}}</p>
+  <h1 class="mt-4 font-mono text-2xl font-semibold uppercase tracking-widest">{{.Message}}</h1>
+  <p class="mt-3 text-muted-foreground">The page you are looking for does not exist or has moved.</p>
+  <a class="mt-8 inline-block rounded-md bg-primary px-5 py-2 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90" href="/">Reconnect</a>
+</main>
+{{template "footer" .}}
+</body>
+</html>

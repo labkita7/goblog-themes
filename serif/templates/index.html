@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-6xl px-6 pb-24">
+  {{if .Posts}}{{with index .Posts 0}}
+  <p class="mt-8 text-center text-sm text-muted-foreground">{{if setting "show_dateline"}}<span class="kicker text-base">Week of {{formatDate .PublishedAt}}</span>{{end}}</p>
+  {{end}}{{end}}
+
+  <h1 class="sr-only">Latest posts</h1>
+  <div class="mt-8 grid gap-8 sm:grid-cols-2 {{if eq (setting "columns") "2"}}lg:grid-cols-2{{else}}lg:grid-cols-3{{end}}">
+    {{range $i, $p := .Posts}}
+    <article class="flex flex-col gap-2 border-t-2 border-foreground pt-4 {{if eq $i 0}}sm:col-span-2{{end}}">
+      {{if eq $i 0}}{{if or $p.CoverURL $p.OGImageURL}}
+      <img class="aspect-[16/9] w-full rounded-sm border border-border object-cover" src="{{if $p.CoverURL}}{{$p.CoverURL}}{{else}}{{$p.OGImageURL}}{{end}}" alt="" width="1200" height="675">
+      {{end}}{{end}}
+      {{if eq $i 0}}<p class="kicker text-base text-primary">Featured</p>{{end}}
+      <h2 class="{{if eq $i 0}}font-heading text-3xl{{else}}text-xl{{end}} font-bold leading-tight tracking-tight">
+        <a class="hover:text-primary" href="{{$p.URL}}">{{$p.Title}}</a>
+      </h2>
+      <p class="kicker text-base text-muted-foreground">
+        <time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time> · {{$p.ReadingMinutes}} min · {{$p.Author.Name}}
+      </p>
+      {{if $p.Excerpt}}<p class="leading-relaxed text-muted-foreground">{{$p.Excerpt}}</p>{{end}}
+      {{if $p.Tags}}<p class="kicker text-base text-muted-foreground">
+        {{range $t := $p.Tags}}<a class="hover:text-foreground" href="{{$t.URL}}">{{$t.Name}}</a> {{end}}
+      </p>{{end}}
+    </article>
+    {{end}}
+  </div>
+
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Claude Warm — tweakcn #1 "Claude+": cream, terracotta, serif headings.
+   Dark mode stays warm; never pure black. */
+:root {
+  --background: #faf9f5;
+  --foreground: #1f1e1c;
+  --card: #ffffff;
+  --card-foreground: #1f1e1c;
+  --primary: #d97757;
+  --primary-foreground: #ffffff;
+  --secondary: #f0eee6;
+  --secondary-foreground: #3d3929;
+  --muted: #f0eee6;
+  --muted-foreground: #78716c;
+  --accent: #f0eee6;
+  --accent-foreground: #3d3929;
+  --destructive: #c2410c;
+  --border: #e5e1d8;
+  --input: #e5e1d8;
+  --ring: #d97757;
+  --radius: 0.5rem;
+  --font-heading: Georgia, "Times New Roman", serif;
+}
+.dark {
+  --background: #262624;
+  --foreground: #ece9df;
+  --card: #2d2d2a;
+  --card-foreground: #ece9df;
+  --primary: #d97757;
+  --primary-foreground: #ffffff;
+  --secondary: #33322e;
+  --secondary-foreground: #ece9df;
+  --muted: #33322e;
+  --muted-foreground: #a8a29e;
+  --accent: #33322e;
+  --accent-foreground: #ece9df;
+  --destructive: #e07a5f;
+  --border: #3d3b36;
+  --input: #3d3b36;
+  --ring: #d97757;
+}
+
+body { font-size: 1.0625rem; line-height: 1.7; }
+
+/* Warm author chip — initials avatar (users have no avatar field in v1) */
+.author-avatar {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.75rem; height: 2.75rem; border-radius: 9999px;
+  background: var(--primary); color: var(--primary-foreground);
+  font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700;
+  letter-spacing: 0.02em;
+}

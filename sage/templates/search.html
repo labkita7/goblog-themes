@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+<head>
+{{template "headCore" .}}
+<title>{{if .Query}}“{{.Query}}” search{{else}}Search{{end}} · {{.Site.Title}}</title>
+<meta name="description" content="Search results on {{.Site.Title}}.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Search — {{.Site.Title}}">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-6xl px-6 pb-24">
+  <div class="mt-12 flex flex-col gap-12 lg:grid lg:grid-cols-5 lg:gap-10">
+    <div class="lg:col-span-3">
+      <h1 class="text-3xl font-bold tracking-tight">Search</h1>
+      <form class="mt-6 flex gap-2" role="search" action="/search" method="get">
+        <label class="sr-only" for="search-q">Search posts</label>
+        <input id="search-q" type="search" name="q" value="{{.Query}}" placeholder="Search posts…"
+               class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none">
+        <button type="submit" class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">Search</button>
+      </form>
+      {{if .Query}}
+      <p class="mt-6 text-muted-foreground">{{len .Posts}} result{{if ne (len .Posts) 1}}s{{end}} for <strong class="text-foreground">“{{.Query}}”</strong></p>
+      {{end}}
+      <div class="mt-8 flex flex-col gap-10">
+        {{range .Posts}}
+        <article class="flex flex-col gap-2">
+          <h2 class="text-2xl font-semibold leading-snug tracking-tight">
+            <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+          </h2>
+          <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
+          {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
+        </article>
+        {{end}}
+      </div>
+      {{if and .Query (not .Posts)}}
+      <p class="mt-10 text-muted-foreground">Nothing found. Try a different phrase, or browse the <a class="text-primary hover:underline" href="/archive/">archive</a>.</p>
+      {{end}}
+      {{if or .PrevURL .NextURL}}
+      <nav class="pagination" aria-label="Pagination">
+        {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+        {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+      </nav>
+      {{end}}
+    </div>
+    {{template "sidebar" .}}
+  </div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

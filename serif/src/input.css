@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Elegant Editorial — "elegant luxury": ivory, ink, muted gold, Playfair. */
+
+/* Bundled OFL-licensed font (relative to /assets/theme/<slug>/theme.css) */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/playfair-display-700.woff2") format("woff2");
+}
+
+:root {
+  --background: #fbf9f4;
+  --foreground: #201d17;
+  --card: #fffef9;
+  --card-foreground: #201d17;
+  --primary: #b08d57;
+  --primary-foreground: #201d17;
+  --secondary: #f3efe4;
+  --secondary-foreground: #201d17;
+  --muted: #f3efe4;
+  --muted-foreground: #6b6455;
+  --accent: #f3efe4;
+  --accent-foreground: #201d17;
+  --destructive: #a13327;
+  --border: #e3ddcd;
+  --input: #e3ddcd;
+  --ring: #b08d57;
+  --radius: 0.25rem;
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: Georgia, "Times New Roman", ui-serif, serif;
+}
+.dark {
+  --background: #191712;
+  --foreground: #ece5d8;
+  --card: #211e17;
+  --card-foreground: #ece5d8;
+  --primary: #c8a96e;
+  --primary-foreground: #191712;
+  --secondary: #26231b;
+  --secondary-foreground: #ece5d8;
+  --muted: #26231b;
+  --muted-foreground: #a39a86;
+  --accent: #26231b;
+  --accent-foreground: #ece5d8;
+  --destructive: #e07a5f;
+  --border: #353024;
+  --input: #353024;
+  --ring: #c8a96e;
+}
+
+body { font-size: 1.0625rem; line-height: 1.7; }
+
+/* Small-caps kicker labels */
+.kicker {
+  font-family: var(--font-body);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+}

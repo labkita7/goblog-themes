@@ -1,0 +1,14 @@
+{
+  "slug": "pastel",
+  "name": "Catppuccin Soft",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Newsletter-style centered column on Catppuccin latte/mocha — author card, dated entries and a subscribe CTA.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "subscribe_url", "label": "Newsletter subscribe endpoint", "type": "text", "default": "" },
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#8839ef" },
+    { "key": "show_dates", "label": "Show dates on entries", "type": "bool", "default": true }
+  ]
+}

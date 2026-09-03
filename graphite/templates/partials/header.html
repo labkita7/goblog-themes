@@ -1,0 +1,22 @@
+{{define "header"}}
+<header class="border-b border-border">
+  <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-4">
+    <a href="/" class="font-mono text-sm font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
+    <div class="flex items-center gap-5">
+      {{if .Nav.Items}}
+      <nav aria-label="Main navigation">
+        <ul class="flex items-center gap-4 font-mono text-xs uppercase tracking-wide text-muted-foreground">
+          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
+        </ul>
+      </nav>
+      {{end}}
+      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border font-mono text-muted-foreground transition-colors hover:text-foreground">◐</button>
+    </div>
+  </div>
+</header>
+<script>
+document.addEventListener("click",function(e){var b=e.target.closest("[data-theme-toggle]");if(!b)return;
+var d=document.documentElement.classList.toggle("dark");
+try{localStorage.setItem("goblog-theme",d?"dark":"light")}catch(_){}});
+</script>
+{{end}}

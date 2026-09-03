@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headArchive" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-6xl px-6 pb-24">
+  <h1 class="mt-12 font-heading text-4xl uppercase tracking-wide">{{if .Year}}Archive {{.Year}}{{else}}Archive{{end}}</h1>
+  <div class="mt-10 grid gap-8 sm:grid-cols-2 {{if eq (setting "card_columns") "2"}}lg:grid-cols-2{{else}}lg:grid-cols-3{{end}}">
+    {{range .Posts}}
+    <article class="brutal-card flex flex-col gap-2 p-5">
+      <p class="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+      </p>
+      <h2 class="font-heading text-lg leading-snug">
+        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+      </h2>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

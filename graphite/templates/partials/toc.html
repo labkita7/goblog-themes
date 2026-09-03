@@ -1,0 +1,18 @@
+{{/* Sticky table of contents for post pages. Populated server-side from
+     headings (PostData.TOC — {ID, Text, Level}); renders nothing when the
+     post has no headings or show_toc is off. */}}
+
+{{define "toc"}}
+{{if and (setting "show_toc") .TOC}}
+<nav class="toc hidden max-h-[calc(100vh-4rem)] flex-col gap-1 overflow-y-auto lg:sticky lg:top-10 lg:flex" aria-label="Table of contents">
+  <p class="font-mono text-xs uppercase tracking-wide text-muted-foreground">On this page</p>
+  <ul class="mt-2 flex flex-col gap-0.5 border-l border-border">
+    {{range .TOC}}
+    <li class="{{if eq .Level 3}}pl-5{{else}}pl-3{{end}}">
+      <a class="{{if eq .Level 2}}toc-h2{{end}} border-l-2 border-transparent hover:border-current" href="#{{.ID}}">{{.Text}}</a>
+    </li>
+    {{end}}
+  </ul>
+</nav>
+{{end}}
+{{end}}

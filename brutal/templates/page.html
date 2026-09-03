@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headPage" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-3xl px-6 pb-24">
+  <article>
+    <h1 class="pt-12 font-heading text-4xl sm:text-5xl">{{.Post.Title}}</h1>
+    <div class="prose mt-10">{{.Post.HTML}}</div>
+  </article>
+</main>
+{{template "footer" .}}
+</body>
+</html>

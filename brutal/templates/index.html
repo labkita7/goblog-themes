@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-6xl px-6 pb-24">
+  <h1 class="mt-12 font-heading text-4xl uppercase tracking-wide sm:text-5xl">All the posts</h1>
+  <div class="mt-10 grid gap-8 sm:grid-cols-2 {{if eq (setting "card_columns") "2"}}lg:grid-cols-2{{else}}lg:grid-cols-3{{end}}">
+    {{range .Posts}}
+    <article class="brutal-card flex flex-col gap-3 p-5">
+      <p class="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time> · {{.ReadingMinutes}} min
+      </p>
+      <h2 class="font-heading text-xl leading-snug">
+        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+      </h2>
+      {{if .Excerpt}}<p class="leading-relaxed">{{.Excerpt}}</p>{{end}}
+      {{if .Tags}}
+      <ul class="mt-auto flex flex-wrap gap-2">
+        {{range .Tags}}<li><a class="brutal-tag hover:bg-accent" href="{{.URL}}">{{.Name}}</a></li>{{end}}
+      </ul>
+      {{end}}
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

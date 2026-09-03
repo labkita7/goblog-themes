@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "updated": "2026-09-03T21:04:50Z",
+  "themes": [
+    {
+      "slug": "brutal",
+      "name": "Neo Brutal",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Neo-brutalist card grid — 2px black borders, hard offset shadows, chunky uppercase tags and heavy grotesque display type.",
+      "tags": [
+        "bold",
+        "high-contrast"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/brutal/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/brutal-1.0.0/brutal.zip",
+      "sha256": "5da213711b552bdfadad79a9985116fd1e3d2eb9a806d05f33a478697a5e9b1b",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "claude",
+      "name": "Claude Warm",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Warm cream-and-terracotta single column with a friendly author header, hairline post dividers and serif headings.",
+      "tags": [
+        "warm",
+        "editorial"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/claude/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/claude-1.0.0/claude.zip",
+      "sha256": "e84637c708cfa0a9f4687a3972b1f2bb1421c0756494c6ab9409710d7dc5b2d6",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "cyber",
+      "name": "Cyberpunk Neon",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Dark navy base with neon cyan and magenta accents, glow shadows and a hero featured post over a compact recent list.",
+      "tags": [
+        "dark",
+        "terminal"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/cyber/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/cyber-1.0.0/cyber.zip",
+      "sha256": "a783e438908fa4db001f0ad43d243c0421b73edbca7432d9da368373e9eb3dfc",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "graphite",
+      "name": "Graphite Dev",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Dark-first developer blog — zinc ramp, cyan accent, sticky table of contents and code blocks with a language header bar.",
+      "tags": [
+        "dark",
+        "professional"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/graphite/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/graphite-1.0.0/graphite.zip",
+      "sha256": "f4b91ecc5f6d9711442f88212ddaec7a4da7141a2aebd77cf0a5bdc768ef7927",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "neutral",
+      "name": "Neutral",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Minimal single-column blog theme — true grays, near-white background, generous whitespace, one accent.",
+      "tags": [
+        "minimal",
+        "clean"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/neutral/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/neutral-1.0.0/neutral.zip",
+      "sha256": "50dd8281ddf2af49facdc2e8db13a651701267819b864229c5c6710d43a74b69",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "paper",
+      "name": "Vintage Paper",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Personal journal — cream paper texture, ink-brown serif text, left archive sidebar and italic pull-quotes.",
+      "tags": [
+        "editorial",
+        "serif"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/paper/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/paper-1.0.0/paper.zip",
+      "sha256": "12eabd05974d2aa4549013f6d1046ba627834713f14bcf264ce2ff0eb2fc65cd",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "pastel",
+      "name": "Catppuccin Soft",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Newsletter-style centered column on Catppuccin latte/mocha — author card, dated entries and a subscribe CTA.",
+      "tags": [
+        "soft",
+        "friendly"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/pastel/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/pastel-1.0.0/pastel.zip",
+      "sha256": "1e7783b18fd2a53ab72b9554195d0a613d6ab744dd00c0303079840b6efb8349",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "sage",
+      "name": "Sage Garden",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Classic blog layout with a right sidebar — search, recent posts and an about card on soft forest greens.",
+      "tags": [
+        "organic",
+        "calm"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/sage/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/sage-1.0.0/sage.zip",
+      "sha256": "6a5d4ca2cd3c888547c48127cf69d11502ade073028883396874ec048be7fe14",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "serif",
+      "name": "Elegant Editorial",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Newspaper-style editorial — centered serif masthead with rules, dateline, and a featured grid on ivory with muted gold.",
+      "tags": [
+        "classic",
+        "typography"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/serif/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/serif-1.0.0/serif.zip",
+      "sha256": "38bb163f7e7a0714213e193ecd03247c923527a155fbb7f59b5c65e16ecb857c",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "slate",
+      "name": "Clean Slate Magazine",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Magazine split layout — oversized masthead, lead story with 16:9 cover, and a hairline latest list on cool professional blues.",
+      "tags": [
+        "corporate",
+        "clean"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/slate/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/slate-1.0.0/slate.zip",
+      "sha256": "60a99cc09480f596e3cb66b1a60ddbf41d2e38afd2b0b24b9b1dabc02044f9a9",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    }
+  ]
+}

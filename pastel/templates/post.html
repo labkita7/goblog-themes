@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headPost" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+  <article>
+    <header class="pt-12">
+      <h1 class="text-4xl font-bold leading-tight tracking-tight">{{.Post.Title}}</h1>
+      <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+        <a class="hover:text-foreground" href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a>
+        <span aria-hidden="true">·</span>
+        <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>
+        <span aria-hidden="true">·</span><span>{{.Post.ReadingMinutes}} min read</span>
+      </div>
+      {{if or .Post.CoverURL .Post.OGImageURL}}
+      <img class="mt-8 w-full rounded-xl border border-border" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1200" height="630">
+      {{end}}
+    </header>
+    <div class="prose mt-10">{{.Post.HTML}}</div>
+  </article>
+  <section class="mt-12 rounded-xl border border-primary/40 bg-card p-6" aria-label="Subscribe">
+    <h2 class="text-lg font-semibold tracking-tight">Enjoyed this? Get the next one.</h2>
+    {{if setting "subscribe_url"}}
+    <form class="mt-4 flex flex-col gap-2 sm:flex-row" action="{{setting "subscribe_url"}}" method="post">
+      <label class="sr-only" for="subscribe-email-post">Email address</label>
+      <input id="subscribe-email-post" type="email" name="email" required placeholder="you@example.com"
+             class="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none">
+      <button type="submit" class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">Subscribe</button>
+    </form>
+    {{else}}
+    <p class="mt-2 text-sm text-muted-foreground">Follow along via <a class="font-medium text-primary hover:underline" href="/rss.xml">RSS</a>.</p>
+    {{end}}
+  </section>
+  {{if or .Prev .Next}}
+  <nav class="mt-14 grid gap-6 sm:grid-cols-2" aria-label="Post navigation">
+    <div>
+      {{if .Prev}}<p class="text-sm text-muted-foreground">Previous</p>
+      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Prev.URL}}" rel="prev">{{.Prev.Title}}</a>{{end}}
+    </div>
+    <div class="sm:text-right">
+      {{if .Next}}<p class="text-sm text-muted-foreground">Next</p>
+      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Next.URL}}" rel="next">{{.Next.Title}}</a>{{end}}
+    </div>
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

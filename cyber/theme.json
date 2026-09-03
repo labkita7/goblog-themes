@@ -1,0 +1,14 @@
+{
+  "slug": "cyber",
+  "name": "Cyberpunk Neon",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Dark navy base with neon cyan and magenta accents, glow shadows and a hero featured post over a compact recent list.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Primary neon accent", "type": "color", "default": "#22d3ee" },
+    { "key": "accent_2", "label": "Secondary neon accent", "type": "color", "default": "#e879f9" },
+    { "key": "hero_height", "label": "Hero height", "type": "select", "options": ["sm", "lg"], "default": "lg" }
+  ]
+}

@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Vintage Paper — cream/sepia journal, ink brown, faded red, Lora. */
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/lora-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/lora-400-italic.woff2") format("woff2");
+}
+
+:root {
+  --background: #f8f2e4;
+  --foreground: #3e3427;
+  --card: #fdf8ec;
+  --card-foreground: #3e3427;
+  --primary: #a83e29;
+  --primary-foreground: #fdf8ec;
+  --secondary: #f0e6d0;
+  --secondary-foreground: #3e3427;
+  --muted: #f0e6d0;
+  --muted-foreground: #7a6a52;
+  --accent: #f0e6d0;
+  --accent-foreground: #3e3427;
+  --destructive: #a83e29;
+  --border: #e0d3b8;
+  --input: #e0d3b8;
+  --ring: #a83e29;
+  --radius: 0.125rem;
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-body);
+}
+.dark {
+  --background: #211915;
+  --foreground: #e8ddc7;
+  --card: #2a201a;
+  --card-foreground: #e8ddc7;
+  --primary: #d1904f;
+  --primary-foreground: #211915;
+  --secondary: #33271f;
+  --secondary-foreground: #e8ddc7;
+  --muted: #33271f;
+  --muted-foreground: #a8977c;
+  --accent: #33271f;
+  --accent-foreground: #e8ddc7;
+  --destructive: #d1904f;
+  --border: #453628;
+  --input: #453628;
+  --ring: #d1904f;
+}
+
+body { font-size: 1.0625rem; line-height: 1.75; }
+
+/* Aged paper mottling — CSS gradients only, no image assets. */
+.paper-texture {
+  background-image:
+    radial-gradient(ellipse 60% 40% at 15% 20%, color-mix(in srgb, var(--foreground) 4%, transparent), transparent),
+    radial-gradient(ellipse 50% 35% at 85% 75%, color-mix(in srgb, var(--foreground) 5%, transparent), transparent),
+    radial-gradient(ellipse 40% 30% at 60% 10%, color-mix(in srgb, var(--primary) 3%, transparent), transparent);
+}
+
+/* Italic pull-quotes: blockquotes read like marginalia */
+.prose blockquote {
+  font-style: italic;
+  border-inline-start: 2px solid var(--primary);
+}
+
+/* Drop cap on post pages (gated by the show_dropcap setting) */
+.dropcap > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.85;
+  padding-right: 0.1em;
+  color: var(--primary);
+}
+
+/* Archive sidebar tree */
+.archive-tree a { text-decoration: none; color: var(--muted-foreground); }
+.archive-tree a:hover { color: var(--primary); }
