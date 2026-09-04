@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Dusk Lo-fi — moody lavender/indigo. heading_style=solid disables the
+   gradient display text via the .solid-headings body class. */
+:root {
+  --background: #f2f0fa;
+  --foreground: #221f3a;
+  --card: #ffffff;
+  --card-foreground: #221f3a;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #e8e5f8;
+  --secondary-foreground: #332e5c;
+  --muted: #e8e5f8;
+  --muted-foreground: #6d6893;
+  --accent: #e3e0f7;
+  --accent-foreground: #3730a3;
+  --destructive: #dc2626;
+  --border: #ddd9f0;
+  --input: #ddd9f0;
+  --ring: #6366f1;
+  --radius: 0.875rem;
+}
+.dark {
+  --background: #131022;
+  --foreground: #d6d2ee;
+  --card: #1c1930;
+  --card-foreground: #d6d2ee;
+  --primary: #818cf8;
+  --primary-foreground: #12102a;
+  --secondary: #24203e;
+  --secondary-foreground: #bcb6dd;
+  --muted: #24203e;
+  --muted-foreground: #8d87b0;
+  --accent: #2a2650;
+  --accent-foreground: #c7d2fe;
+  --destructive: #ef4444;
+  --border: #2b2749;
+  --input: #2b2749;
+  --ring: #818cf8;
+}
+
+/* Indigo→lilac gradient display headings */
+h1 {
+  background-image: linear-gradient(120deg, var(--primary), #c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.solid-headings h1 { background-image: none; color: var(--foreground); }
+
+/* Soft muted chips */
+main article a[href^="/tags/"] { border-radius: 9999px; border-color: transparent; background: var(--secondary); padding: 0.2rem 0.7rem; }
+main article a[href^="/tags/"]:hover { background: var(--primary); color: var(--primary-foreground); }
+
+/* Dreamy soft card for covers */
+main img { border-radius: var(--radius); box-shadow: 0 20px 50px -30px rgb(49 46 129 / 0.5); }
+
+body { font-size: 1.0625rem; line-height: 1.75; }

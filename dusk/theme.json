@@ -1,0 +1,14 @@
+{
+  "slug": "dusk",
+  "name": "Dusk Lo-fi",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Moody lavender-indigo theme — lo-fi calm tones, soft indigo accent, gradient subheads, quiet dark mode.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#6366f1" },
+    { "key": "heading_style", "label": "Heading style", "type": "select", "options": ["gradient", "solid"], "default": "gradient" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

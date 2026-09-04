@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Tokyo Night — dark-first neon. Glow accents use --primary and --glow
+   (accent_2 setting); metadata renders in the mono stack. */
+:root {
+  --background: #e6e9f2;
+  --foreground: #1a1b26;
+  --card: #d5d9e8;
+  --card-foreground: #1a1b26;
+  --primary: #3b5fcd;
+  --primary-foreground: #ffffff;
+  --secondary: #d0d5e6;
+  --secondary-foreground: #2c2e42;
+  --muted: #d0d5e6;
+  --muted-foreground: #565f89;
+  --accent: #c8d2f0;
+  --accent-foreground: #24283b;
+  --destructive: #f7768e;
+  --border: #bfc7dd;
+  --input: #bfc7dd;
+  --ring: #3b5fcd;
+  --glow: #7dcfff;
+  --radius: 0.75rem;
+}
+.dark {
+  --background: #1a1b26;
+  --foreground: #c0caf5;
+  --card: #24283b;
+  --card-foreground: #c0caf5;
+  --primary: #7aa2f7;
+  --primary-foreground: #16161e;
+  --secondary: #2f334d;
+  --secondary-foreground: #a9b1d6;
+  --muted: #2f334d;
+  --muted-foreground: #787fa8;
+  --accent: #343a56;
+  --accent-foreground: #bb9af7;
+  --destructive: #f7768e;
+  --border: #343a56;
+  --input: #343a56;
+  --ring: #7aa2f7;
+  --glow: #7dcfff;
+}
+
+/* Neon glow: primary links and headings pick up a soft outer glow */
+h1, main a:hover {
+  text-shadow: 0 0 24px color-mix(in srgb, var(--primary) 45%, transparent);
+}
+
+/* Glowing post cards (used on the home grid) */
+.neon-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px transparent, -8px 0 24px -14px color-mix(in srgb, var(--glow) 55%, transparent);
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+.neon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px -6px color-mix(in srgb, var(--primary) 55%, transparent);
+}
+
+/* Mono metadata */
+.meta-mono {
+  font-family: var(--font-code);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+/* Neon gradient hero band */
+.neon-hero {
+  background: linear-gradient(120deg,
+    color-mix(in srgb, var(--primary) 26%, transparent),
+    color-mix(in srgb, var(--glow) 18%, transparent) 60%,
+    color-mix(in srgb, #bb9af7 16%, transparent));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+body { font-size: 1rem; line-height: 1.7; }

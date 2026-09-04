@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Mint Fresh — airy teal minimal. tag_style=outline keeps squared chips
+   (template toggles the .tags-outline class), pill is the default. */
+:root {
+  --background: #f7faf9;
+  --foreground: #12241d;
+  --card: #ffffff;
+  --card-foreground: #12241d;
+  --primary: #0d9488;
+  --primary-foreground: #ffffff;
+  --secondary: #e7f4f0;
+  --secondary-foreground: #1f3d34;
+  --muted: #e7f4f0;
+  --muted-foreground: #5c7a70;
+  --accent: #d9efe9;
+  --accent-foreground: #115e59;
+  --destructive: #dc2626;
+  --border: #dbeae5;
+  --input: #dbeae5;
+  --ring: #0d9488;
+  --radius: 0.875rem;
+}
+.dark {
+  --background: #0a1210;
+  --foreground: #d9ece5;
+  --card: #101c18;
+  --card-foreground: #d9ece5;
+  --primary: #2dd4bf;
+  --primary-foreground: #04211c;
+  --secondary: #16241f;
+  --secondary-foreground: #b7d4cb;
+  --muted: #16241f;
+  --muted-foreground: #8aa79d;
+  --accent: #1a2e28;
+  --accent-foreground: #99f6e4;
+  --destructive: #ef4444;
+  --border: #1d312a;
+  --input: #1d312a;
+  --ring: #2dd4bf;
+}
+
+/* Animated underline on post titles */
+main h2 a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--primary) 45%, transparent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color .2s ease, color .2s ease;
+}
+main h2 a:hover { text-decoration-color: var(--primary); }
+
+/* Pill tags (default) vs outline (tags-outline) */
+main article a[href^="/tags/"] { border-radius: 9999px; border-color: transparent; background: var(--secondary); padding: 0.2rem 0.75rem; }
+main article a[href^="/tags/"]:hover { background: var(--primary); color: var(--primary-foreground); }
+.tags-outline main article a[href^="/tags/"] { border-radius: calc(var(--radius) - 4px); background: transparent; border: 1px solid var(--border); }
+.tags-outline main article a[href^="/tags/"]:hover { border-color: var(--primary); background: transparent; color: var(--primary); }
+
+body { font-size: 1.0625rem; line-height: 1.75; }

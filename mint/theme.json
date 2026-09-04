@@ -1,0 +1,14 @@
+{
+  "slug": "mint",
+  "name": "Mint Fresh",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Airy mint-teal minimal theme — generous whitespace, pill tags, animated underlines, calm dark mode.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#0d9488" },
+    { "key": "tag_style", "label": "Tag style", "type": "select", "options": ["pill", "outline"], "default": "pill" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

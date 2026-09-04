@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Pop Play — chunky pop cards: 2px ink borders, hard offset shadow whose
+   size comes from the shadow_offset setting (--pop-shadow px). */
+:root {
+  --background: #fffdf5;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --primary: #ec4899;
+  --primary-foreground: #ffffff;
+  --secondary: #fef9c3;
+  --secondary-foreground: #4a3a05;
+  --muted: #fdf4e3;
+  --muted-foreground: #757064;
+  --accent: #fde68a;
+  --accent-foreground: #4a3a05;
+  --destructive: #dc2626;
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+  --ring: #ec4899;
+  --radius: 1.5rem;
+  --pop-shadow: 5px;
+}
+.dark {
+  --background: #141414;
+  --foreground: #fdfcf7;
+  --card: #1e1e1e;
+  --card-foreground: #fdfcf7;
+  --primary: #f472b6;
+  --primary-foreground: #210b16;
+  --secondary: #3a3010;
+  --secondary-foreground: #fef08a;
+  --muted: #262626;
+  --muted-foreground: #a8a49a;
+  --accent: #3a3010;
+  --accent-foreground: #fde68a;
+  --destructive: #ef4444;
+  --border: #fdfcf7;
+  --input: #fdfcf7;
+  --ring: #f472b6;
+}
+
+/* Sticker card: thick border + hard offset shadow */
+.pop-card {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--pop-shadow) var(--pop-shadow) 0 0 var(--border);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.pop-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--pop-shadow) + 2px) calc(var(--pop-shadow) + 2px) 0 0 var(--primary);
+}
+
+/* Yellow sticker tags */
+main article a[href^="/tags/"] {
+  border: 2px solid var(--border);
+  border-radius: 9999px;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-weight: 600;
+  padding: 0.15rem 0.7rem;
+}
+main article a[href^="/tags/"]:hover { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+
+/* Buttons / toggle get the sticker treatment */
+[data-theme-toggle] { border-width: 2px !important; border-radius: 9999px !important; }
+
+body { font-size: 1.0625rem; line-height: 1.7; }

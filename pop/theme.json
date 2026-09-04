@@ -1,0 +1,14 @@
+{
+  "slug": "pop",
+  "name": "Pop Play",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Playful pop theme — chunky rounded cards, thick ink borders, hard offset shadows, vivid pink-and-yellow palette.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#ec4899" },
+    { "key": "shadow_offset", "label": "Card shadow offset (px)", "type": "number", "default": 5 },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Frost Glass — glassmorphism. Fixed gradient mesh behind everything;
+   .glass cards are translucent with a blur (blur_strength px setting). */
+:root {
+  --background: #eaf3fb;
+  --foreground: #0f2436;
+  --card: rgb(255 255 255 / 0.62);
+  --card-foreground: #0f2436;
+  --primary: #0284c7;
+  --primary-foreground: #ffffff;
+  --secondary: rgb(255 255 255 / 0.55);
+  --secondary-foreground: #0f2436;
+  --muted: rgb(255 255 255 / 0.5);
+  --muted-foreground: #4a6577;
+  --accent: rgb(14 165 233 / 0.16);
+  --accent-foreground: #0c4a6e;
+  --destructive: #dc2626;
+  --border: rgb(15 36 54 / 0.14);
+  --input: rgb(15 36 54 / 0.14);
+  --ring: #0284c7;
+  --radius: 1.125rem;
+  --glass-blur: 14px;
+  --mesh-1: #7dd3fc;
+  --mesh-2: #c7d2fe;
+  --mesh-3: #fbcfe8;
+}
+.dark {
+  --background: #0b1524;
+  --foreground: #dbe9f5;
+  --card: rgb(23 37 55 / 0.55);
+  --card-foreground: #dbe9f5;
+  --primary: #38bdf8;
+  --primary-foreground: #06202e;
+  --secondary: rgb(30 48 68 / 0.5);
+  --secondary-foreground: #c4d6e5;
+  --muted: rgb(30 48 68 / 0.5);
+  --muted-foreground: #8fa8bd;
+  --accent: rgb(56 189 248 / 0.16);
+  --accent-foreground: #bae6fd;
+  --destructive: #ef4444;
+  --border: rgb(148 184 210 / 0.18);
+  --input: rgb(148 184 210 / 0.18);
+  --ring: #38bdf8;
+  --mesh-1: #0e7490;
+  --mesh-2: #4338ca;
+  --mesh-3: #701a75;
+}
+
+/* Fixed gradient mesh canvas */
+body {
+  background:
+    radial-gradient(55% 70% at 12% 8%, color-mix(in srgb, var(--mesh-1) 55%, transparent), transparent 70%),
+    radial-gradient(60% 80% at 88% 18%, color-mix(in srgb, var(--mesh-2) 50%, transparent), transparent 72%),
+    radial-gradient(75% 90% at 55% 105%, color-mix(in srgb, var(--mesh-3) 42%, transparent), transparent 78%),
+    var(--background);
+  background-attachment: fixed;
+}
+
+/* Frosted glass card */
+.glass {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+  box-shadow: 0 16px 40px -24px rgb(2 132 199 / 0.45);
+}
+
+/* Translucent header/footer bands */
+body > header, body > footer {
+  background: var(--card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Glassy pill tags */
+main article a[href^="/tags/"] { border-radius: 9999px; border-color: transparent; background: var(--secondary); padding: 0.2rem 0.75rem; }
+main article a[href^="/tags/"]:hover { background: var(--primary); color: var(--primary-foreground); }
+
+body { font-size: 1.0625rem; line-height: 1.7; }

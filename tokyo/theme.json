@@ -1,0 +1,15 @@
+{
+  "slug": "tokyo",
+  "name": "Tokyo Night",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Dark-first neon theme from the Tokyo Night palette — blue/cyan glow accents, mono metadata, glowing post cards.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#7aa2f7" },
+    { "key": "accent_2", "label": "Secondary glow color", "type": "color", "default": "#7dcfff" },
+    { "key": "default_mode", "label": "Default color mode", "type": "select", "options": ["dark", "light"], "default": "dark" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

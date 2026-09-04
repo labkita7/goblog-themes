@@ -1,0 +1,14 @@
+{
+  "slug": "aurora",
+  "name": "Aurora Holo",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Iridescent modern theme — violet accent, gradient display headings, aurora glow hero and pill tags.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#7c3aed" },
+    { "key": "hero_style", "label": "Home hero style", "type": "select", "options": ["gradient", "plain"], "default": "gradient" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

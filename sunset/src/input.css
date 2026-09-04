@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Sunset Fade — warm cream ground, coral gradient display text, soft shadows.
+   gradient_hero=false swaps the hero to solid ink via .plain-hero. */
+:root {
+  --background: #fff8f2;
+  --foreground: #3d2b24;
+  --card: #ffffff;
+  --card-foreground: #3d2b24;
+  --primary: #f97316;
+  --primary-foreground: #ffffff;
+  --secondary: #ffedd5;
+  --secondary-foreground: #5b341f;
+  --muted: #ffedd5;
+  --muted-foreground: #9a7461;
+  --accent: #fff1e6;
+  --accent-foreground: #9a3412;
+  --destructive: #dc2626;
+  --border: #f7dcc8;
+  --input: #f7dcc8;
+  --ring: #f97316;
+  --radius: 1.125rem;
+}
+.dark {
+  --background: #1c1410;
+  --foreground: #f5e6da;
+  --card: #261a14;
+  --card-foreground: #f5e6da;
+  --primary: #fb923c;
+  --primary-foreground: #241407;
+  --secondary: #332217;
+  --secondary-foreground: #e9d2bd;
+  --muted: #332217;
+  --muted-foreground: #b89581;
+  --accent: #3a2317;
+  --accent-foreground: #fdba74;
+  --destructive: #ef4444;
+  --border: #3d2a1e;
+  --input: #3d2a1e;
+  --ring: #fb923c;
+}
+
+/* Coral gradient display heading */
+h1 {
+  background-image: linear-gradient(95deg, #ef4444, var(--primary) 55%, #fbbf24);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.plain-hero h1 { background-image: none; color: var(--foreground); }
+
+/* Soft warm shadow on covers and cards */
+main img, .sunset-card {
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px -24px rgb(120 53 15 / 0.35);
+}
+
+/* Pill tags with warm hover */
+main article a[href^="/tags/"] { border-radius: 9999px; border-color: transparent; background: var(--secondary); padding: 0.2rem 0.7rem; }
+main article a[href^="/tags/"]:hover { background: var(--primary); color: var(--primary-foreground); }
+
+body { font-size: 1.0625rem; line-height: 1.7; }

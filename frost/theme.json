@@ -1,0 +1,14 @@
+{
+  "slug": "frost",
+  "name": "Frost Glass",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Glassmorphism theme — frosted translucent cards floating over a fixed sky-blue gradient mesh, sky accent.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#0ea5e9" },
+    { "key": "blur_strength", "label": "Glass blur (px)", "type": "number", "default": 14 },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

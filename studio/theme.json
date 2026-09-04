@@ -1,0 +1,15 @@
+{
+  "slug": "studio",
+  "name": "Studio Grid",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Clean modern studio look — wide measure, uppercase micro-labels, indigo accent, precise hairlines and calm grays.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#4f46e5" },
+    { "key": "show_labels", "label": "Show uppercase micro-labels", "type": "bool", "default": true },
+    { "key": "posts_per_page", "label": "Posts per page", "type": "number", "default": 10 },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

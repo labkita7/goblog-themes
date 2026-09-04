@@ -1,0 +1,14 @@
+{
+  "slug": "swiss",
+  "name": "Swiss Typo",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "International typographic style — black on white, zero radius, heavy rules, uppercase display headings and a red accent.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#e60000" },
+    { "key": "show_index_numbers", "label": "Number the posts on the home page", "type": "bool", "default": true },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

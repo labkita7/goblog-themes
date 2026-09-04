@@ -1,0 +1,14 @@
+{
+  "slug": "bento",
+  "name": "Bento Grid",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "App-like bento grid home — posts as rounded cards, near-black accent, soft layered shadows.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#3b82f6" },
+    { "key": "grid_columns", "label": "Home grid columns", "type": "select", "options": ["2", "3"], "default": "2" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

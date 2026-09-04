@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Bento Grid — app-like cards: big radius, hairline border, layered shadow.
+   grid-2 / grid-3 classes come from the grid_columns template setting. */
+:root {
+  --background: #f4f4f5;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #27272a;
+  --muted: #e4e4e7;
+  --muted-foreground: #71717a;
+  --accent: #eff6ff;
+  --accent-foreground: #1d4ed8;
+  --destructive: #dc2626;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #3b82f6;
+  --radius: 1.25rem;
+}
+.dark {
+  --background: #0b0b0d;
+  --foreground: #f4f4f5;
+  --card: #17171a;
+  --card-foreground: #f4f4f5;
+  --primary: #60a5fa;
+  --primary-foreground: #0b1220;
+  --secondary: #1f1f23;
+  --secondary-foreground: #d4d4d8;
+  --muted: #1f1f23;
+  --muted-foreground: #a1a1aa;
+  --accent: #17233a;
+  --accent-foreground: #bfdbfe;
+  --destructive: #ef4444;
+  --border: #26262b;
+  --input: #26262b;
+  --ring: #60a5fa;
+}
+
+/* Bento cards */
+.bento-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -16px rgb(0 0 0 / 0.16);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05), 0 16px 40px -20px color-mix(in srgb, var(--primary) 40%, transparent);
+}
+.bento-card--lead { grid-column: 1 / -1; }
+
+/* Pill tags inside cards */
+.bento-card a[href^="/tags/"] {
+  border-radius: 9999px;
+  border-color: transparent;
+  background: var(--muted);
+  padding: 0.2rem 0.7rem;
+}
+.bento-card a[href^="/tags/"]:hover { background: var(--primary); color: var(--primary-foreground); }
+
+body { font-size: 1rem; line-height: 1.65; }

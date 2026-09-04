@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Swiss Typo — international style: white ground, black ink, hard 2px rules,
+   zero radius, tight uppercase display headings, single red accent. */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --primary: #e60000;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f2f2;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f2f2f2;
+  --muted-foreground: #6b6b6b;
+  --accent: #f2f2f2;
+  --accent-foreground: #0a0a0a;
+  --destructive: #e60000;
+  --border: #0a0a0a;
+  --input: #0a0a0a;
+  --ring: #e60000;
+  --radius: 0rem;
+  --font-heading: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+}
+.dark {
+  --background: #111111;
+  --foreground: #fafafa;
+  --card: #111111;
+  --card-foreground: #fafafa;
+  --primary: #ff3b3b;
+  --primary-foreground: #111111;
+  --secondary: #1f1f1f;
+  --secondary-foreground: #fafafa;
+  --muted: #1f1f1f;
+  --muted-foreground: #a3a3a3;
+  --accent: #1f1f1f;
+  --accent-foreground: #fafafa;
+  --destructive: #ff3b3b;
+  --border: #fafafa;
+  --input: #fafafa;
+  --ring: #ff3b3b;
+}
+
+/* Display headings: uppercase, tight, Helvetica */
+h1, h2 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+/* Heavy rules instead of hairlines */
+header, footer, .prose hr { border-width: 2px; }
+main article + article, .rule-top { border-top: 2px solid var(--border); }
+
+/* Squared tag chips */
+main article a[href^="/tags/"] { border-width: 2px; font-family: var(--font-heading); text-transform: uppercase; font-size: 0.6875rem; letter-spacing: 0.06em; padding: 0.15rem 0.5rem; }
+main article a[href^="/tags/"]:hover { background: var(--foreground); color: var(--background); border-color: var(--foreground); }
+
+/* Post index numbers (gated by show_index_numbers via .numbered) */
+.numbered { counter-reset: post; }
+.numbered article { counter-increment: post; }
+.numbered article::before {
+  content: counter(post, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--primary);
+}
+
+body { font-size: 1.0625rem; line-height: 1.65; }

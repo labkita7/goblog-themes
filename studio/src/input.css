@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Studio Grid — modern studio: wide measure, uppercase micro-labels
+   (.micro-label, gated by show_labels), precise hairlines, indigo accent. */
+:root {
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f1;
+  --secondary-foreground: #26262b;
+  --muted: #f0f0f1;
+  --muted-foreground: #6f6f76;
+  --accent: #eef2ff;
+  --accent-foreground: #3730a3;
+  --destructive: #dc2626;
+  --border: #e8e8ea;
+  --input: #e8e8ea;
+  --ring: #4f46e5;
+  --radius: 0.625rem;
+}
+.dark {
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --card: #101012;
+  --card-foreground: #f4f4f5;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #1b1b1f;
+  --secondary-foreground: #d4d4d8;
+  --muted: #1b1b1f;
+  --muted-foreground: #9d9da6;
+  --accent: #1e1b4b;
+  --accent-foreground: #c7d2fe;
+  --destructive: #ef4444;
+  --border: #232327;
+  --input: #232327;
+  --ring: #6366f1;
+}
+
+/* Micro-label: uppercase tracked kicker text */
+.micro-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+/* Title hover: accent ink shift */
+main h2 a { transition: color .15s ease; }
+
+/* Squared chips with hover fill */
+main article a[href^="/tags/"] { font-size: 0.75rem; padding: 0.15rem 0.6rem; }
+main article a[href^="/tags/"]:hover { background: var(--accent); color: var(--accent-foreground); border-color: transparent; }
+
+body { font-size: 1.0625rem; line-height: 1.7; }

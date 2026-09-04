@@ -1,0 +1,14 @@
+{
+  "slug": "sunset",
+  "name": "Sunset Fade",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Warm modern gradient theme — coral-orange accent, gradient hero heading, soft shadows on cream.",
+  "engines": {"goblog": ">=1.0.0 <2.0.0"},
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#f97316" },
+    { "key": "gradient_hero", "label": "Gradient hero heading", "type": "bool", "default": true },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
+  ]
+}

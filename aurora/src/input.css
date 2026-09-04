@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+/* Aurora Holo — iridescent violet: gradient display text, aurora glow hero,
+   pill tags. hero_style=gradient gates the .aurora-hero gradient via CSS. */
+:root {
+  --background: #fcfcff;
+  --foreground: #1b1b2f;
+  --card: #ffffff;
+  --card-foreground: #1b1b2f;
+  --primary: #7c3aed;
+  --primary-foreground: #ffffff;
+  --secondary: #f0eeff;
+  --secondary-foreground: #2e2e4d;
+  --muted: #f0eeff;
+  --muted-foreground: #6b6b8a;
+  --accent: #ede9fe;
+  --accent-foreground: #4c1d95;
+  --destructive: #dc2626;
+  --border: #e6e3f5;
+  --input: #e6e3f5;
+  --ring: #7c3aed;
+  --radius: 1rem;
+}
+.dark {
+  --background: #0f0d1a;
+  --foreground: #eae7f7;
+  --card: #171429;
+  --card-foreground: #eae7f7;
+  --primary: #a78bfa;
+  --primary-foreground: #14102b;
+  --secondary: #221d3a;
+  --secondary-foreground: #c9c3e8;
+  --muted: #221d3a;
+  --muted-foreground: #9a93bd;
+  --accent: #2a2450;
+  --accent-foreground: #ddd4ff;
+  --destructive: #ef4444;
+  --border: #2b2547;
+  --input: #2b2547;
+  --ring: #a78bfa;
+}
+
+/* Gradient display headings */
+h1 {
+  background-image: linear-gradient(100deg, var(--primary), #c084fc 45%, var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.plain-headers h1 { background-image: none; color: var(--foreground); }
+
+/* Aurora glow hero */
+.aurora-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(var(--radius) + 0.75rem);
+  background:
+    radial-gradient(60% 90% at 15% 10%, color-mix(in srgb, var(--primary) 22%, transparent), transparent 70%),
+    radial-gradient(50% 80% at 85% 20%, color-mix(in srgb, #22d3ee 16%, transparent), transparent 70%),
+    radial-gradient(70% 90% at 60% 100%, color-mix(in srgb, #f472b6 14%, transparent), transparent 75%);
+  border: 1px solid var(--border);
+}
+
+/* Pill tags */
+main article a[href^="/tags/"] {
+  border-radius: 9999px;
+  background: var(--secondary);
+  border-color: transparent;
+  padding: 0.2rem 0.75rem;
+  transition: background .15s ease, color .15s ease;
+}
+main article a[href^="/tags/"]:hover { background: var(--primary); color: var(--primary-foreground); }
+
+/* Lift cards on hover */
+.lift { transition: transform .18s ease, box-shadow .18s ease; }
+.lift:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--primary) 35%, transparent); }
+
+body { font-size: 1.0625rem; line-height: 1.7; }
