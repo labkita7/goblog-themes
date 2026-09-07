@@ -44,16 +44,17 @@ document.documentElement.classList.toggle("dark",d)})();
 {{define "headIndex"}}
 <head>
 {{template "headCore" .}}
-<title>{{.Site.Title}}</title>
-<meta name="description" content="{{.Site.Description}}">
+<title>{{.Head.Title}}</title>
+<meta name="description" content="{{.Head.Description}}">
 <link rel="canonical" href="{{.Site.URL}}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{.Site.Title}}">
-<meta property="og:description" content="{{.Site.Description}}">
+<meta property="og:title" content="{{.Head.Title}}">
+<meta property="og:description" content="{{.Head.Description}}">
+{{if .Head.OGImage}}<meta property="og:image" content="{{.Head.OGImage}}">{{end}}
 <meta property="og:url" content="{{.Site.URL}}">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{{.Site.Title}}">
-<meta name="twitter:description" content="{{.Site.Description}}">
+<meta name="twitter:title" content="{{.Head.Title}}">
+<meta name="twitter:description" content="{{.Head.Description}}">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":{{.Site.Title}},"url":{{.Site.URL}}}</script>
 </head>
 {{end}}
