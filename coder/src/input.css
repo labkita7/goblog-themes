@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #ffffff;
+  --foreground: #222222;
+  --card: #ffffff;
+  --card-foreground: #222222;
+  --primary: #e5a50a;
+  --primary-foreground: #ffffff;
+  --secondary: #6b7280;
+  --secondary-foreground: #222222;
+  --muted: #6b7280;
+  --muted-foreground: #6b7280;
+  --accent: #6b7280;
+  --accent-foreground: #222222;
+  --destructive: #dc2626;
+  --border: #6b7280;
+  --input: #6b7280;
+  --ring: #e5a50a;
+  --radius: 0;
+  --font-sans: Ubuntu Mono, Courier New, monospace;
+}
+.dark {
+  --background: #1a1a1a;
+  --foreground: #e9e9e9;
+  --card: #1a1a1a;
+  --card-foreground: #e9e9e9;
+  --primary: #f0b429;
+  --primary-foreground: #ffffff;
+  --secondary: #9a9a9a;
+  --secondary-foreground: #e9e9e9;
+  --muted: #9a9a9a;
+  --muted-foreground: #9a9a9a;
+  --accent: #9a9a9a;
+  --accent-foreground: #e9e9e9;
+  --destructive: #ef4444;
+  --border: #9a9a9a;
+  --input: #9a9a9a;
+  --ring: #f0b429;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+<head>
+{{template "headCore" .}}
+<title>{{.Head.Title}}</title>
+<meta name="description" content="{{.Head.Description}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{.Head.Title}}">
+<meta property="og:description" content="{{.Head.Description}}">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+  <h1 class="pt-12 text-4xl font-bold tracking-tight">Contact</h1>
+  {{if .Sent}}
+  <p class="mt-6 rounded-md border border-border px-4 py-3 text-sm text-foreground" role="status">Thank you — your message was delivered.</p>
+  {{else}}
+  {{if .Message}}<p class="mt-6 rounded-md border border-border px-4 py-3 text-sm text-red-600 dark:text-red-400" role="alert">{{.Message}}</p>{{end}}
+  <form method="post" action="/contact" class="mt-8 flex flex-col gap-4">
+    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-name">Name
+      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-name" name="name" required maxlength="100" value="{{.Values.Name}}">
+    </label>
+    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-email">Email
+      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-email" name="email" type="email" required maxlength="200" value="{{.Values.Email}}">
+    </label>
+    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-subject">Subject
+      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-subject" name="subject" maxlength="150" value="{{.Values.Subject}}">
+    </label>
+    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-message">Message
+      <textarea class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-message" name="message" rows="6" required minlength="10" maxlength="5000">{{.Values.Message}}</textarea>
+    </label>
+    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-captcha">{{.Question}} <span>(spam check)</span>
+      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-captcha" name="captcha" required inputmode="numeric" autocomplete="off">
+    </label>
+    <input type="hidden" name="captcha_token" value="{{.Token}}">
+    <input class="hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="w-fit rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90" type="submit">Send message</button>
+  </form>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "slug": "gruvbox",
+  "name": "Gruvbox",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Warm retro-groove palette in light and dark, Gruvbox-style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#b57614" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Ubuntu Mono, Courier New, monospace" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"palette_mode","label":"Palette contrast","type":"select","options":["soft","medium","hard"],"default":"medium"}
+  ]
+}

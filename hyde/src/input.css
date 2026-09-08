@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #f7f7f7;
+  --foreground: #222222;
+  --card: #f7f7f7;
+  --card-foreground: #222222;
+  --primary: #8b0000;
+  --primary-foreground: #ffffff;
+  --secondary: #757575;
+  --secondary-foreground: #222222;
+  --muted: #757575;
+  --muted-foreground: #757575;
+  --accent: #757575;
+  --accent-foreground: #222222;
+  --destructive: #dc2626;
+  --border: #757575;
+  --input: #757575;
+  --ring: #8b0000;
+  --radius: 0;
+  --font-sans: Georgia, ui-serif, serif;
+}
+.dark {
+  --background: #161616;
+  --foreground: #dddddd;
+  --card: #161616;
+  --card-foreground: #dddddd;
+  --primary: #c0392b;
+  --primary-foreground: #ffffff;
+  --secondary: #9a9a9a;
+  --secondary-foreground: #dddddd;
+  --muted: #9a9a9a;
+  --muted-foreground: #9a9a9a;
+  --accent: #9a9a9a;
+  --accent-foreground: #dddddd;
+  --destructive: #ef4444;
+  --border: #9a9a9a;
+  --input: #9a9a9a;
+  --ring: #c0392b;
+}
+
+/* layout variant */
+/* Sidebar variant (Hyde / Lanyon / Minimal Mistakes): the site header
+   becomes a fixed narrow sidebar on desktop; content shifts right. */
+@media (min-width: 897px) {
+  body > header {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 272px;
+    border-inline-end: 1px solid var(--border);
+    background: var(--card);
+    z-index: 40;
+  }
+  body > header > div {
+    max-width: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+  body > header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  body { margin-left: 272px; }
+}
+@media (max-width: 896px) {
+  body > header { position: static; }
+  body { margin-left: 0; }
+}
+.site-header-links a { color: var(--muted-foreground); }
+
+/* Dark sidebar for Hyde: inverted header, accent links. */
+@media (min-width: 897px) {
+  body > header {
+    background: var(--foreground);
+    color: var(--background);
+  }
+  body > header a { color: var(--muted-foreground); }
+  body > header a:hover { color: var(--background); }
+  body > header .border-border { border-color: color-mix(in srgb, var(--foreground) 85%, var(--border)); }
+}

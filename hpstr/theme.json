@@ -1,0 +1,15 @@
+{
+  "slug": "hpstr",
+  "name": "HPSTR",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Image-forward rows with an orange accent and subtle texture, HPSTR-style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#e5642c" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Source Sans Pro, Segoe UI, sans-serif" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"texture","label":"Background texture","type":"select","options":["none","grain"],"default":"none"}
+  ]
+}

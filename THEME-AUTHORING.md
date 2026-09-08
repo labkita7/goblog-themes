@@ -194,8 +194,10 @@ the manifest checks):
 
 - [ ] `sh themes/build.sh <slug>` succeeds and `assets/theme.css` is non-trivial
 - [ ] every page type renders: index, post (cover, tags, reading time,
-      prev/next), page, tag, archive, 404 — render them with the harness:
+      prev/next), page, tag, archive, 404, **contact** (success and error
+      states) — render them with the harness:
       `cd themes && go run ./_shared/dev/render <slug> <outdir>`
+- [ ] footer partial renders `{{if .FooterNav.Items}}` links (footer menu)
 - [ ] templates use **only** documented data fields and FuncMap functions
 - [ ] light + dark modes both readable; toggle works; `prefers-color-scheme`
       respected when no stored preference

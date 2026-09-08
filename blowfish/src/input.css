@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #f7f7f7;
+  --foreground: #1e293b;
+  --card: #f7f7f7;
+  --card-foreground: #1e293b;
+  --primary: #9333ea;
+  --primary-foreground: #ffffff;
+  --secondary: #64748b;
+  --secondary-foreground: #1e293b;
+  --muted: #64748b;
+  --muted-foreground: #64748b;
+  --accent: #64748b;
+  --accent-foreground: #1e293b;
+  --destructive: #dc2626;
+  --border: #64748b;
+  --input: #64748b;
+  --ring: #9333ea;
+  --radius: 0.75rem;
+  --font-sans: Inter, ui-sans-serif, system-ui;
+}
+.dark {
+  --background: #101627;
+  --foreground: #e7e9ee;
+  --card: #101627;
+  --card-foreground: #e7e9ee;
+  --primary: #a78bfa;
+  --primary-foreground: #ffffff;
+  --secondary: #8b93a7;
+  --secondary-foreground: #e7e9ee;
+  --muted: #8b93a7;
+  --muted-foreground: #8b93a7;
+  --accent: #8b93a7;
+  --accent-foreground: #e7e9ee;
+  --destructive: #ef4444;
+  --border: #8b93a7;
+  --input: #8b93a7;
+  --ring: #a78bfa;
+}
+
+/* layout variant */
+/* Hero band for the index page (Blowfish / Casper / Clean Blog /
+   Ananke / Adritian / Meditor): gradient or flat accent block. */
+.hero {
+  background: linear-gradient(160deg,
+    color-mix(in srgb, var(--primary) 18%, var(--background)),
+    color-mix(in srgb, var(--primary) 6%, var(--background)) 70%,
+    var(--background));
+  border-bottom: 1px solid var(--border);
+}
+.hero h1 { color: var(--foreground); }
+.hero p { color: var(--muted-foreground); }

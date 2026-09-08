@@ -1,0 +1,30 @@
+/* Sidebar variant (Hyde / Lanyon / Minimal Mistakes): the site header
+   becomes a fixed narrow sidebar on desktop; content shifts right. */
+@media (min-width: 897px) {
+  body > header {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 272px;
+    border-inline-end: 1px solid var(--border);
+    background: var(--card);
+    z-index: 40;
+  }
+  body > header > div {
+    max-width: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+  body > header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  body { margin-left: 272px; }
+}
+@media (max-width: 896px) {
+  body > header { position: static; }
+  body { margin-left: 0; }
+}
+.site-header-links a { color: var(--muted-foreground); }

@@ -1,0 +1,15 @@
+{
+  "slug": "hacker",
+  "name": "Hacker Blog",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Green-on-black plain-text blog, monospace, ASCII-ish borders.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#00cc00" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Ubuntu Mono, Courier New, monospace" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"borders","label":"Border style","type":"select","options":["ascii","none"],"default":"ascii"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "coder",
+  "name": "Coder",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Developer portfolio-blog with monospace headings and an amber accent, Coder-style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#e5a50a" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Ubuntu Mono, Courier New, monospace" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"default_mode","label":"Default mode","type":"select","options":["system","dark","light"],"default":"system"}
+  ]
+}

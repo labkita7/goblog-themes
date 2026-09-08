@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #f4efe6;
+  --foreground: #222222;
+  --card: #f4efe6;
+  --card-foreground: #222222;
+  --primary: #8a3324;
+  --primary-foreground: #ffffff;
+  --secondary: #7a7264;
+  --secondary-foreground: #222222;
+  --muted: #7a7264;
+  --muted-foreground: #7a7264;
+  --accent: #7a7264;
+  --accent-foreground: #222222;
+  --destructive: #dc2626;
+  --border: #7a7264;
+  --input: #7a7264;
+  --ring: #8a3324;
+  --radius: 0;
+  --font-sans: Georgia, ui-serif, serif;
+}
+.dark {
+  --background: #191713;
+  --foreground: #e8e0d0;
+  --card: #191713;
+  --card-foreground: #e8e0d0;
+  --primary: #b0462f;
+  --primary-foreground: #ffffff;
+  --secondary: #9d9484;
+  --secondary-foreground: #e8e0d0;
+  --muted: #9d9484;
+  --muted-foreground: #9d9484;
+  --accent: #9d9484;
+  --accent-foreground: #e8e0d0;
+  --destructive: #ef4444;
+  --border: #9d9484;
+  --input: #9d9484;
+  --ring: #b0462f;
+}

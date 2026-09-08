@@ -1,0 +1,15 @@
+{
+  "slug": "cleanblog",
+  "name": "Clean Blog",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Full-width per-post header images with centered titles, Clean Blog style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#32485f" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Source Sans Pro, Segoe UI, sans-serif" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"header_height","label":"Header height","type":"select","options":["tall","medium"],"default":"tall"}
+  ]
+}

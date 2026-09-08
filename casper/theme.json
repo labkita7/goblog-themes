@@ -1,0 +1,15 @@
+{
+  "slug": "casper",
+  "name": "Casper",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Ghost Casper-style cover hero with an author-forward layout.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#2f6fdb" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Inter, ui-sans-serif, system-ui" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"cover_height","label":"Cover height","type":"select","options":["big","medium","none"],"default":"big"}
+  ]
+}

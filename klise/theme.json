@@ -1,0 +1,15 @@
+{
+  "slug": "klise",
+  "name": "Klise",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Minimalist with a red accent and seamless dark mode, Klise-style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#d0342c" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Inter, ui-sans-serif, system-ui" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"nav_position","label":"Nav position","type":"select","options":["top","left"],"default":"top"}
+  ]
+}

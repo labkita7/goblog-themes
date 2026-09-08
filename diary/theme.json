@@ -1,0 +1,15 @@
+{
+  "slug": "diary",
+  "name": "Diary",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Soft journaling look with rounded headings and pastel pink.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#e8a0bf" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Georgia, ui-serif, serif" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"divider_style","label":"Divider style","type":"select","options":["dots","line"],"default":"dots"}
+  ]
+}

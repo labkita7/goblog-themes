@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --primary: #2f6fdb;
+  --primary-foreground: #ffffff;
+  --secondary: #737373;
+  --secondary-foreground: #1a1a1a;
+  --muted: #737373;
+  --muted-foreground: #737373;
+  --accent: #737373;
+  --accent-foreground: #1a1a1a;
+  --destructive: #dc2626;
+  --border: #737373;
+  --input: #737373;
+  --ring: #2f6fdb;
+  --radius: 0.375rem;
+  --font-sans: Inter, ui-sans-serif, system-ui;
+}
+.dark {
+  --background: #0f1115;
+  --foreground: #d8dee9;
+  --card: #0f1115;
+  --card-foreground: #d8dee9;
+  --primary: #4c8dff;
+  --primary-foreground: #ffffff;
+  --secondary: #8a95a5;
+  --secondary-foreground: #d8dee9;
+  --muted: #8a95a5;
+  --muted-foreground: #8a95a5;
+  --accent: #8a95a5;
+  --accent-foreground: #d8dee9;
+  --destructive: #ef4444;
+  --border: #8a95a5;
+  --input: #8a95a5;
+  --ring: #4c8dff;
+}
+
+/* layout variant */
+/* Hero band for the index page (Blowfish / Casper / Clean Blog /
+   Ananke / Adritian / Meditor): gradient or flat accent block. */
+.hero {
+  background: linear-gradient(160deg,
+    color-mix(in srgb, var(--primary) 18%, var(--background)),
+    color-mix(in srgb, var(--primary) 6%, var(--background)) 70%,
+    var(--background));
+  border-bottom: 1px solid var(--border);
+}
+.hero h1 { color: var(--foreground); }
+.hero p { color: var(--muted-foreground); }

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<section class="hero">
+  <div class="mx-auto w-full max-w-3xl px-6 pb-16 pt-20">
+    <h1 class="text-5xl font-extrabold tracking-tight">{{.Site.Title}}</h1>
+    {{if .Site.Description}}<p class="mt-4 text-xl leading-relaxed text-muted-foreground">{{.Site.Description}}</p>{{end}}
+  </div>
+</section>
+<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+  <div class="-mt-6 flex flex-col gap-12">
+    {{range .Posts}}
+    <article class="flex flex-col gap-3">
+      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
+        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
+      </h2>
+      <p class="text-sm text-muted-foreground">
+        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
+      </p>
+      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
+      {{if .Tags}}
+      <ul class="flex flex-wrap gap-2 text-sm">
+        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
+      </ul>
+      {{end}}
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+  <nav class="pagination mt-12" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

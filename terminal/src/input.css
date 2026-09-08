@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #0c0c0c;
+  --foreground: #00ff66;
+  --card: #0c0c0c;
+  --card-foreground: #00ff66;
+  --primary: #00ff66;
+  --primary-foreground: #ffffff;
+  --secondary: #00b84f;
+  --secondary-foreground: #00ff66;
+  --muted: #00b84f;
+  --muted-foreground: #00b84f;
+  --accent: #00b84f;
+  --accent-foreground: #00ff66;
+  --destructive: #dc2626;
+  --border: #00b84f;
+  --input: #00b84f;
+  --ring: #00ff66;
+  --radius: 0;
+  --font-sans: Ubuntu Mono, Courier New, monospace;
+}
+.dark {
+  --background: #0c0c0c;
+  --foreground: #00ff66;
+  --card: #0c0c0c;
+  --card-foreground: #00ff66;
+  --primary: #00ff66;
+  --primary-foreground: #ffffff;
+  --secondary: #00b84f;
+  --secondary-foreground: #00ff66;
+  --muted: #00b84f;
+  --muted-foreground: #00b84f;
+  --accent: #00b84f;
+  --accent-foreground: #00ff66;
+  --destructive: #ef4444;
+  --border: #00b84f;
+  --input: #00b84f;
+  --ring: #00ff66;
+}
+
+/* layout variant */
+/* CRT terminal variant (Terminal / Hacker): scanlines, glow, framed
+   articles — pure CSS so the page stays zero-JS. */
+body {
+  background-image: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--primary) 10%, transparent), transparent 65%);
+}
+article {
+  border: 1px solid color-mix(in srgb, var(--border) 80%, var(--primary));
+  padding: 0.9rem 1.1rem;
+  background: color-mix(in srgb, var(--background) 96%, var(--primary));
+}
+article h2 a:hover { text-shadow: 0 0 10px color-mix(in srgb, var(--primary) 70%, transparent); }
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.14) 0 1px, transparent 1px 3px);
+  mix-blend-mode: multiply;
+}

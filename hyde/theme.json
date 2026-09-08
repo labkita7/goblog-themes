@@ -1,0 +1,15 @@
+{
+  "slug": "hyde",
+  "name": "Hyde",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Classic sidebar-left content-first theme, Hyde-style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#8b0000" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Georgia, ui-serif, serif" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"sidebar_side","label":"Sidebar side","type":"select","options":["left","right"],"default":"left"}
+  ]
+}

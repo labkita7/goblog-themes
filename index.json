@@ -1,7 +1,55 @@
 {
   "version": 1,
-  "updated": "2026-09-07T16:16:13Z",
+  "updated": "2026-09-08T00:28:25Z",
   "themes": [
+    {
+      "slug": "adritian",
+      "name": "Adritian",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Elegant portfolio-blog with big hero type and a gold accent, Adritian-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/adritian/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/adritian-1.0.0/adritian.zip",
+      "sha256": "5f679b3a6961ebe26d834aebc64d524a94521ac94e566ee5b50ee07e0fea4705",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "ananke",
+      "name": "Ananke",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Classic editorial with serif body and generous whitespace, Ananke-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/ananke/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/ananke-1.0.0/ananke.zip",
+      "sha256": "c2ae4d862d597bde871c2b9a2a101680004aa10f18de3ae7703c0e822660ae10",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "archie",
+      "name": "Archie",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Two-column minimal with monospace nav, Archie-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/archie/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/archie-1.0.0/archie.zip",
+      "sha256": "d3369f381ea0906bd1edc63d7abd12841a1cb00761458ef2099b9e1cff30a150",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
     {
       "slug": "aurora",
       "name": "Aurora Holo",
@@ -13,7 +61,23 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/aurora/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/aurora-1.0.0/aurora.zip",
-      "sha256": "fc4d6422daaefa2bfd8143ae96990d7f12d5ae672b8db5dd806fc1192b2fd30d",
+      "sha256": "2bc2410e6621faf0a0366fc59ee3ded0cc5eaa8403e519e7604e3ba90c3cdf22",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "bear",
+      "name": "Bear",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Ultra-minimal system-font blog, Bear Blog style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/bear/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/bear-1.0.0/bear.zip",
+      "sha256": "5095bb9cd5eb3a0fc1ac6858d4453fe11f7673b505b01d46e25691390609aa66",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -29,7 +93,23 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/bento/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/bento-1.0.0/bento.zip",
-      "sha256": "77f591d044ed56fd6af3a72637382084d2fc9ffbf817122e1fb2bc9ab0fe8b62",
+      "sha256": "254310c703d41a9e5ab4dbb71ded6d2797ff2a4c3be34b2aa70af8cb4995ef9f",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "blowfish",
+      "name": "Blowfish",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Modern card grid with a violet gradient hero, Blowfish-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/blowfish/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/blowfish-1.0.0/blowfish.zip",
+      "sha256": "8c6fb41c530c16eec83b87a4770da2f0559def7eb743051de9695e9866e1db7d",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -46,7 +126,39 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/brutal/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/brutal-1.0.0/brutal.zip",
-      "sha256": "38c79443f200a28c7d8d03b915a4f57925ec92ebe0a6dea3bcdab96f0635db5f",
+      "sha256": "8462e623df02553f96805b147ec1743a0ef142989639935468f2069504a5beeb",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "casper",
+      "name": "Casper",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Ghost Casper-style cover hero with an author-forward layout.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/casper/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/casper-1.0.0/casper.zip",
+      "sha256": "5e969ec55d8d571b167f150abe5a9433ee68f8c1977fd3e301bb1a6bfea5cc38",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "chalk",
+      "name": "Chalk",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Elegant two-column with a dark default and pink accent, Chalk-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/chalk/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/chalk-1.0.0/chalk.zip",
+      "sha256": "a30b65bbda0d2006adc3b2a8611f1df8e8ceafefa60d6092dfebb346a48bb1d2",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -63,7 +175,55 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/claude/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/claude-1.0.0/claude.zip",
-      "sha256": "14256a542094be784136f4ab0ec3be751d0575a5eff32af160a566a83cbcda6a",
+      "sha256": "aa55b184c7041f74a3d05f5cf72e1030c98889f00b908e05b1b12bce6dfd77e1",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "cleanblog",
+      "name": "Clean Blog",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Full-width per-post header images with centered titles, Clean Blog style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/cleanblog/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/cleanblog-1.0.0/cleanblog.zip",
+      "sha256": "5ba58fee7c769b1b89e28a5744ea37aa6e77da2d6f84c3d80bb89a5695673e22",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "coder",
+      "name": "Coder",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Developer portfolio-blog with monospace headings and an amber accent, Coder-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/coder/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/coder-1.0.0/coder.zip",
+      "sha256": "6a1881460cfdaf0b6a67784e278957faf0482ae5cd5424a88098c798f14bc862",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "congo",
+      "name": "Congo",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Tailwind-clean card lists with subtle borders, Congo-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/congo/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/congo-1.0.0/congo.zip",
+      "sha256": "04be6a01d0b3759acb047466a8cba536100ad3dc08adedd8499ba393ae582e75",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -80,7 +240,23 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/cyber/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/cyber-1.0.0/cyber.zip",
-      "sha256": "905568e65927d54634003272a7292dec8dea20135e7912f4c51109e3e110b2b2",
+      "sha256": "320427fe4f634cfc4813796470e76c9c539238108695b0cc8ed1e2e15e82d487",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "diary",
+      "name": "Diary",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Soft journaling look with rounded headings and pastel pink.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/diary/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/diary-1.0.0/diary.zip",
+      "sha256": "c217f42878b5db6c6cd8380b036e9d063cdb9037e200401b271a16f7bc36da97",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -96,7 +272,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/dusk/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/dusk-1.0.0/dusk.zip",
-      "sha256": "542867ee150484817d3c6d9bf4e6575fe2c0fef56ad91902ef36d4fbe8483f1e",
+      "sha256": "50dcbf48c3f5bb5aacc673007a61f7133f059e09c82132be63cbc6c5333cfec6",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -112,7 +288,23 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/frost/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/frost-1.0.0/frost.zip",
-      "sha256": "1655a3ac66b39dd41565dbafc0af02da8d9d429675e78f571474b20d142eb818",
+      "sha256": "4d02ed9db997bcd594e74bb7f3afda77cd4609c75afd2209c28d985bd5c29fd5",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "ghostwriter",
+      "name": "Ghostwriter",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Literary serif with a burgundy accent, ghostwriter-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/ghostwriter/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/ghostwriter-1.0.0/ghostwriter.zip",
+      "sha256": "50b72c9d36a890fc2f8365658b53fde6fe328c58436ef3e15465328b00e77b57",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -129,7 +321,231 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/graphite/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/graphite-1.0.0/graphite.zip",
-      "sha256": "6e5f5ae8df1dfdd7008affff22950b28b3f1b65c8181a4f4256b29d19c50fb85",
+      "sha256": "ccb0e4e172d1cc1640d586e47d9175e2a1e8ae6f9fdd684b69bfea0b4242ed24",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "gruvbox",
+      "name": "Gruvbox",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Warm retro-groove palette in light and dark, Gruvbox-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/gruvbox/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/gruvbox-1.0.0/gruvbox.zip",
+      "sha256": "aff71026275ea9284c868169e4361796fdf704814e0908dccb774c026cb8c712",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "hacker",
+      "name": "Hacker Blog",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Green-on-black plain-text blog, monospace, ASCII-ish borders.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/hacker/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/hacker-1.0.0/hacker.zip",
+      "sha256": "8a9d48a0279e743e87bf17441c3cd0fd93672e92ddd38968a121d9316b4660af",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "hello",
+      "name": "Hello Friend",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Centered huge lowercase title with a pink accent, hello-friend-ng style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/hello/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/hello-1.0.0/hello.zip",
+      "sha256": "fcf2f61b8a9830075660b8e9099d75f507248ca953d7301eb18f64b3f5899c4f",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "hermit",
+      "name": "Hermit",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Dark-first minimal with a teal glow, Hermit-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/hermit/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/hermit-1.0.0/hermit.zip",
+      "sha256": "9f5d51369948985310d5f39709c73db23476606005e09980ceb08a966da1a24a",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "hpstr",
+      "name": "HPSTR",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Image-forward rows with an orange accent and subtle texture, HPSTR-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/hpstr/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/hpstr-1.0.0/hpstr.zip",
+      "sha256": "8c8278d9d2d4f946e1ee13c60ff26a7629f00abad3faba223fe568191bf40f37",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "hyde",
+      "name": "Hyde",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Classic sidebar-left content-first theme, Hyde-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/hyde/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/hyde-1.0.0/hyde.zip",
+      "sha256": "b5d5f611865643c20123795b7345865c52952092f1cc4b6e51f984886bb375ee",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "klise",
+      "name": "Klise",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Minimalist with a red accent and seamless dark mode, Klise-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/klise/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/klise-1.0.0/klise.zip",
+      "sha256": "f6716bd9d1b282513e52d44c016ab6ae086441db20fb5cb006e29878b1e777bc",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "lagrange",
+      "name": "Lagrange",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Minimal personal blog with elegant serif headings, Lagrange-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/lagrange/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/lagrange-1.0.0/lagrange.zip",
+      "sha256": "7444484db72eccf266d4e6c6be6a56075788838d2e74412782a30340a209c1c9",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "lanyon",
+      "name": "Lanyon",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Hyde sibling with a slide-out drawer feel and crimson accent, Lanyon-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/lanyon/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/lanyon-1.0.0/lanyon.zip",
+      "sha256": "08aaad74853079201fc28a22ba112d7fc5424320273eccbb59cfd1a40c322a0c",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "longhaul",
+      "name": "Long Haul",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Long-form type-focused reading with a warm paper tone.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/longhaul/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/longhaul-1.0.0/longhaul.zip",
+      "sha256": "48cbbc1ff868e82b7558de525da63dd0d03932e91a0664868dec6251437608e8",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "loveit",
+      "name": "LoveIt",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Friendly rounded UI with cyan accent, LoveIt-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/loveit/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/loveit-1.0.0/loveit.zip",
+      "sha256": "59c024c0de8067060e1f3f34034d056be10697fbfade285b6c7c460d09988428",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "meditor",
+      "name": "Meditor",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Medium-inspired lead story with large featured image, Mediator-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/meditor/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/meditor-1.0.0/meditor.zip",
+      "sha256": "bc05e5e4c245a93dc03e8fb590fc4372017c6a1c0987957bbf1de06583e13eec",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "mediumish",
+      "name": "Mediumish",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Medium-style cards with green accents and meta rows, Mediumish-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/mediumish/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/mediumish-1.0.0/mediumish.zip",
+      "sha256": "cbaa2a46c4d8fb244696422b8d1e839e5e01b81649dc65151dff75be9843f14b",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "minima",
+      "name": "Minima",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "The Jekyll default feel — understated, clean, slate accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/minima/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/minima-1.0.0/minima.zip",
+      "sha256": "3ae85a4f99eaa7918da5b5db85c11c7ff387d85abb06d07435e4083bfb77cbab",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -145,7 +561,23 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/mint/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/mint-1.0.0/mint.zip",
-      "sha256": "c88a3e4effdb001c49499cb7d0951da047f01729c62bc647564addad916ef052",
+      "sha256": "1b8a4e5ea9989cb23aed05d357f6b848d5997b6af0613d48c50cea254b297043",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "mmistakes",
+      "name": "Minimal Mistakes",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Flexible two-column feel with a blue accent, Minimal Mistakes-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/mmistakes/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/mmistakes-1.0.0/mmistakes.zip",
+      "sha256": "65859d62ce1a401662851e53827e1f75cb0cdd322d768f05857b9b5fe211e6ed",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -162,7 +594,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/neutral/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/neutral-1.0.0/neutral.zip",
-      "sha256": "dfb94cd7c3f279e057e5cd0647908a97a41924341b95977a72dec51a67f64745",
+      "sha256": "47c6bcfb3c8957312914525916b84ab31be51b19f27e3f4b220acf497a36136e",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -179,7 +611,23 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/paper/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/paper-1.0.0/paper.zip",
-      "sha256": "145ca94631991bdf3bbfa34a2f0a889ec123887593341a5d7d19dc0d5755ff90",
+      "sha256": "514cf0b15a04881410bc0d39460cf7573bf0af64e5df70441b4b947c5a453b1b",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "papermod",
+      "name": "PaperMod",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Minimal fast blog in the PaperMod spirit — compact rows, warm white, one red-orange accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/papermod/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/papermod-1.0.0/papermod.zip",
+      "sha256": "b5fa3945cf7e55e2bee4939b3abb6293158c42c035b76dd8488e92fb4c6cf650",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -196,7 +644,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/pastel/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/pastel-1.0.0/pastel.zip",
-      "sha256": "124c1f7200260c930a368718ab70db91fba87d3382ce1ac98ba7d14d22ee5ff0",
+      "sha256": "ce1499cda8d613eaaa1c1c12f25a55443d35045e59a4782d705b958cdb1f9e12",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -212,7 +660,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/pop/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/pop-1.0.0/pop.zip",
-      "sha256": "933fb6345dfcd9c900cf842ecc9119dbc16d1d49d22c7280919a7ec224087926",
+      "sha256": "0d2ee9eecbfce4ff228c91ceb624c836342b589bd13a0696bf5003d1c70793f1",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -229,7 +677,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/sage/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/sage-1.0.0/sage.zip",
-      "sha256": "c6ce067bb2d56681aa11179081b542b42f545ce2910c43caa99641ba5f7dec0d",
+      "sha256": "41debe6ad0ddfb29915bd6cfe3b820a2eebc7beff7b87b9f4ece29dadfff56bc",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -246,7 +694,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/serif/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/serif-1.0.0/serif.zip",
-      "sha256": "d3bfba962a0d1a9738b106ef3ea2ace00d138be1747392321fde331532538049",
+      "sha256": "056c47ecd0fbd049e4c0ca2681e4301e68a4635ed532a69ea995556a1cdd858b",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -263,7 +711,23 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/slate/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/slate-1.0.0/slate.zip",
-      "sha256": "e28f9a1ed204d6daf78dff5fc3beb6c1c80746daee6426594543c6efb1255e6e",
+      "sha256": "0e6fa26246c9a0d9af13744a92a7e88c1accd291f5f47ff520402a5589e09edb",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "stack",
+      "name": "Stack",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Card-based homepage grid with soft rounded cards, Stack-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/stack/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/stack-1.0.0/stack.zip",
+      "sha256": "5cc2453c5ac52bf1c9f3654b439afee403b955f83ae7b7edf66dec9cdaef9ffd",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -279,7 +743,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/studio/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/studio-1.0.0/studio.zip",
-      "sha256": "da5e612e5efbb269adc0b4c09238eeb54d22d261ac6dd8df76e624f91f3b132a",
+      "sha256": "19ee9f6ce9b0cf6b5311c47b616920cf2797db04632937225010c3321d0aca02",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -295,7 +759,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/sunset/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/sunset-1.0.0/sunset.zip",
-      "sha256": "73849305cde29230a2d1c1145eb9690b4880913a6aed15d48f41e294c99483c5",
+      "sha256": "4fa20a18d2706303a68c18621b6fafd346d62324370a200409225549e5f3a696",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -311,7 +775,23 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/swiss/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/swiss-1.0.0/swiss.zip",
-      "sha256": "9e249f9ccc99a577e771bf04a760e398d205b87f3d773d241b92cdafb4a162a3",
+      "sha256": "ff3f7eb1fdfc04e7f7b3c919da491121ebc7ee766dae0333cd676b7712b13377",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "terminal",
+      "name": "Terminal",
+      "version": "1.0.0",
+      "author": "goblog",
+      "description": "Retro CRT terminal — monospace, green on near-black, scanline-friendly.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/terminal/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/terminal-1.0.0/terminal.zip",
+      "sha256": "f50290242143d83d4a8d20abc1dbe3b0741d1cd3b295f5c0f1bf4eb42d029614",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -327,7 +807,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/tokyo/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/tokyo-1.0.0/tokyo.zip",
-      "sha256": "b9d0ee64720f53b364ef0747629db5443fb1026adc1fa40a3a259fa71eb62154",
+      "sha256": "3c90164c8ec4587e7e124355769c128085aea71df45720d85b5a4c2142b47c31",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }

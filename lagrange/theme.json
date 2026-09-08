@@ -1,0 +1,15 @@
+{
+  "slug": "lagrange",
+  "name": "Lagrange",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Minimal personal blog with elegant serif headings, Lagrange-style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#102a43" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Georgia, ui-serif, serif" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"featured_images","label":"Featured images","type":"bool","default":true}
+  ]
+}

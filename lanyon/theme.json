@@ -1,0 +1,15 @@
+{
+  "slug": "lanyon",
+  "name": "Lanyon",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Hyde sibling with a slide-out drawer feel and crimson accent, Lanyon-style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#dc143c" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Georgia, ui-serif, serif" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"drawer_side","label":"Drawer side","type":"select","options":["left","right"],"default":"left"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "ananke",
+  "name": "Ananke",
+  "version": "1.0.0",
+  "author": "goblog",
+  "description": "Classic editorial with serif body and generous whitespace, Ananke-style.",
+  "engines": { "goblog": ">=1.0.0 <2.0.0" },
+  "screenshot": "screenshot.png",
+  "settings": [
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#2563eb" },
+    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Merriweather, Georgia, serif" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
+    {"key":"cover_style","label":"Cover style","type":"select","options":["full","contained"],"default":"full"}
+  ]
+}
