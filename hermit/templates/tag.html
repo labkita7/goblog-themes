@@ -3,28 +3,32 @@
 {{template "headTag" .}}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="page">
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">#{{.Tag.Name}}</h1>
-  <p class="mt-3 text-muted-foreground">{{len .Posts}} post{{if ne (len .Posts) 1}}s{{end}} with this tag.</p>
-  <div class="mt-12 flex flex-col gap-12">
+<main id="main">
+  <header class="post-head">
+    <p class="kicker">tagged</p>
+    <h1 class="post-title">{{.Tag.Name}}</h1>
+  </header>
+  <ol class="entries" aria-label="Posts">
     {{range .Posts}}
-    <article class="flex flex-col gap-2">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-    </article>
+    <li class="entry">
+      <a class="entry-title" href="{{.URL}}">{{.Title}}</a>
+      <span class="leader" aria-hidden="true"></span>
+      <time class="entry-date" datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+    </li>
+    {{else}}
+    <li class="entry-empty">Nothing tagged yet.</li>
     {{end}}
-  </div>
+  </ol>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">newer</a>{{else}}<span class="is-disabled">newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">older</a>{{else}}<span class="is-disabled">older</span>{{end}}
   </nav>
   {{end}}
 </main>
 {{template "footer" .}}
+</div>
 </body>
 </html>

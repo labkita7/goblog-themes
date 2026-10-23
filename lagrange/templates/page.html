@@ -4,10 +4,20 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+<main id="main" class="lg-column lg-article">
   <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
+    <header>
+      <h1 class="lg-article-title">{{.Post.Title}}</h1>
+    </header>
+    {{if .TOC}}
+    <nav class="lg-toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">Contents</h2>
+      <ol>
+        {{range .TOC}}<li class="lg-toc-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}
+      </ol>
+    </nav>
+    {{end}}
+    <div class="prose lg-body">{{.Post.HTML}}</div>
   </article>
 </main>
 {{template "footer" .}}

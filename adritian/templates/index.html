@@ -4,36 +4,68 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<section class="hero">
-  <div class="mx-auto w-full max-w-3xl px-6 pb-16 pt-20">
-    <h1 class="text-5xl font-extrabold tracking-tight">{{.Site.Title}}</h1>
-    {{if .Site.Description}}<p class="mt-4 text-xl leading-relaxed text-muted-foreground">{{.Site.Description}}</p>{{end}}
-  </div>
-</section>
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <div class="-mt-6 flex flex-col gap-12">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
-      {{end}}
-    </article>
-    {{end}}
-  </div>
+<main id="main">
+  <section class="ad-hero{{if eq (setting "hero_size") "medium"}} ad-hero-medium{{end}}" aria-labelledby="hero-title">
+    <div class="ad-shell">
+      <h1 id="hero-title" class="ad-hero-title">{{.Site.Title}}</h1>
+      <p class="ad-role">{{.Site.Description}}</p>
+      <div class="ad-actions">
+        <a class="ad-btn ad-btn-solid" href="#featured">Latest posts</a>
+        <a class="ad-btn" href="/contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  {{if .Posts}}
+  <section id="featured" class="ad-shell ad-featured" aria-labelledby="featured-title">
+    <div class="ad-section-head">
+      <h2 id="featured-title">Featured</h2>
+      <span class="ad-rule" aria-hidden="true"></span>
+    </div>
+    <div class="ad-cards">
+      {{range $i, $p := .Posts}}{{if lt $i 3}}
+      <article class="ad-card">
+        <div class="ad-card-media" aria-hidden="true">
+          {{if $p.CoverURL}}<img src="{{$p.CoverURL}}" alt="" width="800" height="600" loading="lazy">{{else}}<span class="ad-plate"></span>{{end}}
+        </div>
+        <div class="ad-card-body">
+          <p class="ad-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+          <h3 class="ad-card-title"><a class="ad-link" href="{{$p.URL}}">{{$p.Title}}</a></h3>
+          {{if $p.Excerpt}}<p class="ad-card-excerpt">{{$p.Excerpt}}</p>{{end}}
+          {{if and (setting "show_tags") $p.Tags}}
+          <ul class="ad-tags">
+            {{range $p.Tags}}<li><a href="{{.URL}}">#{{.Name}}</a></li>{{end}}
+          </ul>
+          {{end}}
+        </div>
+      </article>
+      {{end}}{{end}}
+    </div>
+  </section>
+
+  {{if gt (len .Posts) 3}}
+  <section class="ad-shell ad-more" aria-labelledby="more-title">
+    <div class="ad-section-head">
+      <h2 id="more-title">More writing</h2>
+      <span class="ad-rule" aria-hidden="true"></span>
+    </div>
+    <ol class="ad-list">
+      {{range $i, $p := .Posts}}{{if ge $i 3}}
+      <li class="ad-row">
+        <time class="ad-row-date" datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>
+        <a class="ad-row-title ad-link" href="{{$p.URL}}">{{$p.Title}}</a>
+        <span class="ad-row-arrow" aria-hidden="true">→</span>
+      </li>
+      {{end}}{{end}}
+    </ol>
+  </section>
+  {{end}}
+  {{end}}
+
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination mt-12" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="ad-shell ad-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
   </nav>
   {{end}}
 </main>

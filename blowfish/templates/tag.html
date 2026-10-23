@@ -4,24 +4,31 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">#{{.Tag.Name}}</h1>
-  <p class="mt-3 text-muted-foreground">{{len .Posts}} post{{if ne (len .Posts) 1}}s{{end}} with this tag.</p>
-  <div class="mt-12 flex flex-col gap-12">
-    {{range .Posts}}
-    <article class="flex flex-col gap-2">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-    </article>
-    {{end}}
-  </div>
+<main id="main" class="bf-shell">
+  <section class="bf-banner">
+    <h1>{{.Tag.Name}}</h1>
+    <p>{{len .Posts}} post{{if ne (len .Posts) 1}}s{{end}} tagged with {{.Tag.Name}}.</p>
+  </section>
+  <section class="bf-section" aria-label="Posts">
+    <div class="bf-grid bf-cols-3">
+      {{range .Posts}}
+      <article class="bf-card">
+        <div class="bf-thumb{{if not .CoverURL}} bf-thumb-gen{{end}}" aria-hidden="true">
+          {{if .CoverURL}}<img src="{{.CoverURL}}" alt="" width="800" height="450" loading="lazy">{{end}}
+        </div>
+        <div class="bf-card-body">
+          <h2 class="bf-card-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+          {{if .Excerpt}}<p class="bf-card-excerpt">{{.Excerpt}}</p>{{end}}
+          <p class="bf-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
+        </div>
+      </article>
+      {{end}}
+    </div>
+  </section>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="bf-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
   </nav>
   {{end}}
 </main>

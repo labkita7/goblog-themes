@@ -10,7 +10,7 @@
   --foreground: #1a1a1a;
   --card: #ffffff;
   --card-foreground: #1a1a1a;
-  --primary: #ec4899;
+  --primary: #be185d;
   --primary-foreground: #ffffff;
   --secondary: #fef9c3;
   --secondary-foreground: #4a3a05;
@@ -21,7 +21,7 @@
   --destructive: #dc2626;
   --border: #1a1a1a;
   --input: #1a1a1a;
-  --ring: #ec4899;
+  --ring: #be185d;
   --radius: 1.5rem;
   --pop-shadow: 5px;
 }

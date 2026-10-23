@@ -1,0 +1,11 @@
+{{define "preview"}}
+<article class="preview">
+  <a class="preview-media" href="{{.URL}}" tabindex="-1" aria-hidden="true">
+    {{if .CoverURL}}<img src="{{.CoverURL}}" alt="" loading="lazy" width="1200" height="500">{{else}}<span class="preview-fallback"></span>{{end}}
+  </a>
+  <h2 class="preview-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+  {{if .Excerpt}}<p class="preview-sub">{{.Excerpt}}</p>{{end}}
+  <p class="byline">Posted by <span class="byline-name">{{.Author.Name}}</span> on <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.ReadingMinutes}} min read{{end}}</p>
+</article>
+<hr class="rule">
+{{end}}

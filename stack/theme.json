@@ -1,15 +1,15 @@
 {
   "slug": "stack",
   "name": "Stack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Card-based homepage grid with soft rounded cards, Stack-style.",
+  "description": "Three-column reading layout in the Hugo Stack spirit: a persistent profile sidebar with a round initials badge, tag cloud and menu, wide cards with thumbnails on the right, and an archive-by-year widget on wide screens. Indigo accent on a cool grey page.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#2563eb" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Inter, ui-sans-serif, system-ui" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"card_radius","label":"Card radius (px)","type":"number","default":14}
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#4338ca" },
+    { "key": "badge_text", "label": "Sidebar badge text (2 letters)", "type": "text", "default": "FN" },
+    { "key": "show_archive_widget", "label": "Show archive widget on wide screens", "type": "bool", "default": true },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
   ]
 }

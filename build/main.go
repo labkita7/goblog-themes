@@ -9,7 +9,7 @@
 //
 //	go run ./registry/build --out <dir> [--themes ./themes] [--inplace]
 //		[--pages-base https://labkita7.github.io/goblog-themes]
-//		[--download-template "https://github.com/labkita7/goblog-themes/releases/download/{slug}-{version}/{slug}.zip"]
+//		[--download-template "https://github.com/labkita7/goblog-themes/releases/download/{slug}-{version}/{slug}-{version}.zip"]
 //		[--skeleton]  # copy registry/skeleton files + docs/THEME-AUTHORING.md into out
 package main
 
@@ -32,6 +32,12 @@ import (
 // zipEpoch pins entry timestamps so rebuilds are byte-identical and the
 // published sha256 stays stable.
 var zipEpoch = time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)
+
+const defaultDownloadTemplate = "https://github.com/labkita7/goblog-themes/releases/download/{slug}-{version}/{slug}-{version}.zip"
+
+func downloadURL(tpl, slug, version string) string {
+	return strings.ReplaceAll(strings.ReplaceAll(tpl, "{slug}", slug), "{version}", version)
+}
 
 type manifest struct {
 	Slug        string `json:"slug"`
@@ -85,7 +91,7 @@ func main() {
 	inplace := flag.Bool("inplace", false, "assemble into --themes itself (publishing-repo mode)")
 	pagesBase := flag.String("pages-base", "https://labkita7.github.io/goblog-themes", "public base URL for screenshots")
 	downloadTpl := flag.String("download-template",
-		"https://github.com/labkita7/goblog-themes/releases/download/{slug}-{version}/{slug}.zip",
+		defaultDownloadTemplate,
 		"download URL template; {slug} and {version} are substituted")
 	skeleton := flag.Bool("skeleton", false, "copy registry/skeleton + docs/THEME-AUTHORING.md into the output")
 	flag.Parse()
@@ -153,7 +159,7 @@ func main() {
 			Slug: slug, Name: m.Name, Version: m.Version, Author: m.Author,
 			Description: m.Description, Tags: tags,
 			Screenshot: strings.TrimSuffix(*pagesBase, "/") + "/" + slug + "/screenshot.png",
-			Download:   strings.ReplaceAll(strings.ReplaceAll(*downloadTpl, "{slug}", slug), "{version}", m.Version),
+			Download:   downloadURL(*downloadTpl, slug, m.Version),
 			SHA256:     sum,
 		}
 		e.Engines.Goblog = m.Engines.Goblog

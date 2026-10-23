@@ -1,0 +1,23 @@
+{{define "ledger"}}
+{{if .Posts}}
+<ol class="ledger">
+  {{range .Posts}}
+  <li class="entry-row">
+    <p class="entry-date">
+      <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+      {{if setting "show_reading_time"}}<span>{{.ReadingMinutes}} min</span>{{end}}
+    </p>
+    <div class="entry-main">
+      <a class="entry-title" href="{{.URL}}">{{.Title}}</a>
+      {{if and (setting "show_excerpts") .Excerpt}}<span class="entry-excerpt">{{.Excerpt}}</span>{{end}}
+      {{if and (setting "show_tags") .Tags}}
+      <ul class="tag-list">{{range .Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+      {{end}}
+    </div>
+  </li>
+  {{end}}
+</ol>
+{{else}}
+<p class="empty">Nothing here yet.</p>
+{{end}}
+{{end}}

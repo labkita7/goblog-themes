@@ -4,10 +4,26 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
+<main id="main" class="ad-shell ad-post">
   <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
+    <header class="ad-post-head">
+      <h1 class="ad-post-title">{{.Post.Title}}</h1>
+    </header>
+    <div class="ad-post-grid">
+      {{if .TOC}}
+      <aside class="ad-side" aria-label="Page contents">
+        <div class="ad-side-inner">
+          <nav aria-labelledby="toc-label">
+            <p class="ad-label" id="toc-label">Contents</p>
+            <ol class="ad-toc">
+              {{range .TOC}}<li class="ad-toc-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}
+            </ol>
+          </nav>
+        </div>
+      </aside>
+      {{end}}
+      <div class="prose ad-prose">{{.Post.HTML}}</div>
+    </div>
   </article>
 </main>
 {{template "footer" .}}

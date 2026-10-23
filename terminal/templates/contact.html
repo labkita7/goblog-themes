@@ -8,37 +8,32 @@
 <meta property="og:title" content="{{.Head.Title}}">
 <meta property="og:description" content="{{.Head.Description}}">
 </head>
-<body>
+<body class="{{if setting "scanlines"}}scan{{end}}">
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="term">
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="pt-12 text-4xl font-bold tracking-tight">Contact</h1>
-  {{if .Sent}}
-  <p class="mt-6 rounded-md border border-border px-4 py-3 text-sm text-foreground" role="status">Thank you — your message was delivered.</p>
-  {{else}}
-  {{if .Message}}<p class="mt-6 rounded-md border border-border px-4 py-3 text-sm text-red-600 dark:text-red-400" role="alert">{{.Message}}</p>{{end}}
-  <form method="post" action="/contact" class="mt-8 flex flex-col gap-4">
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-name">Name
-      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-name" name="name" required maxlength="100" value="{{.Values.Name}}">
-    </label>
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-email">Email
-      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-email" name="email" type="email" required maxlength="200" value="{{.Values.Email}}">
-    </label>
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-subject">Subject
-      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-subject" name="subject" maxlength="150" value="{{.Values.Subject}}">
-    </label>
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-message">Message
-      <textarea class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-message" name="message" rows="6" required minlength="10" maxlength="5000">{{.Values.Message}}</textarea>
-    </label>
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-captcha">{{.Question}} <span>(spam check)</span>
-      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-captcha" name="captcha" required inputmode="numeric" autocomplete="off">
-    </label>
-    <input type="hidden" name="captcha_token" value="{{.Token}}">
-    <input class="hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <button class="w-fit rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90" type="submit">Send message</button>
-  </form>
-  {{end}}
+<main id="main">
+  <section class="block">
+    <p class="cmd"><span class="ps">reader@<span class="host">{{setting "prompt_host"}}</span>:~$</span> <span class="cmd-arg">./contact --new</span></p>
+    <h1 class="motd">contact</h1>
+    {{if .Sent}}
+    <p class="out" role="status">message sent. the owner will reply when the process wakes up.</p>
+    {{else}}
+    {{if .Message}}<p class="out err" role="alert">error: {{.Message}}</p>{{end}}
+    <form method="post" action="/contact" class="form">
+      <label class="field"><span class="ps">name:</span> <input name="name" required maxlength="100" value="{{.Values.Name}}" autocomplete="name"></label>
+      <label class="field"><span class="ps">email:</span> <input name="email" type="email" required maxlength="200" value="{{.Values.Email}}" autocomplete="email"></label>
+      <label class="field"><span class="ps">subject:</span> <input name="subject" maxlength="150" value="{{.Values.Subject}}"></label>
+      <label class="field field-area"><span class="ps">message:</span> <textarea name="message" rows="6" required minlength="10" maxlength="5000">{{.Values.Message}}</textarea></label>
+      <label class="field"><span class="ps">{{.Question}} (spam check):</span> <input name="captcha" required inputmode="numeric" autocomplete="off"></label>
+      <input type="hidden" name="captcha_token" value="{{.Token}}">
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="send" type="submit">[ send ]</button>
+    </form>
+    {{end}}
+  </section>
 </main>
 {{template "footer" .}}
+</div>
 </body>
 </html>

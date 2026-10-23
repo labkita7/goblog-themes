@@ -4,10 +4,12 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
+<main id="main" class="page">
+  <article class="frame doc">
+    <p class="frame-label">{{.Post.Slug}}.txt</p>
+    <p class="cmd-title cmd-small">cat {{.Post.Slug}}.txt</p>
+    <h1 class="doc-title">{{.Post.Title}}</h1>
+    <div class="prose hk-prose">{{.Post.HTML}}</div>
   </article>
 </main>
 {{template "footer" .}}

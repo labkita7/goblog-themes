@@ -1,16 +1,16 @@
 {{define "header"}}
-<header class="border-b border-border">
-  <div class="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-    <a href="/" class="text-base font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
-    <div class="flex items-center gap-5">
+<header class="pm-header">
+  <input class="pm-burger-toggle" type="checkbox" id="pm-nav-toggle" aria-label="Show main menu">
+  <div class="pm-wrap pm-header-bar">
+    <a class="pm-brand" href="/">{{.Site.Title}}</a>
+    <div class="pm-menu">
+      <label class="pm-burger" for="pm-nav-toggle" aria-hidden="true"><span></span></label>
       {{if .Nav.Items}}
-      <nav aria-label="Main navigation">
-        <ul class="flex items-center gap-4 text-sm text-muted-foreground">
-          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-        </ul>
+      <nav class="pm-nav-wrap" aria-label="Main navigation">
+        <ul>{{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}</ul>
       </nav>
       {{end}}
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:text-foreground">◐</button>
+      <button type="button" class="pm-theme" data-theme-toggle aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg></button>
     </div>
   </div>
 </header>

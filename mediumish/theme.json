@@ -1,15 +1,14 @@
 {
   "slug": "mediumish",
   "name": "Mediumish",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Medium-style cards with green accents and meta rows, Mediumish-style.",
+  "description": "Medium-style home: a featured story beside two stacked cards, then a three-column grid with author and date meta. Green accent, sans UI with serif reading text.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#4caf50" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Inter, ui-sans-serif, system-ui" },
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#15803d" },
     { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"card_shadow","label":"Card shadows","type":"bool","default":true}
+    { "key": "card_shadow", "label": "Card shadows", "type": "bool", "default": true }
   ]
 }

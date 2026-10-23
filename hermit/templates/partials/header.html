@@ -1,19 +1,30 @@
 {{define "header"}}
-<header class="border-b border-border">
-  <div class="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-    <a href="/" class="text-base font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
-    <div class="flex items-center gap-5">
-      {{if .Nav.Items}}
-      <nav aria-label="Main navigation">
-        <ul class="flex items-center gap-4 text-sm text-muted-foreground">
-          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-        </ul>
-      </nav>
-      {{end}}
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:text-foreground">◐</button>
-    </div>
-  </div>
+<header class="masthead">
+  <a class="title" href="/">{{.Site.Title}}</a>
+  {{template "masthead-tools" .}}
 </header>
+{{end}}
+
+{{define "header-home"}}
+<header class="masthead">
+  <h1 class="masthead-heading"><a class="title" href="/">{{.Site.Title}}</a></h1>
+  {{template "masthead-tools" .}}
+</header>
+{{end}}
+
+{{define "masthead-tools"}}
+  <div class="masthead-row">
+    {{if .Nav.Items}}
+    <nav aria-label="Main navigation">
+      <ul class="nav">
+        {{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}
+      </ul>
+    </nav>
+    {{end}}
+    <button type="button" data-theme-toggle class="moon" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.6 3.2a9 9 0 1 0 6.2 12.5A7.6 7.6 0 0 1 14.6 3.2z"/></svg>
+    </button>
+  </div>
 <script>
 document.addEventListener("click",function(e){var b=e.target.closest("[data-theme-toggle]");if(!b)return;
 var d=document.documentElement.classList.toggle("dark");

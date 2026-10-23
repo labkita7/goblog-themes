@@ -35,7 +35,7 @@ document.documentElement.classList.toggle("dark",d)})();
      defaults; repeated under .dark because themes lighten accents there. */}}
 <style>
 :root{--primary:{{setting "accent"}};--pop-shadow:{{setting "shadow_offset"}}px;}
-.dark{--primary:{{setting "accent"}};}
+.dark{--primary:color-mix(in srgb,{{setting "accent"}} 62%,#fff);}
 </style>
 {{end}}
 

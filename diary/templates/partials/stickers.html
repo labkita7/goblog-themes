@@ -1,0 +1,7 @@
+{{define "stickers"}}
+{{if .}}
+<ul class="dy-stickers{{if setting "sticker_tilt"}} is-tilted{{end}}">
+  {{range .}}<li><a href="{{.URL}}">#{{.Name}}</a></li>{{end}}
+</ul>
+{{end}}
+{{end}}

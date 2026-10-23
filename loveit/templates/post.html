@@ -1,41 +1,42 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPost" .}}
-<body>
+<body class="lv-page">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <header class="pt-12">
-      <h1 class="text-4xl font-bold leading-tight tracking-tight">{{.Post.Title}}</h1>
-      <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-        <a class="hover:text-foreground" href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a>
-        <span aria-hidden="true">·</span>
-        <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span><span>{{.Post.ReadingMinutes}} min read</span>{{end}}
-      </div>
-      {{if or .Post.CoverURL .Post.OGImageURL}}
-      <img class="mt-8 w-full rounded-lg border border-border" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1200" height="630">
-      {{end}}
+<main id="main" class="lv-main lv-post">
+  <article class="lv-article">
+    <header class="lv-post-head">
+      <h1>{{.Post.Title}}</h1>
+      <ul class="lv-meta">
+        <li>{{template "ico-calendar"}}<time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time></li>
+        {{if setting "show_reading_time"}}<li>{{template "ico-clock"}}<span>{{.Post.ReadingMinutes}} min read</span></li>{{end}}
+        <li><span>{{.Post.Author.Name}}</span></li>
+      </ul>
     </header>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
+    {{if or .Post.CoverURL .Post.OGImageURL}}
+    <img class="lv-cover" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1600" height="900">
+    {{end}}
+    <div class="prose lv-body">{{.Post.HTML}}</div>
     {{if .Post.Tags}}
-    <ul class="mt-10 flex flex-wrap gap-2 text-sm">
-      {{range .Post.Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
+    <ul class="lv-post-tags" aria-label="Tags">
+      {{range .Post.Tags}}<li><a href="{{.URL}}">{{template "ico-tag"}}<span>{{.Name}}</span></a></li>{{end}}
     </ul>
     {{end}}
+    {{if or .Prev .Next}}
+    <nav class="lv-post-nav" aria-label="Post navigation">
+      {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><span class="lv-nav-label"><span aria-hidden="true">←</span> Previous post</span><span class="lv-nav-title">{{.Prev.Title}}</span></a>{{else}}<span class="lv-nav-empty" aria-hidden="true"></span>{{end}}
+      {{if .Next}}<a class="lv-next" href="{{.Next.URL}}" rel="next"><span class="lv-nav-label">Next post <span aria-hidden="true">→</span></span><span class="lv-nav-title">{{.Next.Title}}</span></a>{{end}}
+    </nav>
+    {{end}}
   </article>
-  {{if or .Prev .Next}}
-  <nav class="mt-16 grid gap-6 border-t border-border pt-8 sm:grid-cols-2" aria-label="Post navigation">
-    <div>
-      {{if .Prev}}<p class="text-sm text-muted-foreground">Previous</p>
-      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Prev.URL}}" rel="prev">{{.Prev.Title}}</a>{{end}}
-    </div>
-    <div class="sm:text-right">
-      {{if .Next}}<p class="text-sm text-muted-foreground">Next</p>
-      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Next.URL}}" rel="next">{{.Next.Title}}</a>{{end}}
-    </div>
-  </nav>
+  {{if and (setting "show_toc") .TOC}}
+  <aside class="lv-aside" aria-label="Table of contents">
+    <details class="lv-toc lv-toc-box" open>
+      <summary>On this page</summary>
+      <ol>{{range .TOC}}<li class="lvl-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}</ol>
+    </details>
+  </aside>
   {{end}}
 </main>
 {{template "footer" .}}

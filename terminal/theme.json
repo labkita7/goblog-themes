@@ -1,15 +1,14 @@
 {
   "slug": "terminal",
   "name": "Terminal",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Retro CRT terminal — monospace, green on near-black, scanline-friendly.",
+  "description": "Phosphor-green shell session on black: a reader@host prompt with a blinking cursor, [ bracketed ] navigation, post lists printed like command output and a '# ' heading on every post. Optional CRT scanlines.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#00ff66" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Ubuntu Mono, Courier New, monospace" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"scanlines","label":"CRT scanlines","type":"bool","default":true}
+    { "key": "accent", "label": "Phosphor color", "type": "color", "default": "#5dff9b" },
+    { "key": "prompt_host", "label": "Prompt host name", "type": "text", "default": "fieldnotes" },
+    { "key": "scanlines", "label": "CRT scanlines", "type": "bool", "default": true }
   ]
 }

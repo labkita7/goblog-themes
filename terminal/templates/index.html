@@ -1,38 +1,42 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headIndex" .}}
-<body>
+<body class="{{if setting "scanlines"}}scan{{end}}">
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="term">
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
+<main id="main">
+  <section class="block">
+    <p class="cmd"><span class="ps">reader@<span class="host">{{setting "prompt_host"}}</span>:~$</span> <span class="cmd-arg">cat motd</span></p>
+    <h1 class="motd">{{.Site.Title}}</h1>
+    {{if .Site.Description}}<p class="out">{{.Site.Description}}</p>{{end}}
+  </section>
+  <section class="block" aria-labelledby="listing">
+    <p class="cmd"><span class="ps">reader@<span class="host">{{setting "prompt_host"}}</span>:~$</span> <span class="cmd-arg">ls -t posts | head</span></p>
+    <h2 id="listing" class="sr-only">Posts</h2>
+    <ol class="listing">
+      {{range .Posts}}
+      <li class="listing-row">
+        <time class="listing-date" datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+        <a class="listing-title" href="{{.URL}}">{{.Title}}</a>
+        {{if .Excerpt}}<p class="out listing-excerpt">{{.Excerpt}}</p>{{end}}
+        {{if .Tags}}<p class="listing-tags">{{range .Tags}}<a href="{{.URL}}">[{{.Name}}]</a> {{end}}</p>{{end}}
+      </li>
+      {{else}}
+      <li class="out">(no posts yet)</li>
       {{end}}
-    </article>
+    </ol>
+    {{if or .PrevURL .NextURL}}
+    <nav class="pager" aria-label="Pagination">
+      {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">[ newer ]</a>{{else}}<span class="is-disabled" aria-disabled="true">[ newer ]</span>{{end}}
+      <span class="muted">page {{.Page}} of {{.Pages}}</span>
+      {{if .NextURL}}<a href="{{.NextURL}}" rel="next">[ older ]</a>{{else}}<span class="is-disabled" aria-disabled="true">[ older ]</span>{{end}}
+    </nav>
     {{end}}
-  </div>
-  {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
-  </nav>
-  {{end}}
+  </section>
+  <p class="cmd"><span class="ps">reader@<span class="host">{{setting "prompt_host"}}</span>:~$</span> <span class="cursor" aria-hidden="true"></span></p>
 </main>
 {{template "footer" .}}
+</div>
 </body>
 </html>

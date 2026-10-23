@@ -4,23 +4,19 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">{{if .Year}}Posts from {{.Year}}{{else}}Archive{{end}}</h1>
-  <p class="mt-3 text-muted-foreground">Every post on {{.Site.Title}}, newest first.</p>
-  <div class="mt-12 flex flex-col gap-8">
-    {{range .Posts}}
-    <article class="flex flex-col gap-1 border-l-2 border-border pl-5">
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      <h2 class="text-xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-    </article>
-    {{end}}
-  </div>
+<main id="main" class="st-main">
+  <h1 class="st-heading">{{if .Year}}{{.Year}}{{else}}Archive{{end}}<small>Every post on {{.Site.Title}}, newest first.</small></h1>
+  <section class="st-card st-year" aria-label="Posts">
+    <ul>
+      {{range .Posts}}
+      <li><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time><a href="{{.URL}}">{{.Title}}</a></li>
+      {{end}}
+    </ul>
+  </section>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="st-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer posts</a>{{else}}<span class="is-disabled">← Newer posts</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older posts →</a>{{else}}<span class="is-disabled">Older posts →</span>{{end}}
   </nav>
   {{end}}
 </main>

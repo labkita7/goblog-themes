@@ -82,3 +82,4 @@ h1, main a:hover {
 }
 
 body { font-size: 1rem; line-height: 1.7; }
+.pagination .is-disabled { color: var(--muted-foreground); opacity: 0.6; }

@@ -3,27 +3,32 @@
 {{template "headArchive" .}}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="page">
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">{{if .Year}}Posts from {{.Year}}{{else}}Archive{{end}}</h1>
-  <p class="mt-3 text-muted-foreground">Every post on {{.Site.Title}}, newest first.</p>
-  <div class="mt-12 flex flex-col gap-8">
+<main id="main">
+  <header class="post-head">
+    <p class="kicker">archive</p>
+    <h1 class="post-title">{{if .Year}}{{.Year}}{{else}}All writing{{end}}</h1>
+  </header>
+  <ol class="entries" aria-label="Archive">
     {{range .Posts}}
-    <article class="flex flex-col gap-1 border-l-2 border-border pl-5">
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      <h2 class="text-xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-    </article>
+    <li class="entry">
+      <a class="entry-title" href="{{.URL}}">{{.Title}}</a>
+      <span class="leader" aria-hidden="true"></span>
+      <time class="entry-date" datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+    </li>
+    {{else}}
+    <li class="entry-empty">Nothing here yet.</li>
     {{end}}
-  </div>
+  </ol>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">newer</a>{{else}}<span class="is-disabled">newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">older</a>{{else}}<span class="is-disabled">older</span>{{end}}
   </nav>
   {{end}}
 </main>
 {{template "footer" .}}
+</div>
 </body>
 </html>

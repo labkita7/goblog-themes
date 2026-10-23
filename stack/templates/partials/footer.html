@@ -1,17 +1,22 @@
 {{define "footer"}}
-<footer class="border-t border-border">
-  <div class="mx-auto flex w-full max-w-2xl flex-col gap-2 px-6 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-    <p>© {{.Site.Year}} {{.Site.Title}}</p>
-    {{if .FooterNav.Items}}
-    <ul class="flex gap-4">
-      {{range .FooterNav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-    </ul>
-    {{end}}
-    <ul class="flex gap-4">
-      <li><a class="hover:text-foreground" href="/rss.xml">RSS</a></li>
-      <li><a class="hover:text-foreground" href="/atom.xml">Atom</a></li>
-      <li><a class="hover:text-foreground" href="/feed.json">JSON</a></li>
+{{if and (setting "show_archive_widget") .Site.ArchiveYears}}
+<aside class="st-widget" aria-labelledby="st-archive-title">
+  <div class="st-card">
+    <h2 id="st-archive-title">Archive</h2>
+    <ul class="st-years">
+      {{range .Site.ArchiveYears}}<li><a href="{{.URL}}"><span>{{.Year}}</span><span class="st-count">{{.Count}} posts</span></a></li>{{end}}
     </ul>
   </div>
+</aside>
+{{end}}
+</div>
+<footer class="st-footer">
+  <p>© {{.Site.Year}} {{.Site.Title}}</p>
+  {{if .FooterNav.Items}}
+  <nav aria-label="Footer navigation">
+    <ul>{{range .FooterNav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}</ul>
+  </nav>
+  {{end}}
+  <p><a href="/rss.xml">RSS</a> · <a href="/atom.xml">Atom</a> · <a href="/feed.json">JSON</a></p>
 </footer>
 {{end}}

@@ -1,27 +1,29 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headTag" .}}
-<body>
+<body class="gw">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">#{{.Tag.Name}}</h1>
-  <p class="mt-3 text-muted-foreground">{{len .Posts}} post{{if ne (len .Posts) 1}}s{{end}} with this tag.</p>
-  <div class="mt-12 flex flex-col gap-12">
+<main id="main" class="gw-main">
+  <section class="gw-section-head">
+    <p class="gw-kicker">Under the heading</p>
+    <h1 class="gw-h1"><em>{{.Tag.Name}}</em></h1>
+    <p class="gw-dek">{{len .Posts}} {{if eq (len .Posts) 1}}piece{{else}}pieces{{end}} filed under {{.Tag.Name}}.</p>
+  </section>
+  <ol class="gw-entries is-roman">
     {{range .Posts}}
-    <article class="flex flex-col gap-2">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-    </article>
+    <li class="gw-entry">
+      <article>
+        <p class="gw-kicker"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
+        <h2><a href="{{.URL}}">{{.Title}}</a></h2>
+      </article>
+    </li>
     {{end}}
-  </div>
+  </ol>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="gw-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Earlier pages</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Earlier pages</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Later pages <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Later pages <span aria-hidden="true">→</span></span>{{end}}
   </nav>
   {{end}}
 </main>

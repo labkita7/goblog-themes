@@ -21,7 +21,7 @@
   --destructive: #dc2626;
   --border: #f7dcc8;
   --input: #f7dcc8;
-  --ring: #f97316;
+  --ring: #ae500f;
   --radius: 1.125rem;
 }
 .dark {
@@ -63,3 +63,4 @@ main article a[href^="/tags/"] { border-radius: 9999px; border-color: transparen
 main article a[href^="/tags/"]:hover { background: var(--primary); color: var(--primary-foreground); }
 
 body { font-size: 1.0625rem; line-height: 1.7; }
+.pagination .is-disabled { color: var(--muted-foreground); opacity: 0.6; }

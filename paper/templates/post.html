@@ -28,11 +28,11 @@
   {{if or .Prev .Next}}
   <nav class="mt-14 grid gap-6 sm:grid-cols-2" aria-label="Post navigation">
     <div>
-      {{if .Prev}}<p class="text-xs uppercase tracking-widest text-muted-foreground">Previous</p>
+      {{if .Prev}}<p class="text-[0.8125rem] uppercase tracking-widest text-muted-foreground">Previous</p>
       <a class="line-clamp-2 font-heading text-lg font-bold hover:text-primary" href="{{.Prev.URL}}" rel="prev">{{.Prev.Title}}</a>{{end}}
     </div>
     <div class="sm:text-right">
-      {{if .Next}}<p class="text-xs uppercase tracking-widest text-muted-foreground">Next</p>
+      {{if .Next}}<p class="text-[0.8125rem] uppercase tracking-widest text-muted-foreground">Next</p>
       <a class="line-clamp-2 font-heading text-lg font-bold hover:text-primary" href="{{.Next.URL}}" rel="next">{{.Next.Title}}</a>{{end}}
     </div>
   </nav>

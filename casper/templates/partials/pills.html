@@ -1,0 +1,9 @@
+{{define "pills"}}
+{{if or .PrevURL .NextURL}}
+<nav class="pills" aria-label="Pagination">
+  {{if .PrevURL}}<a class="pill" href="{{.PrevURL}}" rel="prev">Newer</a>{{else}}<span class="pill pill--off is-disabled" aria-disabled="true">Newer</span>{{end}}
+  <span class="pills-page">Page {{.Page}} of {{.Pages}}</span>
+  {{if .NextURL}}<a class="pill" href="{{.NextURL}}" rel="next">Older</a>{{else}}<span class="pill pill--off is-disabled" aria-disabled="true">Older</span>{{end}}
+</nav>
+{{end}}
+{{end}}

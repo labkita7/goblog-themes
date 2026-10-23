@@ -1,17 +1,12 @@
 {{define "footer"}}
-<footer class="border-t border-border">
-  <div class="mx-auto flex w-full max-w-2xl flex-col gap-2 px-6 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-    <p>© {{.Site.Year}} {{.Site.Title}}</p>
-    {{if .FooterNav.Items}}
-    <ul class="flex gap-4">
-      {{range .FooterNav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-    </ul>
-    {{end}}
-    <ul class="flex gap-4">
-      <li><a class="hover:text-foreground" href="/rss.xml">RSS</a></li>
-      <li><a class="hover:text-foreground" href="/atom.xml">Atom</a></li>
-      <li><a class="hover:text-foreground" href="/feed.json">JSON</a></li>
-    </ul>
-  </div>
+<div class="rule" aria-hidden="true"></div>
+<footer class="term-foot">
+  <p>© {{.Site.Year}} {{.Site.Title}} <span class="muted">· exit 0</span></p>
+  <ul class="nav">
+    {{range .FooterNav.Items}}<li class="nav-item"><a href="{{.URL}}">{{.Label}}</a></li>{{end}}
+    <li class="nav-item"><a href="/rss.xml">rss</a></li>
+    <li class="nav-item"><a href="/atom.xml">atom</a></li>
+    <li class="nav-item"><a href="/feed.json">json</a></li>
+  </ul>
 </footer>
 {{end}}

@@ -1,0 +1,14 @@
+{{define "list"}}
+{{if .Posts}}
+<ul class="posts">
+  {{range .Posts}}
+  <li>
+    <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+    <a href="{{.URL}}">{{.Title}}</a>
+  </li>
+  {{end}}
+</ul>
+{{else}}
+<p>Nothing here yet.</p>
+{{end}}
+{{end}}

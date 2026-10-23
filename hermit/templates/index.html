@@ -3,36 +3,31 @@
 {{template "headIndex" .}}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-{{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
+<div class="page">
+{{template "header-home" .}}
+<main id="main">
+  {{if .Site.Description}}<p class="intro">{{.Site.Description}}</p>{{end}}
+  <ol class="entries" aria-label="Posts">
     {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
-      {{end}}
-    </article>
+    <li class="entry">
+      <a class="entry-title" href="{{.URL}}">{{.Title}}</a>
+      <span class="leader" aria-hidden="true"></span>
+      <time class="entry-date" datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+      {{if setting "show_excerpts"}}{{if .Excerpt}}<p class="entry-excerpt">{{.Excerpt}}</p>{{end}}{{end}}
+      {{if setting "show_tags"}}{{if .Tags}}<p class="entry-tags">{{range .Tags}}<span>· <a href="{{.URL}}">{{.Name}}</a></span> {{end}}</p>{{end}}{{end}}
+    </li>
+    {{else}}
+    <li class="entry-empty">Nothing here yet.</li>
     {{end}}
-  </div>
+  </ol>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">newer</a>{{else}}<span class="is-disabled" aria-disabled="true">newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">older</a>{{else}}<span class="is-disabled" aria-disabled="true">older</span>{{end}}
   </nav>
   {{end}}
 </main>
 {{template "footer" .}}
+</div>
 </body>
 </html>

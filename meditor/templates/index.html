@@ -4,38 +4,42 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<section class="hero">
-  <div class="mx-auto w-full max-w-3xl px-6 pb-16 pt-20">
-    <h1 class="text-5xl font-extrabold tracking-tight">{{.Site.Title}}</h1>
-    {{if .Site.Description}}<p class="mt-4 text-xl leading-relaxed text-muted-foreground">{{.Site.Description}}</p>{{end}}
-  </div>
-</section>
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <div class="-mt-6 flex flex-col gap-12">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
+<main id="main" class="wrap">
+  {{if .Posts}}
+  {{if setting "lead_story"}}
+  <section class="lead-section" aria-label="Lead stories">
+    <div class="lead-grid">
+      {{range $i, $p := .Posts}}{{if eq $i 0}}{{template "leadStory" $p}}{{end}}{{end}}
+      {{if gt (len .Posts) 1}}
+      <div class="side-column">
+        {{range $i, $p := .Posts}}{{if and (ge $i 1) (lt $i 3)}}{{template "sideStory" $p}}{{end}}{{end}}
+      </div>
       {{end}}
-    </article>
-    {{end}}
-  </div>
-  {{if or .PrevURL .NextURL}}
-  <nav class="pagination mt-12" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
-  </nav>
+    </div>
+  </section>
   {{end}}
+  <div class="desk{{if not (setting "show_topics")}} desk--solo{{end}}">
+    {{if setting "show_topics"}}
+    {{if .Site.Tags}}
+    <aside class="topics" aria-labelledby="topics-title">
+      <h2 id="topics-title" class="section-label">Topics</h2>
+      <ol class="topic-list">
+        {{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+      </ol>
+    </aside>
+    {{end}}
+    {{end}}
+    <section class="dense" aria-labelledby="dense-title">
+      <h2 id="dense-title" class="section-label">{{if setting "lead_story"}}More from the desk{{else}}Latest{{end}}</h2>
+      <ol class="dense-list">
+        {{range $i, $p := .Posts}}{{if or (not (setting "lead_story")) (ge $i 3)}}{{template "denseRow" $p}}{{end}}{{end}}
+      </ol>
+    </section>
+  </div>
+  {{else}}
+  <p class="empty">No stories yet.</p>
+  {{end}}
+  {{if or .PrevURL .NextURL}}{{template "pager" .}}{{end}}
 </main>
 {{template "footer" .}}
 </body>

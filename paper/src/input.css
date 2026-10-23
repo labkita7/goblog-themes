@@ -88,3 +88,5 @@ body { font-size: 1.0625rem; line-height: 1.75; }
 /* Archive sidebar tree */
 .archive-tree a { text-decoration: none; color: var(--muted-foreground); }
 .archive-tree a:hover { color: var(--primary); }
+.is-disabled { color: var(--muted-foreground); opacity: 0.6; }
+html.dark { --primary: #d1904f; --ring: #d1904f; }

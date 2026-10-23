@@ -1,0 +1,7 @@
+{{define "entry"}}
+<article class="roll-item">
+  <p class="roll-date"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}}<span aria-hidden="true"> / </span>{{.ReadingMinutes}} min{{end}}</p>
+  <h2 class="roll-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+  {{if and (setting "show_excerpts") .Excerpt}}<p class="roll-excerpt">{{.Excerpt}}</p>{{end}}
+</article>
+{{end}}

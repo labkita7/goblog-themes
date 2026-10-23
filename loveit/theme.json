@@ -1,15 +1,15 @@
 {
   "slug": "loveit",
   "name": "LoveIt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Friendly rounded UI with cyan accent, LoveIt-style.",
+  "description": "Dated timeline in the LoveIt spirit: a blurred sticky navbar with a switch toggle, summaries marked by a cyan left rule with inline SVG meta icons, and a sticky table of contents beside posts.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#00b4d8" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Inter, ui-sans-serif, system-ui" },
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#0e7490" },
+    { "key": "show_timeline", "label": "Show dates as a timeline rail on home", "type": "bool", "default": true },
     { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"show_toc","label":"Show table of contents","type":"bool","default":true}
+    { "key": "show_toc", "label": "Show sticky table of contents on posts", "type": "bool", "default": true }
   ]
 }

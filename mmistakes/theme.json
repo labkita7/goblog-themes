@@ -1,15 +1,15 @@
 {
   "slug": "mmistakes",
   "name": "Minimal Mistakes",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Flexible two-column feel with a blue accent, Minimal Mistakes-style.",
+  "description": "A blue masthead over a sticky author-style sidebar. Posts appear as a two-column grid of teaser cards, and each post gets a sticky table of contents on the right and pill tags at the foot.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#3b5998" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Source Sans Pro, Segoe UI, sans-serif" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"skin","label":"Skin","type":"select","options":["default","air","dark"],"default":"default"}
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#1d5fa7" },
+    { "key": "layout", "label": "Post listing", "type": "select", "options": ["grid", "list"], "default": "grid" },
+    { "key": "show_toc", "label": "Sticky table of contents on posts", "type": "bool", "default": true },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
   ]
 }

@@ -1,0 +1,12 @@
+{{define "entry"}}
+<li class="read{{if setting "show_reading_time"}} read--timed{{end}}">
+  {{if setting "show_reading_time"}}
+  <p class="read-minutes"><span class="read-num">{{.ReadingMinutes}}</span><span class="read-unit">min</span></p>
+  {{end}}
+  <div class="read-body">
+    <h2 class="read-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+    {{if .Excerpt}}<p class="read-deck">{{.Excerpt}}</p>{{end}}
+    <p class="read-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{range .Tags}} <span aria-hidden="true">/</span> <a href="{{.URL}}">{{.Name}}</a>{{end}}</p>
+  </div>
+</li>
+{{end}}

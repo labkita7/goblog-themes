@@ -1,15 +1,15 @@
 {
   "slug": "adritian",
   "name": "Adritian",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Elegant portfolio-blog with big hero type and a gold accent, Adritian-style.",
+  "description": "Portfolio-blog: a tall hero with a thin, oversized site name, a featured grid of the three newest posts, then a dated list of older writing. Gold accent, humanist sans.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#c49a5a" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Inter, ui-sans-serif, system-ui" },
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#d4a546" },
+    { "key": "hero_size", "label": "Hero size", "type": "select", "options": ["big", "medium"], "default": "big" },
     { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"hero_size","label":"Hero size","type":"select","options":["big","medium"],"default":"big"}
+    { "key": "show_tags", "label": "Show tags on cards", "type": "bool", "default": true }
   ]
 }

@@ -1,26 +1,28 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headArchive" .}}
-<body>
+<body class="dy">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">{{if .Year}}Posts from {{.Year}}{{else}}Archive{{end}}</h1>
-  <p class="mt-3 text-muted-foreground">Every post on {{.Site.Title}}, newest first.</p>
-  <div class="mt-12 flex flex-col gap-8">
+<main id="main" class="dy-main">
+  <section class="dy-tag-head">
+    <p class="dy-kicker">the whole notebook</p>
+    <h1 class="dy-h1">{{if .Year}}Entries from {{.Year}}{{else}}Archive{{end}}</h1>
+  </section>
+  <ol class="dy-entries dy-entries-compact">
     {{range .Posts}}
-    <article class="flex flex-col gap-1 border-l-2 border-border pl-5">
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      <h2 class="text-xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-    </article>
+    <li class="dy-entry">
+      {{template "tile" .}}
+      <article class="dy-page">
+        <h2><a href="{{.URL}}">{{.Title}}</a></h2>
+      </article>
+    </li>
     {{end}}
-  </div>
+  </ol>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="dy-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← newer entries</a>{{else}}<span class="is-disabled" aria-disabled="true">← newer entries</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">older entries →</a>{{else}}<span class="is-disabled" aria-disabled="true">older entries →</span>{{end}}
   </nav>
   {{end}}
 </main>

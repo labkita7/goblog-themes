@@ -1,17 +1,18 @@
 {{define "header"}}
-<header class="border-b border-border">
-  <div class="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-    <a href="/" class="text-base font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
-    <div class="flex items-center gap-5">
-      {{if .Nav.Items}}
-      <nav aria-label="Main navigation">
-        <ul class="flex items-center gap-4 text-sm text-muted-foreground">
-          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-        </ul>
-      </nav>
-      {{end}}
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:text-foreground">◐</button>
-    </div>
+<header class="ad-header">
+  <div class="ad-shell ad-bar">
+    <a class="ad-brand" href="/">{{.Site.Title}}</a>
+    {{if .Nav.Items}}
+    <nav aria-label="Main navigation">
+      <ul class="ad-nav">
+        {{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}
+      </ul>
+    </nav>
+    {{end}}
+    <button type="button" class="ad-toggle" data-theme-toggle aria-label="Toggle dark mode">
+      <svg class="ad-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></svg>
+      <svg class="ad-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg>
+    </button>
   </div>
 </header>
 <script>

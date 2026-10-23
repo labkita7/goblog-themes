@@ -28,7 +28,7 @@
       {{range $i, $p := .Posts}}{{if lt $i 5}}
       <li>
         <a class="text-sm font-medium leading-snug hover:text-primary" href="{{$p.URL}}">{{$p.Title}}</a>
-        <p class="text-xs text-muted-foreground"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></p>
+        <p class="text-[0.8125rem] text-muted-foreground"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></p>
       </li>
       {{end}}{{end}}
     </ul>

@@ -1,13 +1,18 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPage" .}}
-<body>
+<body class="dy">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
+<main id="main" class="dy-main">
+  <article class="dy-page dy-page-post">
+    <header class="dy-post-head dy-post-head-plain">
+      <div>
+        <p class="dy-kicker">a page</p>
+        <h1>{{.Post.Title}}</h1>
+      </div>
+    </header>
+    <div class="prose dy-prose">{{.Post.HTML}}</div>
   </article>
 </main>
 {{template "footer" .}}

@@ -1,15 +1,16 @@
 {
   "slug": "congo",
   "name": "Congo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Tailwind-clean card lists with subtle borders, Congo-style.",
+  "description": "Profile-led reading layout in the Congo spirit: a centered hero with a large initials circle, horizontal article cards with small square thumbnails and thin rings, serif headings on a sans body, and a sticky table of contents with an author footer on posts. Green accent.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#2563eb" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Inter, ui-sans-serif, system-ui" },
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#15803d" },
+    { "key": "avatar_text", "label": "Profile circle text (2 letters)", "type": "text", "default": "FN" },
+    { "key": "show_thumbnails", "label": "Show thumbnails in lists", "type": "bool", "default": true },
     { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"homepage_layout","label":"Homepage layout","type":"select","options":["list","cards"],"default":"list"}
+    { "key": "show_toc", "label": "Show sticky contents on posts", "type": "bool", "default": true }
   ]
 }

@@ -11,7 +11,7 @@
   --card: #ffffff;
   --card-foreground: #1f1e1c;
   --primary: #d97757;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #1f1e1c;
   --secondary: #f0eee6;
   --secondary-foreground: #3d3929;
   --muted: #f0eee6;
@@ -31,7 +31,7 @@
   --card: #2d2d2a;
   --card-foreground: #ece9df;
   --primary: #d97757;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #1f1e1c;
   --secondary: #33322e;
   --secondary-foreground: #ece9df;
   --muted: #33322e;
@@ -54,3 +54,6 @@ body { font-size: 1.0625rem; line-height: 1.7; }
   font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700;
   letter-spacing: 0.02em;
 }
+.is-disabled { color: var(--muted-foreground); opacity: 0.6; }
+.text-accent-strong { color: color-mix(in srgb, var(--primary) 80%, var(--foreground)); }
+.pagination a { color: color-mix(in srgb, var(--primary) 70%, var(--foreground)); }

@@ -1,26 +1,32 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headArchive" .}}
-<body>
+<body class="gb">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">{{if .Year}}Posts from {{.Year}}{{else}}Archive{{end}}</h1>
-  <p class="mt-3 text-muted-foreground">Every post on {{.Site.Title}}, newest first.</p>
-  <div class="mt-12 flex flex-col gap-8">
-    {{range .Posts}}
-    <article class="flex flex-col gap-1 border-l-2 border-border pl-5">
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      <h2 class="text-xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-    </article>
-    {{end}}
+<main id="main" class="gb-main">
+  <section class="gb-buffer-head">
+    <p class="gb-path">:ls {{if .Year}}posts/{{.Year}}{{else}}posts{{end}}</p>
+    <h1>{{if .Year}}{{.Year}}{{else}}Archive{{end}}</h1>
+  </section>
+  <div class="gb-table-wrap">
+    <table class="gb-table">
+      <caption class="sr-only">Posts, newest first</caption>
+      <thead><tr><th scope="col">date</th><th scope="col">title</th></tr></thead>
+      <tbody>
+        {{range .Posts}}
+        <tr>
+          <td><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></td>
+          <td><a href="{{.URL}}">{{.Title}}</a></td>
+        </tr>
+        {{end}}
+      </tbody>
+    </table>
   </div>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="gb-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">:prev</a>{{else}}<span class="is-disabled" aria-disabled="true">:prev</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">:next</a>{{else}}<span class="is-disabled" aria-disabled="true">:next</span>{{end}}
   </nav>
   {{end}}
 </main>

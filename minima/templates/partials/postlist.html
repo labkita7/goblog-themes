@@ -1,0 +1,15 @@
+{{define "postlist"}}
+{{if .Posts}}
+<ul class="post-list">
+  {{range .Posts}}
+  <li class="post-item">
+    <p class="post-date"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
+    <h2 class="post-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+    {{if and (setting "show_excerpts") .Excerpt}}<p class="post-excerpt">{{.Excerpt}}</p>{{end}}
+  </li>
+  {{end}}
+</ul>
+{{else}}
+<p class="empty">No posts yet.</p>
+{{end}}
+{{end}}

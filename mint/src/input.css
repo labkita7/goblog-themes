@@ -10,18 +10,18 @@
   --foreground: #12241d;
   --card: #ffffff;
   --card-foreground: #12241d;
-  --primary: #0d9488;
+  --primary: #0f766e;
   --primary-foreground: #ffffff;
   --secondary: #e7f4f0;
   --secondary-foreground: #1f3d34;
   --muted: #e7f4f0;
-  --muted-foreground: #5c7a70;
+  --muted-foreground: #4a6860;
   --accent: #d9efe9;
   --accent-foreground: #115e59;
   --destructive: #dc2626;
   --border: #dbeae5;
   --input: #dbeae5;
-  --ring: #0d9488;
+  --ring: #0f766e;
   --radius: 0.875rem;
 }
 .dark {

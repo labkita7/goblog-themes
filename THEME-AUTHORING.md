@@ -234,7 +234,7 @@ release zips:
   "description": "…",
   "tags": ["minimal", "professional"],
   "screenshot": "https://labkita7.github.io/goblog-themes/mytheme/screenshot.png",
-  "download": "https://github.com/labkita7/goblog-themes/releases/download/mytheme-1.0.0/mytheme.zip",
+  "download": "https://github.com/labkita7/goblog-themes/releases/download/mytheme-1.0.0/mytheme-1.0.0.zip",
   "sha256": "…64 hex chars…",
   "engines": { "goblog": ">=1.0.0 <2.0.0" }
 }
@@ -247,7 +247,7 @@ shasum -a 256 mytheme.zip        # macOS / Linux
 ```
 
 Publish flow: tag `mytheme-1.0.0` on the `goblog-themes` repo, attach
-`mytheme.zip` to that release, add the entry above to `index.json` (bump its
+`mytheme-1.0.0.zip` to that release, add the entry above to `index.json` (bump its
 `updated` timestamp), and push. Readers install via Admin → Appearance →
 Registry; the admin verifies `sha256`, checks `engines`, and validates the
 manifest before activating.

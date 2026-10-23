@@ -1,0 +1,71 @@
+{{define "media"}}
+<div class="media" aria-hidden="true">{{if .CoverURL}}<img src="{{.CoverURL}}" alt="" loading="lazy" decoding="async">{{end}}</div>
+{{end}}
+
+{{define "byline"}}
+<p class="meta">
+  {{with .Author.Name}}<span class="avatar" aria-hidden="true">{{printf "%.1s" .}}</span>{{end}}
+  <span class="author">{{.Author.Name}}</span>
+  <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+  {{if setting "show_reading_time"}}<span>{{.ReadingMinutes}} min read</span>{{end}}
+</p>
+{{end}}
+
+{{define "tagList"}}
+{{if .Tags}}
+<ul class="tags">
+  {{range .Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+</ul>
+{{end}}
+{{end}}
+
+{{define "featureCard"}}
+<article class="card card--feature{{if setting "card_shadow"}} is-raised{{end}}">
+  {{template "media" .}}
+  <div class="card-body">
+    {{template "tagList" .}}
+    <h2 class="card-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+    {{if .Excerpt}}<p class="card-excerpt">{{.Excerpt}}</p>{{end}}
+    {{template "byline" .}}
+  </div>
+</article>
+{{end}}
+
+{{define "smallCard"}}
+<article class="card card--small{{if setting "card_shadow"}} is-raised{{end}}">
+  {{template "media" .}}
+  <div class="card-body">
+    <h3 class="card-title"><a href="{{.URL}}">{{.Title}}</a></h3>
+    {{template "byline" .}}
+  </div>
+</article>
+{{end}}
+
+{{define "gridCard"}}
+<article class="card{{if setting "card_shadow"}} is-raised{{end}}">
+  {{template "media" .}}
+  <div class="card-body">
+    {{template "tagList" .}}
+    <h3 class="card-title"><a href="{{.URL}}">{{.Title}}</a></h3>
+    {{if .Excerpt}}<p class="card-excerpt">{{.Excerpt}}</p>{{end}}
+    {{template "byline" .}}
+  </div>
+</article>
+{{end}}
+
+{{define "archiveRow"}}
+<article class="archive-row">
+  {{template "media" .}}
+  <div class="archive-text">
+    <p class="meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{with .Author.Name}}<span class="author">{{.}}</span>{{end}}</p>
+    <h2 class="archive-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+  </div>
+</article>
+{{end}}
+
+{{define "pager"}}
+<nav class="pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer stories</a>{{else}}<span class="is-disabled">← Newer stories</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older stories →</a>{{else}}<span class="is-disabled">Older stories →</span>{{end}}
+</nav>
+{{end}}

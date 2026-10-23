@@ -1,15 +1,15 @@
 {
   "slug": "hacker",
-  "name": "Hacker Blog",
-  "version": "1.0.0",
+  "name": "Hacker",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Green-on-black plain-text blog, monospace, ASCII-ish borders.",
+  "description": "Full-width ls -l listing: the homepage is a framed table of mode, size, modified date and slug with the title beside it, under a '$ cat posts/' heading. Green accent with red warning flags on a neutral charcoal, a power-icon toggle, and posts laid out as framed documents with a sectioned contents list.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#00cc00" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Ubuntu Mono, Courier New, monospace" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"borders","label":"Border style","type":"select","options":["ascii","none"],"default":"ascii"}
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#39ff7a" },
+    { "key": "warn_color", "label": "Warning color", "type": "color", "default": "#ff5c57" },
+    { "key": "show_perms", "label": "Show mode column", "type": "bool", "default": true },
+    { "key": "show_size", "label": "Show size column", "type": "bool", "default": true }
   ]
 }

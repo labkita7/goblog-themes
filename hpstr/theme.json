@@ -1,15 +1,15 @@
 {
   "slug": "hpstr",
   "name": "HPSTR",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Image-forward rows with an orange accent and subtle texture, HPSTR-style.",
+  "description": "Photo-essay layout: a huge title band, alternating image and text rows in old-print frames with grain, spaced capitals for tags, and a drop cap on posts.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#e5642c" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Source Sans Pro, Segoe UI, sans-serif" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"texture","label":"Background texture","type":"select","options":["none","grain"],"default":"none"}
+    { "key": "accent", "label": "Accent color (frames, kickers)", "type": "color", "default": "#b5461e" },
+    { "key": "frame_style", "label": "Image frame", "type": "select", "options": ["print", "plain"], "default": "print" },
+    { "key": "show_dropcap", "label": "Drop cap on posts", "type": "bool", "default": true },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
   ]
 }

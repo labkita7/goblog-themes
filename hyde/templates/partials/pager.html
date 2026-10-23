@@ -1,0 +1,8 @@
+{{define "pager"}}
+{{if or .PrevURL .NextURL}}
+<nav class="pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer posts</a>{{else}}<span class="is-off">← Newer posts</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older posts →</a>{{else}}<span class="is-off">Older posts →</span>{{end}}
+</nav>
+{{end}}
+{{end}}

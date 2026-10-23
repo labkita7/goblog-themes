@@ -1,35 +1,41 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headIndex" .}}
-<body>
+<body class="pm">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
+<main id="main" class="pm-wrap pm-main">
+  <section class="pm-home-info" aria-labelledby="pm-home-title">
+    <h1 id="pm-home-title">{{.Site.Title}}</h1>
+    {{if .Site.Description}}<p class="pm-home-desc">{{.Site.Description}}</p>{{end}}
+    <ul class="pm-social" aria-label="Feeds">
+      <li><a href="/rss.xml">RSS</a></li>
+      <li><a href="/atom.xml">Atom</a></li>
+      <li><a href="/feed.json">JSON Feed</a></li>
+    </ul>
+  </section>
+  <h2 class="pm-section-label">Recent posts</h2>
+  <ul class="pm-entries{{if eq (setting "list_style") "full"}} pm-list-full{{end}}">
     {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
-      {{end}}
-    </article>
+    <li>
+      <article class="pm-entry">
+        <h3 class="pm-entry-title"><a href="{{.URL}}">{{.Title}}</a></h3>
+        {{if .Excerpt}}<p class="pm-entry-summary">{{.Excerpt}}</p>{{end}}
+        <p class="pm-meta">
+          <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+          {{if setting "show_reading_time"}}<span class="pm-dot" aria-hidden="true">·</span><span>{{.ReadingMinutes}} min read</span>{{end}}
+        </p>
+        {{if .Tags}}
+        <ul class="pm-tags" aria-label="Tags">{{range .Tags}}<li><a href="{{.URL}}">#{{.Name}}</a></li>{{end}}</ul>
+        {{end}}
+      </article>
+    </li>
     {{end}}
-  </div>
+  </ul>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="pm-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
   </nav>
   {{end}}
 </main>

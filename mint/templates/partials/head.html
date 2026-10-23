@@ -35,7 +35,7 @@ document.documentElement.classList.toggle("dark",d)})();
      defaults; repeated under .dark because themes lighten accents there. */}}
 <style>
 :root{--primary:{{setting "accent"}};}
-.dark{--primary:{{setting "accent"}};}
+.dark{--primary:color-mix(in srgb,{{setting "accent"}} 62%,#fff);}
 {{if eq (setting "tag_style") "outline"}}main article a[href^="/tags/"]{border-radius:calc(var(--radius) - 4px);background:transparent;border:1px solid var(--border)}main article a[href^="/tags/"]:hover{background:transparent;border-color:var(--primary);color:var(--primary)}
 {{end}}
 </style>

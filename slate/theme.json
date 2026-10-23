@@ -1,7 +1,7 @@
 {
   "slug": "slate",
   "name": "Clean Slate Magazine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "goblog",
   "description": "Magazine split layout — oversized masthead, lead story with 16:9 cover, and a hairline latest list on cool professional blues.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

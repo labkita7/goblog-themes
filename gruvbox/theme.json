@@ -1,15 +1,15 @@
 {
   "slug": "gruvbox",
   "name": "Gruvbox",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Warm retro-groove palette in light and dark, Gruvbox-style.",
+  "description": "Retro editor layout: warm layered panels, numbered buffer lines, rotating colored tag chips and a vim-style status bar.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#b57614" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Ubuntu Mono, Courier New, monospace" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"palette_mode","label":"Palette contrast","type":"select","options":["soft","medium","hard"],"default":"medium"}
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#d65d0e" },
+    { "key": "show_line_numbers", "label": "Number entries like buffer lines", "type": "bool", "default": true },
+    { "key": "show_outline", "label": "Show outline on post pages", "type": "bool", "default": true },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
   ]
 }

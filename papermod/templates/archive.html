@@ -1,26 +1,29 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headArchive" .}}
-<body>
+<body class="pm">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">{{if .Year}}Posts from {{.Year}}{{else}}Archive{{end}}</h1>
-  <p class="mt-3 text-muted-foreground">Every post on {{.Site.Title}}, newest first.</p>
-  <div class="mt-12 flex flex-col gap-8">
+<main id="main" class="pm-wrap pm-main">
+  <h1 class="pm-page-title">{{if .Year}}Posts from {{.Year}}{{else}}Archive{{end}}</h1>
+  <p class="pm-lead">Every post on {{.Site.Title}}, newest first.</p>
+  {{if .Site.ArchiveYears}}
+  <ul class="pm-tags pm-years" aria-label="Years">
+    {{range .Site.ArchiveYears}}<li><a href="{{.URL}}">{{.Year}} <span aria-hidden="true">·</span> {{.Count}}</a></li>{{end}}
+  </ul>
+  {{end}}
+  <ul class="pm-archive pm-after-head">
     {{range .Posts}}
-    <article class="flex flex-col gap-1 border-l-2 border-border pl-5">
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      <h2 class="text-xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-    </article>
+    <li>
+      <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+      <a href="{{.URL}}">{{.Title}}</a>
+    </li>
     {{end}}
-  </div>
+  </ul>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="pm-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
   </nav>
   {{end}}
 </main>

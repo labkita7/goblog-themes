@@ -1,19 +1,30 @@
 {{define "header"}}
-<header class="border-b border-border">
-  <div class="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-    <a href="/" class="text-base font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
-    <div class="flex items-center gap-5">
-      {{if .Nav.Items}}
-      <nav aria-label="Main navigation">
-        <ul class="flex items-center gap-4 text-sm text-muted-foreground">
-          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-        </ul>
-      </nav>
-      {{end}}
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:text-foreground">◐</button>
+<div class="st-shell{{if setting "show_archive_widget"}} st-with-widget{{end}}">
+  <aside class="st-sidebar" aria-label="Site profile">
+    <div class="st-card st-profile">
+      <span class="st-badge" aria-hidden="true">{{setting "badge_text"}}</span>
+      <p class="st-site"><a href="/">{{.Site.Title}}</a></p>
+      {{if .Site.Description}}<p class="st-desc">{{.Site.Description}}</p>{{end}}
+      <input class="st-menu-toggle" type="checkbox" id="st-menu-toggle" aria-label="Show menu and tags">
+      <label class="st-menu-label" for="st-menu-toggle">Menu and tags</label>
+      <div class="st-side-body">
+        {{if .Nav.Items}}
+        <nav aria-label="Main navigation">
+          <ul class="st-nav">{{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}</ul>
+        </nav>
+        {{end}}
+        {{if .Site.Tags}}
+        <h2 class="st-block-title">Tags</h2>
+        <ul class="st-tagcloud">{{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+        {{end}}
+        <button type="button" class="st-theme" data-theme-toggle aria-label="Toggle dark mode">
+          <svg class="st-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.7 4.7l1.6 1.6M17.7 17.7l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.7 19.3l1.6-1.6M17.7 6.3l1.6-1.6"/></svg>
+          <svg class="st-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+          <span>Light / dark</span>
+        </button>
+      </div>
     </div>
-  </div>
-</header>
+  </aside>
 <script>
 document.addEventListener("click",function(e){var b=e.target.closest("[data-theme-toggle]");if(!b)return;
 var d=document.documentElement.classList.toggle("dark");

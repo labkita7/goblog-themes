@@ -3,13 +3,17 @@
 {{template "headPage" .}}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="frame">
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
-  </article>
+<main id="main" class="page">
+  <div class="column">
+    <article>
+      <h1 class="article-title">{{.Post.Title}}</h1>
+      <div class="prose entry-body">{{.Post.HTML}}</div>
+    </article>
+  </div>
 </main>
 {{template "footer" .}}
+</div>
 </body>
 </html>

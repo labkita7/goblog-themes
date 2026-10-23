@@ -4,26 +4,40 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">#{{.Tag.Name}}</h1>
-  <p class="mt-3 text-muted-foreground">{{len .Posts}} post{{if ne (len .Posts) 1}}s{{end}} with this tag.</p>
-  <div class="mt-12 flex flex-col gap-12">
-    {{range .Posts}}
-    <article class="flex flex-col gap-2">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-    </article>
+<main id="main" class="page">
+  <section class="frame" aria-labelledby="tag-title">
+    <p class="frame-label">tag: {{.Tag.Name}}</p>
+    <h1 id="tag-title" class="cmd-title">grep -l "{{.Tag.Name}}" posts/*</h1>
+    <p class="status">total {{len .Posts}}</p>
+    <div class="table-wrap">
+      <table class="ls">
+        <caption class="sr-only">Posts tagged {{.Tag.Name}}</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="col-date">modified</th>
+            <th scope="col">name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{range .Posts}}
+          <tr class="ls-row">
+            <td class="col-date"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></td>
+            <td class="col-name"><a href="{{.URL}}">{{.Slug}}</a> <span class="col-title">{{.Title}}</span></td>
+          </tr>
+          {{else}}
+          <tr><td colspan="2" class="empty">no matches</td></tr>
+          {{end}}
+        </tbody>
+      </table>
+    </div>
+    {{if or .PrevURL .NextURL}}
+    <nav class="pager" aria-label="Pagination">
+      {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">&lt;&lt;</span> prev</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">&lt;&lt;</span> prev</span>{{end}}
+      <span class="status">page {{.Page}}/{{.Pages}}</span>
+      {{if .NextURL}}<a href="{{.NextURL}}" rel="next">next <span aria-hidden="true">&gt;&gt;</span></a>{{else}}<span class="is-disabled" aria-disabled="true">next <span aria-hidden="true">&gt;&gt;</span></span>{{end}}
+    </nav>
     {{end}}
-  </div>
-  {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
-  </nav>
-  {{end}}
+  </section>
 </main>
 {{template "footer" .}}
 </body>

@@ -1,15 +1,14 @@
 {
   "slug": "coder",
   "name": "Coder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Developer portfolio-blog with monospace headings and an amber accent, Coder-style.",
+  "description": "Friendly centered developer homepage: a badge with the site initial, a centered lede, numbered-style '//' section title and '>' post rows over a sans body with monospace headings. Amber accent, chip tags and prev/next cards.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#e5a50a" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Ubuntu Mono, Courier New, monospace" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"default_mode","label":"Default mode","type":"select","options":["system","dark","light"],"default":"system"}
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#b45309" },
+    { "key": "show_excerpts", "label": "Show post excerpts", "type": "bool", "default": true },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
   ]
 }

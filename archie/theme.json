@@ -1,15 +1,15 @@
 {
   "slug": "archie",
   "name": "Archie",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Two-column minimal with monospace nav, Archie-style.",
+  "description": "Archive ledger: a framed masthead, monospace date column and one-line entries instead of cards. Serif reading text, ink-blue accent.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#1d1d1d" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "SF Mono, Courier New, monospace" },
+    { "key": "accent", "label": "Link and accent color", "type": "color", "default": "#1f4e79" },
     { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"nav_style","label":"Nav style","type":"select","options":["mono","serif"],"default":"mono"}
+    { "key": "show_excerpts", "label": "Show one-line excerpts in lists", "type": "bool", "default": true },
+    { "key": "show_tags", "label": "Show tags", "type": "bool", "default": true }
   ]
 }

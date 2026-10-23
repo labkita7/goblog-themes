@@ -1,0 +1,26 @@
+{{define "years"}}
+{{if .Posts}}
+<div class="years">
+  {{$year := 0}}
+  {{range .Posts}}
+    {{if ne .PublishedAt.Year $year}}
+      {{if $year}}</ol></div></section>{{end}}
+      {{$year = .PublishedAt.Year}}
+      <section class="year" aria-label="{{$year}}">
+        <p class="year-mark" aria-hidden="true">{{$year}}</p>
+        <div class="year-body">
+        <ol class="year-list">
+    {{end}}
+          <li class="entry">
+            <p class="entry-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}}<span>{{.ReadingMinutes}} min read</span>{{end}}</p>
+            <h2 class="entry-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+            {{if and (setting "show_excerpts") .Excerpt}}<p class="entry-excerpt">{{.Excerpt}}</p>{{end}}
+            {{if .Tags}}<ul class="chips">{{range .Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>{{end}}
+          </li>
+  {{end}}
+  {{if $year}}</ol></div></section>{{end}}
+</div>
+{{else}}
+<p class="empty">Nothing here yet.</p>
+{{end}}
+{{end}}

@@ -14,7 +14,7 @@
       {{range .Site.ArchiveYears}}
       <li class="flex items-baseline justify-between gap-3 border-b border-border pb-1.5">
         <a class="font-semibold underline decoration-border decoration-2 underline-offset-4 hover:decoration-foreground" href="{{.URL}}">{{.Year}}</a>
-        <span class="text-xs text-muted-foreground">{{.Count}} entr{{if eq .Count 1}}y{{else}}ies{{end}}</span>
+        <span class="text-[0.8125rem] text-muted-foreground">{{.Count}} entr{{if eq .Count 1}}y{{else}}ies{{end}}</span>
       </li>
       {{end}}
     </ul>

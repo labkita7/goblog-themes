@@ -1,17 +1,16 @@
 {{define "header"}}
-<header class="border-b border-border">
-  <div class="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-    <a href="/" class="text-base font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
-    <div class="flex items-center gap-5">
-      {{if .Nav.Items}}
-      <nav aria-label="Main navigation">
-        <ul class="flex items-center gap-4 text-sm text-muted-foreground">
-          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-        </ul>
-      </nav>
-      {{end}}
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:text-foreground">◐</button>
-    </div>
+<header class="site-head">
+  <div class="site-head-inner">
+    <a class="site-title" href="/">{{.Site.Title}}</a>
+    <nav aria-label="Main navigation">
+      <ul class="site-menu">
+        {{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M13.6 10.4A6 6 0 0 1 5.6 2.4a6 6 0 1 0 8 8z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.2" fill="currentColor"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.1 3.1l1.4 1.4M11.5 11.5l1.4 1.4M3.1 12.9l1.4-1.4M11.5 4.5l1.4-1.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </header>
 <script>

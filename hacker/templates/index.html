@@ -4,34 +4,47 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
-      {{end}}
-    </article>
+<main id="main" class="page">
+  <section class="frame" aria-labelledby="listing-title">
+    <p class="frame-label">{{.Site.Title}}</p>
+    <h1 id="listing-title" class="cmd-title">cat posts/</h1>
+    <p class="status">total {{len .Posts}} <span aria-hidden="true">·</span> sorted by date, newest first{{if .Site.Description}} <span aria-hidden="true">·</span> {{.Site.Description}}{{end}}</p>
+    <div class="table-wrap">
+      <table class="ls">
+        <caption class="sr-only">Posts, newest first</caption>
+        <thead>
+          <tr>
+            {{if setting "show_perms"}}<th scope="col" class="col-perm">mode</th>{{end}}
+            {{if setting "show_size"}}<th scope="col" class="col-size">size</th>{{end}}
+            <th scope="col" class="col-date">modified</th>
+            <th scope="col">name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{range .Posts}}
+          <tr class="ls-row">
+            {{if setting "show_perms"}}<td class="col-perm">{{if .Featured}}-rwxr-xr-x{{else}}-rw-r--r--{{end}}</td>{{end}}
+            {{if setting "show_size"}}<td class="col-size">{{.ReadingMinutes}}.0K</td>{{end}}
+            <td class="col-date"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></td>
+            <td class="col-name">
+              <a href="{{.URL}}">{{.Slug}}</a>{{if .Featured}} <span class="flag-warn" title="featured">!</span>{{end}}
+              <span class="col-title">{{.Title}}</span>
+            </td>
+          </tr>
+          {{else}}
+          <tr><td colspan="4" class="empty">total 0</td></tr>
+          {{end}}
+        </tbody>
+      </table>
+    </div>
+    {{if or .PrevURL .NextURL}}
+    <nav class="pager" aria-label="Pagination">
+      {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">&lt;&lt;</span> prev</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">&lt;&lt;</span> prev</span>{{end}}
+      <span class="status">page {{.Page}}/{{.Pages}}</span>
+      {{if .NextURL}}<a href="{{.NextURL}}" rel="next">next <span aria-hidden="true">&gt;&gt;</span></a>{{else}}<span class="is-disabled" aria-disabled="true">next <span aria-hidden="true">&gt;&gt;</span></span>{{end}}
+    </nav>
     {{end}}
-  </div>
-  {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
-  </nav>
-  {{end}}
+  </section>
 </main>
 {{template "footer" .}}
 </body>

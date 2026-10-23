@@ -1,35 +1,46 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headIndex" .}}
-<body>
+<body class="cg-page">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-6xl px-6 pb-24">
-  <h1 class="mt-14 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3 rounded-xl border border-border bg-card p-5">
-      <h2 class="text-xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="text-sm leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="mt-auto flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
+<main id="main" class="cg-main cg-narrow">
+  <section class="cg-hero" aria-labelledby="cg-hero-title">
+    <div class="cg-avatar" aria-hidden="true">{{setting "avatar_text"}}</div>
+    <h1 id="cg-hero-title">{{.Site.Title}}</h1>
+    {{if .Site.Description}}<p>{{.Site.Description}}</p>{{end}}
+  </section>
+  <section aria-labelledby="cg-latest">
+    <h2 id="cg-latest" class="cg-kicker"><span>Recent articles</span></h2>
+    <ul class="cg-list">
+      {{range .Posts}}
+      <li>
+        <article class="cg-card{{if not (setting "show_thumbnails")}} is-no-thumb{{end}}">
+          {{if setting "show_thumbnails"}}
+          <div class="cg-thumb" aria-hidden="true">
+            {{if .CoverURL}}<img src="{{.CoverURL}}" alt="" loading="lazy" width="1600" height="900">{{else}}<span class="cg-thumb-block"></span>{{end}}
+          </div>
+          {{end}}
+          <div class="cg-body-text">
+            <h3 class="cg-title"><a href="{{.URL}}">{{.Title}}</a></h3>
+            {{if .Excerpt}}<p class="cg-summary">{{.Excerpt}}</p>{{end}}
+            <p class="cg-meta">
+              <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+              {{if setting "show_reading_time"}}<span class="cg-sep" aria-hidden="true">·</span><span>{{.ReadingMinutes}} min read</span>{{end}}
+            </p>
+            {{if .Tags}}
+            <ul class="cg-tags" aria-label="Tags">{{range .Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+            {{end}}
+          </div>
+        </article>
+      </li>
       {{end}}
-    </article>
-    {{end}}
-  </div>
+    </ul>
+  </section>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+  <nav class="cg-pager" aria-label="Pagination">
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="is-disabled" aria-disabled="true">← Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="is-disabled" aria-disabled="true">Older →</span>{{end}}
   </nav>
   {{end}}
 </main>

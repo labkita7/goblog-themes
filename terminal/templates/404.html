@@ -1,15 +1,19 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headError" .}}
-<body>
+<body class="{{if setting "scanlines"}}scan{{end}}">
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="term">
 {{template "header" .}}
-<main id="main" class="mx-auto flex w-full max-w-2xl flex-col items-start px-6 pb-24 pt-24">
-  <p class="text-7xl font-bold tracking-tight text-primary">{{.Code}}</p>
-  <h1 class="mt-4 text-3xl font-semibold tracking-tight">{{.Message}}</h1>
-  <p class="mt-3 text-muted-foreground">The page you are looking for does not exist or has moved.</p>
-  <a class="mt-8 rounded-md border border-border px-4 py-2 text-base hover:bg-muted" href="/">Back to the blog</a>
+<main id="main">
+  <section class="block">
+    <p class="cmd"><span class="ps">reader@<span class="host">{{setting "prompt_host"}}</span>:~$</span> <span class="cmd-arg">cd ./requested-page</span></p>
+    <h1 class="motd">error {{.Code}}</h1>
+    <p class="out err" role="alert">bash: cd: {{.Message}}: No such file or directory</p>
+    <p class="out"><a href="/">[ return to ~ ]</a></p>
+  </section>
 </main>
 {{template "footer" .}}
+</div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
   "slug": "serif",
   "name": "Elegant Editorial",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "goblog",
   "description": "Newspaper-style editorial — centered serif masthead with rules, dateline, and a featured grid on ivory with muted gold.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

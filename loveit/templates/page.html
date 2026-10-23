@@ -1,14 +1,22 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPage" .}}
-<body>
+<body class="lv-page">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
+<main id="main" class="lv-main lv-post">
+  <article class="lv-article">
+    <header class="lv-post-head"><h1>{{.Post.Title}}</h1></header>
+    <div class="prose lv-body">{{.Post.HTML}}</div>
   </article>
+  {{if and (setting "show_toc") .TOC}}
+  <aside class="lv-aside" aria-label="Table of contents">
+    <details class="lv-toc lv-toc-box" open>
+      <summary>On this page</summary>
+      <ol>{{range .TOC}}<li class="lvl-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}</ol>
+    </details>
+  </aside>
+  {{end}}
 </main>
 {{template "footer" .}}
 </body>

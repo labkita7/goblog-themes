@@ -1,19 +1,41 @@
 {{define "header"}}
-<header class="border-b border-border">
-  <div class="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-    <a href="/" class="text-base font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
-    <div class="flex items-center gap-5">
-      {{if .Nav.Items}}
-      <nav aria-label="Main navigation">
-        <ul class="flex items-center gap-4 text-sm text-muted-foreground">
-          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-        </ul>
-      </nav>
-      {{end}}
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:text-foreground">◐</button>
-    </div>
-  </div>
+<input type="checkbox" id="drawer-toggle" class="drawer-toggle" aria-label="Site menu">
+<header class="topbar">
+  <label for="drawer-toggle" class="menu-button">
+    <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="menu-label">Menu</span>
+  </label>
+  <a class="topbar-title" href="/">{{.Site.Title}}</a>
 </header>
+<label for="drawer-toggle" class="scrim" aria-hidden="true"></label>
+<aside class="drawer{{if eq (setting "drawer_side") "right"}} drawer--right{{end}}" aria-label="Site menu">
+  <div class="drawer-brand">
+    <a href="/">{{.Site.Title}}</a>
+    {{if .Site.Description}}<p>{{.Site.Description}}</p>{{end}}
+  </div>
+  {{if .Nav.Items}}
+  <nav aria-label="Main navigation">
+    <ul class="drawer-nav">
+      {{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}
+    </ul>
+  </nav>
+  {{end}}
+  {{if .Site.Tags}}
+  <nav aria-label="Tags" class="drawer-tags">
+    <p class="drawer-label">Topics</p>
+    <ul>
+      {{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+    </ul>
+  </nav>
+  {{end}}
+  <div class="drawer-foot">
+    <button type="button" class="switch" data-theme-toggle aria-label="Dark mode">
+      <span class="switch-track" aria-hidden="true"><span class="switch-knob"></span></span>
+      <span>Dark mode</span>
+    </button>
+    <p class="drawer-feeds"><a href="/rss.xml">RSS</a> <a href="/atom.xml">Atom</a></p>
+  </div>
+</aside>
 <script>
 document.addEventListener("click",function(e){var b=e.target.closest("[data-theme-toggle]");if(!b)return;
 var d=document.documentElement.classList.toggle("dark");

@@ -1,0 +1,33 @@
+{{define "sidebarPost"}}
+<aside class="ch-side" aria-label="Site">
+  <a class="ch-brand" href="/">
+    <span class="ch-badge" aria-hidden="true">{{printf "%.1s" .Site.Title}}</span>
+    <span class="ch-name">{{.Site.Title}}</span>
+  </a>
+  <input class="ch-check" id="ch-menu" type="checkbox">
+  <label class="ch-burger" for="ch-menu">Menu</label>
+  <div class="ch-panel">
+    {{if .Nav.Items}}
+    <nav aria-label="Main navigation" class="ch-nav">
+      <ul>{{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}</ul>
+    </nav>
+    {{end}}
+    {{if .TOC}}
+    <nav aria-labelledby="ch-toc-label">
+      <p class="ch-label" id="ch-toc-label">On this page</p>
+      <ol class="ch-toc">{{range .TOC}}<li class="ch-toc-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}</ol>
+    </nav>
+    {{end}}
+    <button type="button" class="ch-theme" data-theme-toggle aria-label="Toggle dark mode">
+      <svg class="ch-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+      <svg class="ch-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <span>Theme</span>
+    </button>
+  </div>
+</aside>
+<script>
+document.addEventListener("click",function(e){var b=e.target.closest("[data-theme-toggle]");if(!b)return;
+var d=document.documentElement.classList.toggle("dark");
+try{localStorage.setItem("goblog-theme",d?"dark":"light")}catch(_){}});
+</script>
+{{end}}

@@ -1,0 +1,50 @@
+{{define "plate"}}
+<div class="media" aria-hidden="true">{{if .CoverURL}}<img src="{{.CoverURL}}" alt="" loading="lazy" decoding="async">{{end}}</div>
+{{end}}
+
+{{define "byline"}}
+<p class="byline">
+  By <span class="byline-author">{{.Author.Name}}</span>
+  <span aria-hidden="true">/</span>
+  <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+  {{if setting "show_reading_time"}}<span aria-hidden="true">/</span> <span>{{.ReadingMinutes}} min read</span>{{end}}
+</p>
+{{end}}
+
+{{define "topicLink"}}
+{{if .Tags}}{{with index .Tags 0}}<a class="kicker" href="{{.URL}}">{{.Name}}</a>{{end}}{{else}}<span class="kicker">Story</span>{{end}}
+{{end}}
+
+{{define "leadStory"}}
+<article class="lead">
+  {{template "topicLink" .}}
+  <h1 class="lead-title"><a href="{{.URL}}">{{.Title}}</a></h1>
+  {{if .Excerpt}}<p class="standfirst">{{.Excerpt}}</p>{{end}}
+  {{template "byline" .}}
+  {{template "plate" .}}
+</article>
+{{end}}
+
+{{define "sideStory"}}
+<article class="side-story">
+  {{template "topicLink" .}}
+  <h2 class="side-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+  {{if .Excerpt}}<p class="side-excerpt">{{.Excerpt}}</p>{{end}}
+  {{template "byline" .}}
+</article>
+{{end}}
+
+{{define "denseRow"}}
+<li class="dense-row">
+  <time class="dense-date" datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
+  <h3 class="dense-title"><a href="{{.URL}}">{{.Title}}</a></h3>
+  <span class="dense-meta">{{with .Author.Name}}{{.}}{{end}}{{if setting "show_reading_time"}}{{if .Author.Name}} · {{end}}{{.ReadingMinutes}} min{{end}}</span>
+</li>
+{{end}}
+
+{{define "pager"}}
+<nav class="pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
+</nav>
+{{end}}

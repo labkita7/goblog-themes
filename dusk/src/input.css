@@ -10,18 +10,18 @@
   --foreground: #221f3a;
   --card: #ffffff;
   --card-foreground: #221f3a;
-  --primary: #6366f1;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
   --secondary: #e8e5f8;
   --secondary-foreground: #332e5c;
   --muted: #e8e5f8;
-  --muted-foreground: #6d6893;
+  --muted-foreground: #5f5a84;
   --accent: #e3e0f7;
   --accent-foreground: #3730a3;
   --destructive: #dc2626;
   --border: #ddd9f0;
   --input: #ddd9f0;
-  --ring: #6366f1;
+  --ring: #4f46e5;
   --radius: 0.875rem;
 }
 .dark {
@@ -60,3 +60,5 @@ main article a[href^="/tags/"]:hover { background: var(--primary); color: var(--
 main img { border-radius: var(--radius); box-shadow: 0 20px 50px -30px rgb(49 46 129 / 0.5); }
 
 body { font-size: 1.0625rem; line-height: 1.75; }
+.is-disabled { color: var(--muted-foreground); opacity: 0.6; }
+html.dark { --primary: #818cf8; --ring: #818cf8; }

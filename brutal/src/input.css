@@ -69,7 +69,13 @@ body { font-size: 1.0625rem; line-height: 1.65; }
 .brutal-tag {
   display: inline-block; border: 2px solid #000;
   padding: 0.1rem 0.5rem;
-  font-size: 0.6875rem; font-weight: 700;
+  font-size: 0.8125rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   background: var(--secondary); color: var(--secondary-foreground);
 }
+
+.pagination .is-disabled { color: var(--muted-foreground); opacity: 0.6; }
+
+.dark { --primary-foreground: #000000; }
+.dark .brutal-card { --muted-foreground: #d4d4d8; }
+.dark .pagination a, .dark .prose a { color: var(--foreground); }

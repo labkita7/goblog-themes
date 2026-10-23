@@ -1,0 +1,17 @@
+{{define "entry"}}
+<article class="card">
+  <a class="card-teaser" href="{{.URL}}" tabindex="-1" aria-hidden="true">
+    {{if .CoverURL}}<img src="{{.CoverURL}}" alt="" width="1200" height="630" loading="lazy">{{else}}<span class="card-teaser-fallback"></span>{{end}}
+  </a>
+  <div class="card-body">
+    <p class="card-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}}<span aria-hidden="true"> · </span>{{.ReadingMinutes}} min read{{end}}</p>
+    <h2 class="card-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+    {{if .Excerpt}}<p class="card-excerpt">{{.Excerpt}}</p>{{end}}
+    {{if .Tags}}
+    <ul class="pills" aria-label="Tags">
+      {{range .Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+    </ul>
+    {{end}}
+  </div>
+</article>
+{{end}}

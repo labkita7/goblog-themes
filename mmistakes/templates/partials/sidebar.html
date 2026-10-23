@@ -1,0 +1,18 @@
+{{define "sidebar"}}
+<aside class="author-card" aria-label="About this site">
+  <div class="author-mark" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="34" height="34" focusable="false"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 0 4 21.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 1 1.5 1.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  </div>
+  <p class="author-name">{{.Site.Title}}</p>
+  {{if .Site.Description}}<p class="author-bio">{{.Site.Description}}</p>{{end}}
+  {{if .Site.Tags}}
+  <nav aria-label="Tags" class="author-sections">
+    <p class="author-label">Topics</p>
+    <ul>
+      {{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+    </ul>
+  </nav>
+  {{end}}
+  <p class="author-feeds"><a href="/rss.xml">RSS</a><a href="/atom.xml">Atom</a><a href="/feed.json">JSON</a></p>
+</aside>
+{{end}}

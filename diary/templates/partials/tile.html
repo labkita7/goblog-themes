@@ -1,0 +1,9 @@
+{{define "tile"}}
+{{if setting "show_date_tiles"}}
+<time class="dy-tile" datetime="{{isoDate .PublishedAt}}">
+  <span class="dy-month">{{.PublishedAt.Format "Jan"}}</span>
+  <span class="dy-day">{{.PublishedAt.Day}}</span>
+  <span class="dy-year">{{.PublishedAt.Year}}</span>
+</time>
+{{end}}
+{{end}}

@@ -1,18 +1,16 @@
 {{define "header"}}
-<header class="border-b border-border">
-  <div class="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-    <a href="/" class="text-base font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
-    <div class="flex items-center gap-5">
-      {{if .Nav.Items}}
-      <nav aria-label="Main navigation">
-        <ul class="flex items-center gap-4 text-sm text-muted-foreground">
-          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-        </ul>
-      </nav>
-      {{end}}
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:text-foreground">◐</button>
-    </div>
-  </div>
+<header class="gb-topbar">
+  <div class="gb-mode" aria-hidden="true">NORMAL</div>
+  <a class="gb-brand" href="/">{{.Site.Title}}</a>
+  <nav class="gb-tabs" aria-label="Main navigation">
+    <ul>
+      {{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}
+    </ul>
+  </nav>
+  <button type="button" class="gb-toggle" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="gb-on-light">:set bg=dark</span>
+    <span class="gb-on-dark">:set bg=light</span>
+  </button>
 </header>
 <script>
 document.addEventListener("click",function(e){var b=e.target.closest("[data-theme-toggle]");if(!b)return;

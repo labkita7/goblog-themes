@@ -34,7 +34,7 @@ document.documentElement.classList.toggle("dark",d)})();
      Declared after the stylesheet so saved settings win over manifest
      defaults; repeated under .dark because themes lighten accents there. */}}
 <style>
-:root{--primary:{{setting "accent"}};}
+:root{--primary:color-mix(in srgb, {{setting "accent"}} 70%, #000);}
 .dark{--primary:{{setting "accent"}};}
 {{if not (setting "gradient_hero")}}h1{background-image:none;color:var(--foreground)}
 {{end}}

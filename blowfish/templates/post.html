@@ -4,37 +4,32 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <header class="pt-12">
-      <h1 class="text-4xl font-bold leading-tight tracking-tight">{{.Post.Title}}</h1>
-      <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-        <a class="hover:text-foreground" href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a>
-        <span aria-hidden="true">·</span>
-        <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span><span>{{.Post.ReadingMinutes}} min read</span>{{end}}
-      </div>
-      {{if or .Post.CoverURL .Post.OGImageURL}}
-      <img class="mt-8 w-full rounded-lg border border-border" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1200" height="630">
-      {{end}}
-    </header>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
-    {{if .Post.Tags}}
-    <ul class="mt-10 flex flex-wrap gap-2 text-sm">
-      {{range .Post.Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
+<main id="main" class="bf-shell bf-post-wrap">
+  <article class="bf-post-card">
+    <ul class="bf-post-meta">
+      {{range .Post.Tags}}<li class="bf-label bf-label-accent"><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+      <li class="bf-label"><time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time></li>
+      {{if setting "show_reading_time"}}<li class="bf-label">{{.Post.ReadingMinutes}} min read</li>{{end}}
     </ul>
+    <h1>{{.Post.Title}}</h1>
+    <p class="bf-post-author">{{.Post.Author.Name}}</p>
+    {{if .Post.CoverURL}}
+    <figure class="bf-cover"><img src="{{.Post.CoverURL}}" alt="" width="1600" height="900"></figure>
     {{end}}
+    {{if .TOC}}
+    <details class="bf-toc">
+      <summary>Contents</summary>
+      <ol>
+        {{range .TOC}}<li class="bf-toc-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}
+      </ol>
+    </details>
+    {{end}}
+    <div class="prose bf-post-body">{{.Post.HTML}}</div>
   </article>
   {{if or .Prev .Next}}
-  <nav class="mt-16 grid gap-6 border-t border-border pt-8 sm:grid-cols-2" aria-label="Post navigation">
-    <div>
-      {{if .Prev}}<p class="text-sm text-muted-foreground">Previous</p>
-      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Prev.URL}}" rel="prev">{{.Prev.Title}}</a>{{end}}
-    </div>
-    <div class="sm:text-right">
-      {{if .Next}}<p class="text-sm text-muted-foreground">Next</p>
-      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Next.URL}}" rel="next">{{.Next.Title}}</a>{{end}}
-    </div>
+  <nav class="bf-postnav" aria-label="Post navigation">
+    {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><small><span aria-hidden="true">←</span> Previous</small><strong>{{.Prev.Title}}</strong></a>{{else}}<span></span>{{end}}
+    {{if .Next}}<a class="bf-next" href="{{.Next.URL}}" rel="next"><small>Next <span aria-hidden="true">→</span></small><strong>{{.Next.Title}}</strong></a>{{end}}
   </nav>
   {{end}}
 </main>

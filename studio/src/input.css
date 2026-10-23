@@ -30,7 +30,7 @@
   --card: #101012;
   --card-foreground: #f4f4f5;
   --primary: #6366f1;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #09090b;
   --secondary: #1b1b1f;
   --secondary-foreground: #d4d4d8;
   --muted: #1b1b1f;
@@ -45,7 +45,7 @@
 
 /* Micro-label: uppercase tracked kicker text */
 .micro-label {
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;

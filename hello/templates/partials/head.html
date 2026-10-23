@@ -1,25 +1,7 @@
-{{/* Reference partial: the SEO-complete head, shared by all ten launch themes.
-     Defines one entry point per page data type — html/template cannot safely
-     branch on optional fields across different data structs, so each page
-     includes the variant that matches its dot:
-
-       index.html   -> {{template "headIndex" .}}   (IndexData)
-       post.html    -> {{template "headPost" .}}    (PostData)
-       page.html    -> {{template "headPage" .}}    (PageData)
-       tag.html     -> {{template "headTag" .}}     (TagData)
-       archive.html -> {{template "headArchive" .}} (ArchiveData)
-       404.html     -> {{template "headError" .}}   (ErrorData)
-
-     headCore emits charset, viewport, feeds, the dark-mode bootstrap,
-     {{asset "theme.css"}} and the settings style block. Only contract
-     fields are used. */}}
-
 {{define "headCore"}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="goblog">
-{{/* Dark-mode bootstrap: set the .dark class before first paint (≤ 1 KB,
-     no required JS — content and navigation work without it). */}}
 <script>
 (function(){var s=null;try{s=localStorage.getItem("goblog-theme")}catch(e){}
 var d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -30,12 +12,9 @@ document.documentElement.classList.toggle("dark",d)})();
 <link rel="alternate" type="application/atom+xml" title="{{.Site.Title}} — Atom" href="/atom.xml">
 <link rel="alternate" type="application/json" title="{{.Site.Title}} — JSON Feed" href="/feed.json">
 <link rel="stylesheet" href="{{asset "theme.css"}}">
-{{/* Theme settings arrive as CSS custom properties; accent is a hex color.
-     Declared after the stylesheet so saved settings win over manifest
-     defaults; repeated under .dark because themes lighten accents there. */}}
 <style>
-:root{--primary:{{setting "accent"}};--font-heading:{{setting "font_heading"}}, ui-sans-serif, system-ui, sans-serif;}
-.dark{--primary:{{setting "accent"}};}
+:root{--primary:{{setting "accent"}};}
+.dark{--primary:color-mix(in srgb,{{setting "accent"}} 62%,#fff);}
 </style>
 {{end}}
 

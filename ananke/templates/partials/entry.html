@@ -1,0 +1,15 @@
+{{define "entry"}}
+<article class="entry">
+  <a class="entry-media" href="{{.URL}}" tabindex="-1" aria-hidden="true">
+    {{if .CoverURL}}<img src="{{.CoverURL}}" alt="" loading="lazy" width="1200" height="900">{{else}}<span class="entry-fallback"></span>{{end}}
+  </a>
+  <p class="entry-date"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}}<span class="meta-sep" aria-hidden="true">·</span><span class="meta">{{.ReadingMinutes}} min read</span>{{end}}</p>
+  <h2 class="entry-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+  {{if .Excerpt}}<p class="entry-excerpt">{{.Excerpt}}</p>{{end}}
+  {{if .Tags}}
+  <ul class="tags">
+    {{range .Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+  </ul>
+  {{end}}
+</article>
+{{end}}

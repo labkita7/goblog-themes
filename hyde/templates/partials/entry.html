@@ -1,0 +1,7 @@
+{{define "entry"}}
+<article class="entry">
+  <h2 class="entry-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+  <p class="entry-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}} <span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}</p>
+  {{if .Excerpt}}<p class="entry-excerpt">{{.Excerpt}}</p>{{end}}
+</article>
+{{end}}

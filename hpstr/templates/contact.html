@@ -11,31 +11,24 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="pt-12 text-4xl font-bold tracking-tight">Contact</h1>
+<section class="title-band">
+  <h1>Contact</h1>
+  <p class="band-lede">Write a letter. It arrives in the editor's inbox.</p>
+</section>
+<main id="main" class="story">
   {{if .Sent}}
-  <p class="mt-6 rounded-md border border-border px-4 py-3 text-sm text-foreground" role="status">Thank you — your message was delivered.</p>
+  <p class="notice" role="status">Your letter was delivered. Thank you.</p>
   {{else}}
-  {{if .Message}}<p class="mt-6 rounded-md border border-border px-4 py-3 text-sm text-red-600 dark:text-red-400" role="alert">{{.Message}}</p>{{end}}
-  <form method="post" action="/contact" class="mt-8 flex flex-col gap-4">
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-name">Name
-      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-name" name="name" required maxlength="100" value="{{.Values.Name}}">
-    </label>
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-email">Email
-      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-email" name="email" type="email" required maxlength="200" value="{{.Values.Email}}">
-    </label>
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-subject">Subject
-      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-subject" name="subject" maxlength="150" value="{{.Values.Subject}}">
-    </label>
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-message">Message
-      <textarea class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-message" name="message" rows="6" required minlength="10" maxlength="5000">{{.Values.Message}}</textarea>
-    </label>
-    <label class="flex flex-col gap-1 text-sm text-muted-foreground" for="c-captcha">{{.Question}} <span>(spam check)</span>
-      <input class="rounded-md border border-border bg-background px-3 py-2 text-foreground" id="c-captcha" name="captcha" required inputmode="numeric" autocomplete="off">
-    </label>
+  {{if .Message}}<p class="notice notice--error" role="alert">{{.Message}}</p>{{end}}
+  <form method="post" action="/contact" class="letter">
+    <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" required maxlength="100" value="{{.Values.Name}}"></div>
+    <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required maxlength="200" value="{{.Values.Email}}"></div>
+    <div class="field"><label for="c-subject">Subject</label><input id="c-subject" name="subject" maxlength="150" value="{{.Values.Subject}}"></div>
+    <div class="field"><label for="c-message">Message</label><textarea id="c-message" name="message" rows="7" required minlength="10" maxlength="5000">{{.Values.Message}}</textarea></div>
+    <div class="field"><label for="c-captcha">{{.Question}} <span class="field-hint">(spam check)</span></label><input id="c-captcha" name="captcha" required inputmode="numeric" autocomplete="off"></div>
     <input type="hidden" name="captcha_token" value="{{.Token}}">
-    <input class="hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <button class="w-fit rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90" type="submit">Send message</button>
+    <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <button class="stamp" type="submit">Send letter</button>
   </form>
   {{end}}
 </main>

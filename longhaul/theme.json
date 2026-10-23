@@ -1,15 +1,15 @@
 {
   "slug": "longhaul",
   "name": "Long Haul",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Long-form type-focused reading with a warm paper tone.",
+  "description": "A long-form reading list. Each post is a numbered entry with its reading time set large in the margin. Posts read in a serif column on warm paper, with a numbered table of contents that sticks to the left margin and a reading progress rule along the top.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#8a6d3b" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Georgia, ui-serif, serif" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"column_width","label":"Column width","type":"select","options":["narrow","wide"],"default":"narrow"}
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#9a4b1d" },
+    { "key": "column_width", "label": "Reading column width", "type": "select", "options": ["narrow", "wide"], "default": "narrow" },
+    { "key": "show_toc", "label": "Sticky contents on posts", "type": "bool", "default": true },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
   ]
 }

@@ -1,15 +1,15 @@
 {
   "slug": "papermod",
   "name": "PaperMod",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Minimal fast blog in the PaperMod spirit — compact rows, warm white, one red-orange accent.",
+  "description": "Compact single-column blog in the PaperMod spirit: a home-info block, short bold entry cards with two-line summaries, a collapsible table of contents on posts, and one red-orange accent on a system sans.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#e63946" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Georgia, ui-serif, serif" },
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#c2410c" },
     { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"list_style","label":"List style","type":"select","options":["summary","full"],"default":"summary"}
+    { "key": "show_toc", "label": "Show table of contents on posts", "type": "bool", "default": true },
+    { "key": "list_style", "label": "Home list style", "type": "select", "options": ["summary", "full"], "default": "summary" }
   ]
 }

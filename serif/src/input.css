@@ -19,8 +19,8 @@
   --foreground: #201d17;
   --card: #fffef9;
   --card-foreground: #201d17;
-  --primary: #b08d57;
-  --primary-foreground: #201d17;
+  --primary: #7d6130;
+  --primary-foreground: #fffef9;
   --secondary: #f3efe4;
   --secondary-foreground: #201d17;
   --muted: #f3efe4;
@@ -30,7 +30,7 @@
   --destructive: #a13327;
   --border: #e3ddcd;
   --input: #e3ddcd;
-  --ring: #b08d57;
+  --ring: #7d6130;
   --radius: 0.25rem;
   --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body: Georgia, "Times New Roman", ui-serif, serif;
@@ -63,3 +63,4 @@ body { font-size: 1.0625rem; line-height: 1.7; }
   letter-spacing: 0.14em;
   text-transform: lowercase;
 }
+.pagination .is-disabled { color: var(--muted-foreground); opacity: 0.6; }

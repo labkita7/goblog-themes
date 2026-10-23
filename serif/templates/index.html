@@ -21,7 +21,7 @@
         <a class="hover:text-primary" href="{{$p.URL}}">{{$p.Title}}</a>
       </h2>
       <p class="kicker text-base text-muted-foreground">
-        <time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time> · {{$p.ReadingMinutes}} min · {{$p.Author.Name}}
+        <time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time> <span aria-hidden="true">·</span> {{$p.ReadingMinutes}} min <span aria-hidden="true">·</span> {{$p.Author.Name}}
       </p>
       {{if $p.Excerpt}}<p class="leading-relaxed text-muted-foreground">{{$p.Excerpt}}</p>{{end}}
       {{if $p.Tags}}<p class="kicker text-base text-muted-foreground">
@@ -33,8 +33,8 @@
 
   {{if or .PrevURL .NextURL}}
   <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span class="disabled">← Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span class="disabled">Older →</span>{{end}}
+    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
+    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
   </nav>
   {{end}}
 </main>

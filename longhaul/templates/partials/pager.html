@@ -1,0 +1,9 @@
+{{define "pager"}}
+{{if or .PrevURL .NextURL}}
+<nav class="lh-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
+  <span class="lh-pager-status">Page {{.Page}} of {{.Pages}}</span>
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
+</nav>
+{{end}}
+{{end}}

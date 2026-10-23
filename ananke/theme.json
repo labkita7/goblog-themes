@@ -1,15 +1,15 @@
 {
   "slug": "ananke",
   "name": "Ananke",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Classic editorial with serif body and generous whitespace, Ananke-style.",
+  "description": "Full-bleed accent hero with a large serif title, a two-column latest list with big editorial dates, and serif display type over a sans body.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#2563eb" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Merriweather, Georgia, serif" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"cover_style","label":"Cover style","type":"select","options":["full","contained"],"default":"full"}
+    { "key": "accent", "label": "Accent color (hero and links)", "type": "color", "default": "#1f4e8c" },
+    { "key": "hero_height", "label": "Hero height", "type": "select", "options": ["full", "compact"], "default": "full" },
+    { "key": "hero_button", "label": "Hero button text", "type": "text", "default": "Read the latest" },
+    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true }
   ]
 }

@@ -1,0 +1,17 @@
+{{define "row"}}
+<article class="row">
+  <a class="frame{{if eq (setting "frame_style") "plain"}} frame--plain{{end}}" href="{{.URL}}" tabindex="-1" aria-hidden="true">
+    {{if .CoverURL}}<img src="{{.CoverURL}}" alt="" loading="lazy" width="1200" height="800">{{else}}<span class="grain"></span>{{end}}
+  </a>
+  <div class="row-text">
+    {{if .Tags}}
+    <ul class="kickers">
+      {{range .Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+    </ul>
+    {{end}}
+    <h2 class="row-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+    {{if .Excerpt}}<p class="row-excerpt">{{.Excerpt}}</p>{{end}}
+    <p class="row-date"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}} <span aria-hidden="true">/</span> {{.ReadingMinutes}} min{{end}}</p>
+  </div>
+</article>
+{{end}}

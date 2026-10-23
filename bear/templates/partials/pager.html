@@ -1,0 +1,9 @@
+{{define "pager"}}
+{{if or .PrevURL .NextURL}}
+<p class="pager">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{end}}
+  {{if and .PrevURL .NextURL}}·{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{end}}
+</p>
+{{end}}
+{{end}}

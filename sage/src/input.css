@@ -9,7 +9,7 @@
   --foreground: #243026;
   --card: #ffffff;
   --card-foreground: #243026;
-  --primary: #588157;
+  --primary: #4a7050;
   --primary-foreground: #ffffff;
   --secondary: #eaefe4;
   --secondary-foreground: #2c3a2e;
@@ -20,7 +20,7 @@
   --destructive: #b3492f;
   --border: #dde3d4;
   --input: #dde3d4;
-  --ring: #588157;
+  --ring: #4a7050;
   --radius: 0.75rem;
   --font-body: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-body);
@@ -45,3 +45,5 @@
 }
 
 body { font-size: 1.0625rem; line-height: 1.65; }
+.is-disabled { color: var(--muted-foreground); opacity: 0.6; }
+html.dark { --primary: #a3c2a5; --ring: #a3c2a5; }

@@ -1,15 +1,15 @@
 {
   "slug": "lagrange",
   "name": "Lagrange",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Minimal personal blog with elegant serif headings, Lagrange-style.",
+  "description": "Editorial serif journal: a large serif introduction, then wide image-led entries separated by hairlines. Tags are small capitals, not boxes. Post pages open with a drop cap and a contents list.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#102a43" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Georgia, ui-serif, serif" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"featured_images","label":"Featured images","type":"bool","default":true}
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#b5532a" },
+    { "key": "section_label", "label": "Section label", "type": "text", "default": "Recent writing" },
+    { "key": "show_drop_cap", "label": "Drop cap on post pages", "type": "bool", "default": true },
+    { "key": "plate_style", "label": "Placeholder image style", "type": "select", "options": ["lines", "solid"], "default": "lines" }
   ]
 }

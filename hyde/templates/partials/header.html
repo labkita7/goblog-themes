@@ -1,17 +1,27 @@
 {{define "header"}}
-<header class="border-b border-border">
-  <div class="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-    <a href="/" class="text-base font-semibold tracking-tight hover:text-primary">{{.Site.Title}}</a>
-    <div class="flex items-center gap-5">
-      {{if .Nav.Items}}
-      <nav aria-label="Main navigation">
-        <ul class="flex items-center gap-4 text-sm text-muted-foreground">
-          {{range .Nav.Items}}<li><a class="hover:text-foreground" href="{{.URL}}">{{.Label}}</a></li>{{end}}
-        </ul>
-      </nav>
-      {{end}}
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:text-foreground">◐</button>
-    </div>
+<header class="sidebar">
+  <a class="sidebar-brand" href="/">{{.Site.Title}}</a>
+  {{if .Site.Description}}<p class="sidebar-desc">{{.Site.Description}}</p>{{end}}
+  {{if .Nav.Items}}
+  <nav aria-label="Main navigation">
+    <ul class="sidebar-nav">
+      {{range .Nav.Items}}<li><a href="{{.URL}}">{{.Label}}</a></li>{{end}}
+    </ul>
+  </nav>
+  {{end}}
+  {{if and (setting "show_tags") .Site.Tags}}
+  <nav class="sidebar-tags" aria-label="Tags">
+    <p class="sidebar-label">Tags</p>
+    <ul>
+      {{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}
+    </ul>
+  </nav>
+  {{end}}
+  <div class="sidebar-foot">
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </button>
+    <p class="sidebar-feeds"><a href="/rss.xml">RSS</a> <span aria-hidden="true">/</span> <a href="/atom.xml">Atom</a></p>
   </div>
 </header>
 <script>

@@ -4,10 +4,18 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
+<main id="main" class="bf-shell bf-post-wrap">
+  <article class="bf-post-card">
+    <h1>{{.Post.Title}}</h1>
+    {{if .TOC}}
+    <details class="bf-toc">
+      <summary>Contents</summary>
+      <ol>
+        {{range .TOC}}<li class="bf-toc-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}
+      </ol>
+    </details>
+    {{end}}
+    <div class="prose bf-post-body">{{.Post.HTML}}</div>
   </article>
 </main>
 {{template "footer" .}}

@@ -57,7 +57,7 @@ header, footer, .prose hr { border-width: 2px; }
 main article + article, .rule-top { border-top: 2px solid var(--border); }
 
 /* Squared tag chips */
-main article a[href^="/tags/"] { border-width: 2px; font-family: var(--font-heading); text-transform: uppercase; font-size: 0.6875rem; letter-spacing: 0.06em; padding: 0.15rem 0.5rem; }
+main article a[href^="/tags/"] { border-width: 2px; font-family: var(--font-heading); text-transform: uppercase; font-size: 0.8125rem; letter-spacing: 0.06em; padding: 0.15rem 0.5rem; }
 main article a[href^="/tags/"]:hover { background: var(--foreground); color: var(--background); border-color: var(--foreground); }
 
 /* Post index numbers (gated by show_index_numbers via .numbered) */

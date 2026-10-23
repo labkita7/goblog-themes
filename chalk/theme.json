@@ -1,15 +1,15 @@
 {
   "slug": "chalk",
   "name": "Chalk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "goblog",
-  "description": "Elegant two-column with a dark default and pink accent, Chalk-style.",
+  "description": "Two-column layout with a fixed, near-black sidebar (title, menu, tags, archive years) and a light reading column. Entries show a mono date, a bold title and a short pink rule. On small screens the sidebar becomes a CSS-only drawer.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
   "screenshot": "screenshot.png",
   "settings": [
-    { "key": "accent", "label": "Accent color", "type": "color", "default": "#e91e63" },
-    { "key": "font_heading", "label": "Heading font", "type": "text", "default": "Inter, ui-sans-serif, system-ui" },
-    { "key": "show_reading_time", "label": "Show reading time", "type": "bool", "default": true },
-    {"key":"column_style","label":"Column style","type":"select","options":["single","two"],"default":"two"}
+    { "key": "accent", "label": "Accent color", "type": "color", "default": "#ec4899" },
+    { "key": "show_tags", "label": "Show tags in sidebar", "type": "bool", "default": true },
+    { "key": "show_archive", "label": "Show archive years in sidebar", "type": "bool", "default": true },
+    { "key": "entry_layout", "label": "Entry list layout", "type": "select", "options": ["stacked", "numbered"], "default": "stacked" }
   ]
 }
