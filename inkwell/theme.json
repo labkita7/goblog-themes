@@ -26,6 +26,12 @@
       "default": "Georgia"
     },
     {
+      "key": "show_reading_time",
+      "label": "Show reading time",
+      "type": "bool",
+      "default": true
+    },
+    {
       "key": "ink_style",
       "label": "Ink style",
       "type": "select",

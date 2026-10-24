@@ -26,6 +26,12 @@
       "default": "Inter"
     },
     {
+      "key": "show_reading_time",
+      "label": "Show reading time",
+      "type": "bool",
+      "default": true
+    },
+    {
       "key": "frost",
       "label": "Frost overlay",
       "type": "bool",

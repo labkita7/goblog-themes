@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-24T06:43:46Z",
+  "updated": "2026-10-24T07:02:10Z",
   "themes": [
     {
       "slug": "adritian",
@@ -125,7 +125,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/blush/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/blush-1.0.0/blush-1.0.0.zip",
-      "sha256": "62def5c18fb7fd7cb293c49a4468bc0472d443188052a35452c60427fd6fb480",
+      "sha256": "de9698cd9cd5a42f8c48cad3865ff28ab7d1afd91073678e4f68820ed4101b8a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -141,7 +141,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/breeze/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/breeze-1.0.0/breeze-1.0.0.zip",
-      "sha256": "262e9256db88aabf4daf4ed24fe1edf86d27d8f67a8a58069f6d8459745a1ca9",
+      "sha256": "94702582bd52b51560adbba6c4a15cf66e8a95ce11fd7264723ef8f793397286",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -190,7 +190,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/cedar/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/cedar-1.0.0/cedar-1.0.0.zip",
-      "sha256": "f7d2920b16518165c5f43e332fa2ba14194400a8e30fba5eeeeff60f0398b099",
+      "sha256": "17dae5ed8ae536b6d51cee3db0bb5004e2d42744f737fd3d03d8885828416f14",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -222,7 +222,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/citrus/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/citrus-1.0.0/citrus-1.0.0.zip",
-      "sha256": "0ade14230d6c2f3098829b60bc22175d6a725d17235bc66698589b860e268c76",
+      "sha256": "5dd6539aaed9b49e7074e64f033737f90a66de0469c5bbdb09ef911cbbf001bc",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -271,7 +271,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/cobalt/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/cobalt-1.0.0/cobalt-1.0.0.zip",
-      "sha256": "055ea2595e6e896397289437e783e39259ec69aeddc9fd48793a2996c5e16b6e",
+      "sha256": "da8d40a9a63bef2ec3909ba93007d9364174987ffc66abc871e428bb4d8737ff",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -319,7 +319,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/coral/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/coral-1.0.0/coral-1.0.0.zip",
-      "sha256": "4bf75085a6cf019a48ff4014228b11cb92cba82654121693141a1e9f8260407b",
+      "sha256": "422eb33ea63b9f5d51be034980968d7ac5e94fb2b5bc068a20ab6c7fb6bc1fed",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -384,7 +384,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/ember/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/ember-1.0.0/ember-1.0.0.zip",
-      "sha256": "28a3284e0296d52eb3da56be223a459e21e535bbf5a7571219008c4f00e47152",
+      "sha256": "34c259d41c8b8de91ee48815e07375a30ce79ae3f0f5da5cf2b116b7a555681a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -432,7 +432,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/glacier/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/glacier-1.0.0/glacier-1.0.0.zip",
-      "sha256": "dc8941719af2aff0533c551a40e9a897dc9c0d26e5b4275576ab782c7e5cc57c",
+      "sha256": "4044193f697411864ab6e575d223a487c69d006082857d7281d12ece4d65de0f",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -497,7 +497,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/harvest/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/harvest-1.0.0/harvest-1.0.0.zip",
-      "sha256": "778e5f02278bb99146a0064aea3a401c06521940aa7869130f2d1dd7c68df42a",
+      "sha256": "b48f4b4be61539e9dc79609bc5c2de4ae1924259b83908b0fb500c8a8d4ee70b",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -577,7 +577,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/indigo/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/indigo-1.0.0/indigo-1.0.0.zip",
-      "sha256": "a1c80173a1ce50973fcbf4e33a1e2379ef9cc3ea3ab5d707b5761cd5fdc8ed0c",
+      "sha256": "d68c976410c8af366b34e487f5d605b5d7062f519bbd758e29399bc88e05abd1",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -593,7 +593,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/inkwell/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/inkwell-1.0.0/inkwell-1.0.0.zip",
-      "sha256": "ec2713546738781f3bb8edb2e41a75bd6acaf6c221d7f180d22146c6b53466ed",
+      "sha256": "06b635fa1f691d06bc6ca466c3c2062e1d39cbf23c7721adb1a75764b8d66a08",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -625,7 +625,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/lagoon/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/lagoon-1.0.0/lagoon-1.0.0.zip",
-      "sha256": "213e8699c1776c268057e5cdb373cb3a48eecbdad4d0c7e4191c7cecebc0bcfa",
+      "sha256": "39f67c4ac0a2a499377526fcb801d972f24ff7b105fbc6d424ae79c49e56cc1e",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -705,7 +705,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/meadow/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/meadow-1.0.0/meadow-1.0.0.zip",
-      "sha256": "35fd73c49edb38c18e96082217cd99a93d6379d1e796b7ffd5675ef944624cbe",
+      "sha256": "2fbfa0ff46b086c764f38676c178e8aebcc5dee100643107eac3d85a37c5481a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -801,7 +801,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/monolith/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/monolith-1.0.0/monolith-1.0.0.zip",
-      "sha256": "cd2d7ac13614aa7cf1284a069364ab9943c67ab8c142d3f04ca9176b0f7b4df9",
+      "sha256": "c43c56c8d415f4477e6092e854e30c16c5ddf2843da905cdbc299ce5c7d33ab0",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -834,7 +834,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/nocturne/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/nocturne-1.0.0/nocturne-1.0.0.zip",
-      "sha256": "9d013b5fed67b3595246b2e00f18d2fbe6e51e1294b2fa7c52949bfb03efa9cf",
+      "sha256": "a2828fcc527778745a2455f18e48e6c02b33381db7897e8692fd91241f0ec28a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -850,7 +850,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/obsidian/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/obsidian-1.0.0/obsidian-1.0.0.zip",
-      "sha256": "bbcc3ea3a6417d3870d7cdd8b602cf0af4bffc7bf6077c076887dd94d30edb05",
+      "sha256": "8ebf9e0b349a7ccfe613ea429192d19d183f70b8203975654d498a91ed3b02e8",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -932,7 +932,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/porcelain/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/porcelain-1.0.0/porcelain-1.0.0.zip",
-      "sha256": "a941f2132f653f6ee89eb398b9989833b0ed88d7174599399da6408353e9b524",
+      "sha256": "44221ad8d13e0f32b4ab6cc52afe6a0646e2a175ee7c81ff4cd1124b24f08ddf",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -965,7 +965,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/sepia/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/sepia-1.0.0/sepia-1.0.0.zip",
-      "sha256": "47a09b5fd690e9e9091a81e070da73f4abce60316cb4440c8429310854ebcbe8",
+      "sha256": "f288b55cf848999dee89c37ba6408fe3fa69d2c9b5a7f97a7b2512150c5dd91e",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1111,7 +1111,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/tundra/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/tundra-1.0.0/tundra-1.0.0.zip",
-      "sha256": "c8b55e718d91422edc370a3d029ac274e022fac5ed5d08bf6c56ca99b1fe9376",
+      "sha256": "21fd45a2f25c20d3d13e2a61acc48dc4ca120cedf7a6106241f5150721ff13fe",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1127,7 +1127,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/velvet/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/velvet-1.0.0/velvet-1.0.0.zip",
-      "sha256": "28525f06061ccf82493c35d8d058cd12b0d178a719ae3919295ec921054c7970",
+      "sha256": "9dc0e09d33feec7cc165056c6bb6a872e86558ad56db9af417092573192ee687",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
