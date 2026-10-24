@@ -1,38 +1,45 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headIndex" .}}
-<body>
+<body class="t-cedar">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
+<main id="main" class="ce-split">
+  <aside class="ce-panel">
+    <div class="ce-panel-in">
+      <h1 class="ce-panel-title">{{.Site.Title}}</h1>
+      <p class="ce-panel-desc">{{.Site.Description}}</p>
+      {{if .Nav.Items}}
+      <nav class="ce-panel-nav" aria-label="Main navigation">
+        {{range .Nav.Items}}<a href="{{.URL}}">{{.Label}}</a>{{end}}
+      </nav>
       {{end}}
+      {{if .Site.Tags}}
+      <div class="ce-panel-tags">
+        <p class="ce-panel-label">Topics</p>
+        <ul>{{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+      </div>
+      {{end}}
+      <p class="ce-panel-foot">© {{.Site.Year}} {{.Site.Title}}</p>
+    </div>
+  </aside>
+
+  <div class="ce-feed">
+    {{range $i, $p := .Posts}}
+    <article class="ce-post">
+      <p class="ce-post-meta"><span class="ce-post-n">{{printf "%02d" $i}}</span> <time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      <h2 class="ce-post-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+      {{if $p.Excerpt}}<p class="ce-post-ex">{{$p.Excerpt}}</p>{{end}}
+      {{if $p.Tags}}<p class="ce-post-tags">{{range $i2, $t := $p.Tags}}{{if $i2}} · {{end}}<a href="{{$t.URL}}">{{$t.Name}}</a>{{end}}</p>{{end}}
     </article>
     {{end}}
+    {{if or .PrevURL .NextURL}}
+<nav class="ce-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
   </div>
-  {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
-  </nav>
-  {{end}}
 </main>
-{{template "footer" .}}
 </body>
 </html>

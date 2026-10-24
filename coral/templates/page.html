@@ -1,14 +1,23 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPage" .}}
-<body>
+<body class="t-coral">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
-  </article>
+<main id="main" class="co-art">
+  <p class="co-art-cat">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} / {{end}}{{$t.Name}}{{end}}{{end}}</p>
+  <h1 class="co-art-title">{{.Post.Title}}</h1>
+  {{if .Post.Excerpt}}<p class="co-art-standfirst">{{.Post.Excerpt}}</p>{{end}}
+  <p class="co-art-meta"><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a> · <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.Post.ReadingMinutes}} min{{end}}</p>
+  {{if or .Post.CoverURL .Post.OGImageURL}}<img class="co-art-img" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1600" height="900">{{end}}
+  <div class="prose co-prose">{{.Post.HTML}}</div>
+  {{if .Post.Tags}}<ul class="co-art-tags">{{range .Post.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>{{end}}
+  {{if or .Prev .Next}}
+  <nav class="co-artnav" aria-label="Post navigation">
+    {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><span>Previous</span>{{.Prev.Title}}</a>{{end}}
+    {{if .Next}}<a href="{{.Next.URL}}" rel="next"><span>Next</span>{{.Next.Title}}</a>{{end}}
+  </nav>
+  {{end}}
 </main>
 {{template "footer" .}}
 </body>

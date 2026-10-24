@@ -1,15 +1,40 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPage" .}}
-<body>
+<body class="t-tundra">
 <a class="skip-link" href="#main">Skip to content</a>
-{{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
-  </article>
-</main>
+<div class="tu-layout">
+  <aside class="tu-rail">
+    <a class="tu-rail-brand" href="/">{{.Site.Title}}</a>
+    <p class="tu-rail-desc">{{.Site.Description}}</p>
+    {{if .Site.Tags}}
+    <nav class="tu-rail-block" aria-label="Tags">
+      <p class="tu-rail-label">Tags</p>
+      <ul class="tu-rail-tags">{{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+    </nav>
+    {{end}}
+    <div class="tu-rail-foot">
+      {{if .Nav.Items}}<nav aria-label="Main navigation" class="tu-rail-nav">{{range .Nav.Items}}<a href="{{.URL}}">{{.Label}}</a>{{end}}</nav>{{end}}
+      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="tu-toggle">◐</button>
+    </div>
+  </aside>
+  <main id="main" class="tu-main tu-article">
+    <a class="tu-back" href="/">← All posts</a>
+    <h1 class="tu-art-title">{{.Post.Title}}</h1>
+    <p class="tu-art-meta"><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a> · <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.Post.ReadingMinutes}} min{{end}}</p>
+    {{if or .Post.CoverURL .Post.OGImageURL}}
+    <img class="tu-art-img" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1600" height="900">
+    {{end}}
+    <div class="prose tu-prose">{{.Post.HTML}}</div>
+    {{if .Post.Tags}}<ul class="tu-card-tags tu-art-tags">{{range .Post.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>{{end}}
+    {{if or .Prev .Next}}
+    <nav class="tu-artnav" aria-label="Post navigation">
+      {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><span>Newer</span>{{.Prev.Title}}</a>{{end}}
+      {{if .Next}}<a href="{{.Next.URL}}" rel="next"><span>Older</span>{{.Next.Title}}</a>{{end}}
+    </nav>
+    {{end}}
+  </main>
+</div>
 {{template "footer" .}}
 </body>
 </html>

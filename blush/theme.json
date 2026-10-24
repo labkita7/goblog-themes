@@ -1,9 +1,9 @@
 {
   "slug": "blush",
   "name": "Blush",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Soft blush pink with a gentle, friendly tone.",
+  "description": "A soft, friendly layout: a large rounded hero card over a pair of lighter cards, pill tags, gentle shadows.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#ec4899"
+      "default": "#be185d"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "soft",
-      "label": "Soft shadows",
       "type": "bool",
       "default": true
     }

@@ -22,7 +22,7 @@
      no required JS — content and navigation work without it). */}}
 <script>
 (function(){var s=null;try{s=localStorage.getItem("goblog-theme")}catch(e){}
-var d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;
+var d=s?s==="dark":{{if eq (setting "default_mode") "light"}}false{{else}}true{{end}};
 document.documentElement.classList.toggle("dark",d)})();
 </script>
 <meta property="og:site_name" content="{{.Site.Title}}">

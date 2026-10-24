@@ -1,9 +1,9 @@
 {
   "slug": "glacier",
   "name": "Glacier",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Icy glacier whites with a pale blue accent.",
+  "description": "A timeline theme: entries ride a vertical hairline with year-and-date gutters and small accent nodes.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#3b82f6"
+      "default": "#1d6fa5"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "ice",
-      "label": "Ice effect",
       "type": "bool",
       "default": true
     }

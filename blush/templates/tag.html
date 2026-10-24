@@ -1,29 +1,30 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headTag" .}}
-<body>
+<body class="t-blush">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">#{{.Tag.Name}}</h1>
-  <p class="mt-3 text-muted-foreground">{{len .Posts}} post{{if ne (len .Posts) 1}}s{{end}} with this tag.</p>
-  <div class="mt-12 flex flex-col gap-12">
+<main id="main" class="th-shell">
+  <header class="th-page-head">
+    <p class="th-eyebrow">Tag</p>
+    <h1 class="th-page-title">{{.Tag.Name}}</h1>
+    <p class="th-lede">Posts filed under this tag, newest first.</p>
+  </header>
+  <div class="th-list">
     {{range .Posts}}
-    <article class="flex flex-col gap-2">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
+    <article class="th-row">
+      <p class="th-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.ReadingMinutes}} min{{end}}</p>
+      <h2 class="th-row-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+      {{if .Excerpt}}<p class="th-row-ex">{{.Excerpt}}</p>{{end}}
     </article>
     {{end}}
   </div>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
-  </nav>
-  {{end}}
+<nav class="pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
 </main>
 {{template "footer" .}}
 </body>

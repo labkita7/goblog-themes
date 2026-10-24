@@ -1,9 +1,9 @@
 {
   "slug": "cedar",
   "name": "Cedar",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Warm cedar wood tones with a deep brown accent.",
+  "description": "A split-screen theme: a full-height inverted panel carries the identity and topics, the feed scrolls beside it.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -30,12 +30,6 @@
       "label": "Show reading time",
       "type": "bool",
       "default": true
-    },
-    {
-      "key": "texture",
-      "label": "Wood texture",
-      "type": "bool",
-      "default": false
     }
   ]
 }

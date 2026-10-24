@@ -1,9 +1,9 @@
 {
   "slug": "meadow",
   "name": "Meadow",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Fresh meadow greens with a soft organic feel.",
+  "description": "A bento grid homepage with tinted cells of different weights, plus a matching article layout.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#16a34a"
+      "default": "#157f3b"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "organic",
-      "label": "Organic curves",
       "type": "bool",
       "default": true
     }

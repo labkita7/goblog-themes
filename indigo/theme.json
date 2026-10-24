@@ -1,9 +1,9 @@
 {
   "slug": "indigo",
   "name": "Indigo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Deep indigo editorial with a violet accent and serif body.",
+  "description": "Centered editorial layout with a hairline masthead rule, numbered entries and a drop cap in the reading column.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#4f46e5"
+      "default": "#4338ca"
     },
     {
       "key": "font_heading",
@@ -32,8 +32,8 @@
       "default": true
     },
     {
-      "key": "drop_cap",
-      "label": "Drop cap on posts",
+      "key": "show_numbers",
+      "label": "Number the entries",
       "type": "bool",
       "default": true
     }

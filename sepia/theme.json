@@ -1,9 +1,9 @@
 {
   "slug": "sepia",
   "name": "Sepia",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Aged paper tones with a sepia ink accent for long-form reading.",
+  "description": "A manuscript layout: chapter-numbered index with margin facts, and a post page with a sticky marginal contents rail.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#8a6d3b"
+      "default": "#8a5a2b"
     },
     {
       "key": "font_heading",
@@ -30,16 +30,6 @@
       "label": "Show reading time",
       "type": "bool",
       "default": true
-    },
-    {
-      "key": "column_width",
-      "label": "Column width",
-      "type": "select",
-      "options": [
-        "narrow",
-        "wide"
-      ],
-      "default": "narrow"
     }
   ]
 }

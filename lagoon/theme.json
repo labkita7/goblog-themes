@@ -1,9 +1,9 @@
 {
   "slug": "lagoon",
   "name": "Lagoon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Tropical lagoon teals with a calm, airy layout.",
+  "description": "A hierarchical magazine grid: one hero across the top, a divided pair beneath, then a three-up trio.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#0d9488"
+      "default": "#0f766e"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "airy",
-      "label": "Airy spacing",
       "type": "bool",
       "default": true
     }

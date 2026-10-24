@@ -1,37 +1,49 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headIndex" .}}
-<body>
+<body class="t-ember">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
-      {{end}}
-    </article>
+<main id="main">
+  <section class="em-hero">
+    <div class="em-hero-copy">
+      <p class="em-kicker">Field notes</p>
+      <h1 class="em-hero-title">{{.Site.Title}}</h1>
+      <p class="em-hero-lede">{{.Site.Description}}</p>
+      <div class="em-hero-meta">
+        <span>{{len .Posts}} entries</span>
+        <span aria-hidden="true">/</span>
+        <span>Updated {{formatDate (index .Posts 0).PublishedAt}}</span>
+      </div>
+    </div>
+    {{with index .Posts 0}}
+    <a class="em-feature" href="{{.URL}}">
+      <span class="em-feature-tag">Latest</span>
+      <span class="em-feature-title">{{.Title}}</span>
+      {{if .Excerpt}}<span class="em-feature-ex">{{.Excerpt}}</span>{{end}}
+      <span class="em-feature-foot">{{.ReadingMinutes}} min read <span aria-hidden="true">→</span></span>
+    </a>
     {{end}}
-  </div>
+  </section>
+
+  <section class="em-index" aria-label="All posts">
+    {{range $i, $p := .Posts}}{{if gt $i 0}}
+    <article class="em-row">
+      <span class="em-num">{{printf "%02d" $i}}</span>
+      <div class="em-row-body">
+        <h2 class="em-row-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="em-row-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="em-row-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      </div>
+    </article>
+    {{end}}{{end}}
+  </section>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
-  </nav>
-  {{end}}
+<nav class="em-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
 </main>
 {{template "footer" .}}
 </body>

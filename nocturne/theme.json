@@ -1,9 +1,9 @@
 {
   "slug": "nocturne",
   "name": "Nocturne",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Dark-first nocturne palette with a violet glow and mono accents.",
+  "description": "Dark-first theme built around a glowing stage for the latest post, then a two-column stream of everything else.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#a855f7"
+      "default": "#7c3aed"
     },
     {
       "key": "font_heading",
@@ -32,10 +32,15 @@
       "default": true
     },
     {
-      "key": "glow",
-      "label": "Accent glow",
-      "type": "bool",
-      "default": true
+      "key": "default_mode",
+      "label": "Default mode",
+      "type": "select",
+      "options": [
+        "system",
+        "dark",
+        "light"
+      ],
+      "default": "dark"
     }
   ]
 }

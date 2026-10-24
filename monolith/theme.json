@@ -1,9 +1,9 @@
 {
   "slug": "monolith",
   "name": "Monolith",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Stark monolithic black-and-white with sharp edges.",
+  "description": "A brutalist theme: an inverted title block, oversized uppercase entries, heavy rules and zero rounding.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "invert",
-      "label": "Inverted header",
       "type": "bool",
       "default": true
     }

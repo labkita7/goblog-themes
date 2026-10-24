@@ -1,9 +1,9 @@
 {
   "slug": "ember",
   "name": "Ember",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Warm ember palette with serif headings and a glowing orange accent.",
+  "description": "Warm ember palette with a split hero, oversized numerals and a serif reading column.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#e85d04"
+      "default": "#c2410c"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "glow",
-      "label": "Accent glow",
       "type": "bool",
       "default": true
     }

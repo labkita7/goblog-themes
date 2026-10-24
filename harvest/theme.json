@@ -1,9 +1,9 @@
 {
   "slug": "harvest",
   "name": "Harvest",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Harvest autumn tones with a burnt orange accent.",
+  "description": "A magazine layout: a split lead story on top, a two-column card run below, and a sticky utility sidebar.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#c2410c"
+      "default": "#b45309"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "harvest",
-      "label": "Harvest palette",
       "type": "bool",
       "default": true
     }

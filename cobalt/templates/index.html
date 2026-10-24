@@ -1,37 +1,58 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headIndex" .}}
-<body>
+<body class="t-cobalt">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
+<main id="main" class="cb-wrap">
+  <div class="cb-top">
+    <div class="cb-top-main">
+      <h1 class="cb-title">{{.Site.Title}}</h1>
+      <p class="cb-sub">{{.Site.Description}}</p>
+    </div>
+    <dl class="cb-stats">
+      <div><dt>Published</dt><dd>{{len .Posts}}</dd></div>
+      <div><dt>Tags</dt><dd>{{len .Site.Tags}}</dd></div>
+      <div><dt>Years</dt><dd>{{len .Site.ArchiveYears}}</dd></div>
+    </dl>
+  </div>
+
+  <div class="cb-body">
+    <div class="cb-main">
+      <h2 class="cb-section">Latest</h2>
+      {{range $i, $p := .Posts}}{{if lt $i 3}}
+      <article class="cb-feature">
+        <div class="cb-feature-text">
+          <p class="cb-feature-tag">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}} · {{end}}{{$t.Name}}{{end}}{{end}}</p>
+          <h3 class="cb-feature-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h3>
+          {{if $p.Excerpt}}<p class="cb-feature-ex">{{$p.Excerpt}}</p>{{end}}
+          <p class="cb-feature-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min read{{end}}</p>
+        </div>
+        {{if or $p.CoverURL $p.OGImageURL}}<img class="cb-feature-img" src="{{if $p.CoverURL}}{{$p.CoverURL}}{{else}}{{$p.OGImageURL}}{{end}}" alt="" width="640" height="420" loading="lazy">{{end}}
+      </article>
+      {{end}}{{end}}
+    </div>
+
+    <aside class="cb-side">
+      <h2 class="cb-section">Archive</h2>
+      {{range .Posts}}
+      <a class="cb-mini" href="{{.URL}}">
+        <span class="cb-mini-title">{{.Title}}</span>
+        <span class="cb-mini-date"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></span>
+      </a>
       {{end}}
-    </article>
-    {{end}}
+      {{if .Site.Tags}}
+      <h2 class="cb-section cb-section--gap">Topics</h2>
+      <ul class="cb-topics">{{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+      {{end}}
+    </aside>
   </div>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
-  </nav>
-  {{end}}
+<nav class="cb-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
 </main>
 {{template "footer" .}}
 </body>

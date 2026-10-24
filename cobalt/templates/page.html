@@ -1,14 +1,54 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPage" .}}
-<body>
+<body class="t-cobalt">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
-  </article>
+<main id="main" class="cb-art">
+  <div class="cb-art-grid">
+    <aside class="cb-art-side">
+      <div class="cb-art-side-block">
+        <p class="cb-art-side-label">Written by</p>
+        <p class="cb-art-side-value"><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a></p>
+      </div>
+      <div class="cb-art-side-block">
+        <p class="cb-art-side-label">Published</p>
+        <p class="cb-art-side-value"><time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time></p>
+      </div>
+      {{if setting "show_reading_time"}}
+      <div class="cb-art-side-block">
+        <p class="cb-art-side-label">Reading time</p>
+        <p class="cb-art-side-value">{{.Post.ReadingMinutes}} minutes</p>
+      </div>
+      {{end}}
+      {{if .Post.Tags}}
+      <div class="cb-art-side-block">
+        <p class="cb-art-side-label">Filed under</p>
+        <ul class="cb-art-side-tags">{{range .Post.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+      </div>
+      {{end}}
+      {{if .TOC}}
+      <nav class="cb-art-side-block" aria-label="Contents">
+        <p class="cb-art-side-label">Contents</p>
+        <ol class="cb-art-toc">{{range .TOC}}<li class="lvl-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}</ol>
+      </nav>
+      {{end}}
+    </aside>
+    <article class="cb-art-body">
+      <h1 class="cb-art-title">{{.Post.Title}}</h1>
+      {{if .Post.Excerpt}}<p class="cb-art-stand">{{.Post.Excerpt}}</p>{{end}}
+      {{if or .Post.CoverURL .Post.OGImageURL}}
+      <img class="cb-art-cover" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1600" height="900">
+      {{end}}
+      <div class="prose cb-art-prose">{{.Post.HTML}}</div>
+      {{if or .Prev .Next}}
+      <nav class="cb-art-nav" aria-label="Post navigation">
+        {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev">← {{.Prev.Title}}</a>{{end}}
+        {{if .Next}}<a href="{{.Next.URL}}" rel="next">{{.Next.Title}} →</a>{{end}}
+      </nav>
+      {{end}}
+    </article>
+  </div>
 </main>
 {{template "footer" .}}
 </body>

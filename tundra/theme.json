@@ -1,9 +1,9 @@
 {
   "slug": "tundra",
   "name": "Tundra",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Cool frosted blues on a near-white canvas, Tundra-style.",
+  "description": "Cool tundra blues with a sticky navigation rail and a two-column card grid.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#2a7de1"
+      "default": "#0f6fc5"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "frost",
-      "label": "Frost overlay",
       "type": "bool",
       "default": true
     }

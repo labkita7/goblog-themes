@@ -1,40 +1,25 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPost" .}}
-<body>
+<body class="t-glacier">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <header class="pt-12">
-      <h1 class="text-4xl font-bold leading-tight tracking-tight">{{.Post.Title}}</h1>
-      <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-        <a class="hover:text-foreground" href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a>
-        <span aria-hidden="true">·</span>
-        <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span><span>{{.Post.ReadingMinutes}} min read</span>{{end}}
-      </div>
-      {{if or .Post.CoverURL .Post.OGImageURL}}
-      <img class="mt-8 w-full rounded-lg border border-border" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1200" height="630">
-      {{end}}
-    </header>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
-    {{if .Post.Tags}}
-    <ul class="mt-10 flex flex-wrap gap-2 text-sm">
-      {{range .Post.Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-    </ul>
-    {{end}}
-  </article>
+<main id="main" class="art">
+  <header class="art-head">
+    <p class="art-label">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} · {{end}}{{$t.Name}}{{end}}{{else}}Reading{{end}}</p>
+    <h1 class="art-title">{{.Post.Title}}</h1>
+    {{if .Post.Excerpt}}<p class="art-stand">{{.Post.Excerpt}}</p>{{end}}
+    <p class="art-meta"><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a> · <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.Post.ReadingMinutes}} min{{end}}</p>
+  </header>
+  {{if or .Post.CoverURL .Post.OGImageURL}}
+  <div class="art-cover"><img src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1600" height="900"></div>
+  {{end}}
+  <div class="prose art-prose">{{.Post.HTML}}</div>
+  {{if .Post.Tags}}<ul class="art-tags">{{range .Post.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>{{end}}
   {{if or .Prev .Next}}
-  <nav class="mt-16 grid gap-6 border-t border-border pt-8 sm:grid-cols-2" aria-label="Post navigation">
-    <div>
-      {{if .Prev}}<p class="text-sm text-muted-foreground">Previous</p>
-      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Prev.URL}}" rel="prev">{{.Prev.Title}}</a>{{end}}
-    </div>
-    <div class="sm:text-right">
-      {{if .Next}}<p class="text-sm text-muted-foreground">Next</p>
-      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Next.URL}}" rel="next">{{.Next.Title}}</a>{{end}}
-    </div>
+  <nav class="art-nav" aria-label="Post navigation">
+    {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><span>Previous</span>{{.Prev.Title}}</a>{{end}}
+    {{if .Next}}<a href="{{.Next.URL}}" rel="next"><span>Next</span>{{.Next.Title}}</a>{{end}}
   </nav>
   {{end}}
 </main>

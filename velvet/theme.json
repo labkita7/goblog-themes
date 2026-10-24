@@ -1,9 +1,9 @@
 {
   "slug": "velvet",
   "name": "Velvet",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Luxurious velvet purples with a gold accent.",
+  "description": "A book-like theme: a centred cover block over an asymmetric spread that pairs an opening piece with a numbered list.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#7c3aed"
+      "default": "#6d28d9"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "luxury",
-      "label": "Luxury spacing",
       "type": "bool",
       "default": true
     }

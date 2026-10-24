@@ -1,14 +1,33 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPage" .}}
-<body>
+<body class="t-sepia">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <h1 class="pt-12 text-4xl font-bold tracking-tight">{{.Post.Title}}</h1>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
-  </article>
+<main id="main" class="se-art">
+  <header class="se-art-head">
+    <p class="se-overline">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} · {{end}}{{$t.Name}}{{end}}{{else}}Manuscript{{end}}</p>
+    <h1 class="se-art-title">{{.Post.Title}}</h1>
+    <p class="se-art-byline">{{.Post.Author.Name}} — <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>{{if setting "show_reading_time"}}, {{.Post.ReadingMinutes}} min read{{end}}</p>
+  </header>
+  <div class="se-art-layout">
+    <aside class="se-margin" aria-label="Contents">
+      {{if .TOC}}
+      <p class="se-margin-label">Contents</p>
+      <ol class="se-margin-toc">{{range .TOC}}<li class="lvl-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}</ol>
+      {{end}}
+    </aside>
+    <div class="se-art-body">
+      {{if or .Post.CoverURL .Post.OGImageURL}}<figure class="se-plate"><img src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1600" height="900"><figcaption>{{.Post.Title}}</figcaption></figure>{{end}}
+      <div class="prose se-prose">{{.Post.HTML}}</div>
+    </div>
+  </div>
+  {{if or .Prev .Next}}
+  <nav class="se-artnav" aria-label="Post navigation">
+    {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><span>Previous chapter</span>{{.Prev.Title}}</a>{{end}}
+    {{if .Next}}<a href="{{.Next.URL}}" rel="next"><span>Next chapter</span>{{.Next.Title}}</a>{{end}}
+  </nav>
+  {{end}}
 </main>
 {{template "footer" .}}
 </body>

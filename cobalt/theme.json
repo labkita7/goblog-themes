@@ -1,9 +1,9 @@
 {
   "slug": "cobalt",
   "name": "Cobalt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Bold cobalt blue with a crisp corporate look.",
+  "description": "A dense, businesslike layout: a stat bar under the masthead, a feature column and a compact archive sidebar.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -30,16 +30,6 @@
       "label": "Show reading time",
       "type": "bool",
       "default": true
-    },
-    {
-      "key": "density",
-      "label": "Density",
-      "type": "select",
-      "options": [
-        "comfortable",
-        "compact"
-      ],
-      "default": "comfortable"
     }
   ]
 }

@@ -1,37 +1,50 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headIndex" .}}
-<body>
+<body class="t-citrus">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
+<main id="main">
+  <header class="ci-banner">
+    <div class="ci-banner-in">
+      <h1 class="ci-title">{{.Site.Title}}</h1>
+      <p class="ci-sub">{{.Site.Description}}</p>
+    </div>
+  </header>
+
+  <section class="ci-rail-section" aria-label="Recent posts">
+    <div class="ci-rail-head">
+      <h2 class="ci-rail-title">Recent</h2>
+      <p class="ci-rail-hint">Scroll sideways</p>
+    </div>
+    <div class="ci-rail" tabindex="0">
+      {{range $i, $p := .Posts}}
+      <article class="ci-slide">
+        <span class="ci-slide-no">{{printf "%02d" $i}}</span>
+        {{if or $p.CoverURL $p.OGImageURL}}<img class="ci-slide-img" src="{{if $p.CoverURL}}{{$p.CoverURL}}{{else}}{{$p.OGImageURL}}{{end}}" alt="" width="800" height="520" loading="lazy">{{end}}
+        <h3 class="ci-slide-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h3>
+        {{if $p.Excerpt}}<p class="ci-slide-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="ci-slide-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      </article>
       {{end}}
-    </article>
+    </div>
+  </section>
+
+  <section class="ci-stack" aria-label="All posts">
+    <h2 class="ci-stack-title">All entries</h2>
+    {{range .Posts}}
+    <a class="ci-line" href="{{.URL}}">
+      <span class="ci-line-title">{{.Title}}</span>
+      <span class="ci-line-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></span>
+    </a>
     {{end}}
-  </div>
+  </section>
   {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
-  </nav>
-  {{end}}
+<nav class="ci-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
 </main>
 {{template "footer" .}}
 </body>

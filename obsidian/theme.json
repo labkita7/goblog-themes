@@ -1,9 +1,9 @@
 {
   "slug": "obsidian",
   "name": "Obsidian",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Jet-black obsidian with a sharp amber accent, high contrast.",
+  "description": "A stark, high-contrast index rendered as a real table: numbers, titles, tags and dates in aligned columns.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#f59e0b"
+      "default": "#b45309"
     },
     {
       "key": "font_heading",
@@ -32,14 +32,15 @@
       "default": true
     },
     {
-      "key": "contrast",
-      "label": "Contrast",
+      "key": "default_mode",
+      "label": "Default mode",
       "type": "select",
       "options": [
-        "high",
-        "medium"
+        "system",
+        "dark",
+        "light"
       ],
-      "default": "high"
+      "default": "dark"
     }
   ]
 }

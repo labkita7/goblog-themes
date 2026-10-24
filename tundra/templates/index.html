@@ -1,38 +1,54 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headIndex" .}}
-<body>
+<body class="t-tundra">
 <a class="skip-link" href="#main">Skip to content</a>
-{{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <h1 class="mt-16 text-4xl font-bold tracking-tight">Latest posts</h1>
-  <p class="mt-3 text-lg text-muted-foreground">{{.Site.Description}}</p>
-  <div class="mt-14 flex flex-col gap-16">
-    {{range .Posts}}
-    <article class="flex flex-col gap-3">
-      <h2 class="text-2xl font-semibold leading-snug tracking-tight">
-        <a class="hover:text-primary" href="{{.URL}}">{{.Title}}</a>
-      </h2>
-      <p class="text-sm text-muted-foreground">
-        <time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span> {{.ReadingMinutes}} min read{{end}}
-      </p>
-      {{if .Excerpt}}<p class="leading-relaxed text-muted-foreground">{{.Excerpt}}</p>{{end}}
-      {{if .Tags}}
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {{range .Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-      </ul>
-      {{end}}
-    </article>
+<div class="tu-layout">
+  <aside class="tu-rail">
+    <a class="tu-rail-brand" href="/">{{.Site.Title}}</a>
+    <p class="tu-rail-desc">{{.Site.Description}}</p>
+    {{if .Site.Tags}}
+    <nav class="tu-rail-block" aria-label="Tags">
+      <p class="tu-rail-label">Tags</p>
+      <ul class="tu-rail-tags">{{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+    </nav>
     {{end}}
-  </div>
-  {{if or .PrevURL .NextURL}}
-  <nav class="pagination" aria-label="Pagination">
-    {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev"><span aria-hidden="true">←</span> Newer</a>{{else}}<span class="is-disabled" aria-disabled="true"><span aria-hidden="true">←</span> Newer</span>{{end}}
-    {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older <span aria-hidden="true">→</span></a>{{else}}<span class="is-disabled" aria-disabled="true">Older <span aria-hidden="true">→</span></span>{{end}}
-  </nav>
-  {{end}}
-</main>
+    {{if .Site.ArchiveYears}}
+    <nav class="tu-rail-block" aria-label="Archive">
+      <p class="tu-rail-label">Archive</p>
+      <ul class="tu-rail-years">{{range .Site.ArchiveYears}}<li><a href="{{.URL}}">{{.Year}} <span>{{.Count}}</span></a></li>{{end}}</ul>
+    </nav>
+    {{end}}
+    <div class="tu-rail-foot">
+      {{if .Nav.Items}}<nav aria-label="Main navigation" class="tu-rail-nav">{{range .Nav.Items}}<a href="{{.URL}}">{{.Label}}</a>{{end}}</nav>{{end}}
+      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="tu-toggle">◐</button>
+    </div>
+  </aside>
+
+  <main id="main" class="tu-main">
+    <header class="tu-head">
+      <h1 class="tu-head-title">Writing</h1>
+      <p class="tu-head-sub">Newest first</p>
+    </header>
+    <div class="tu-grid">
+      {{range .Posts}}
+      <article class="tu-card">
+        {{if or .CoverURL .OGImageURL}}<img class="tu-card-img" src="{{if .CoverURL}}{{.CoverURL}}{{else}}{{.OGImageURL}}{{end}}" alt="" width="800" height="500" loading="lazy">{{end}}
+        <p class="tu-card-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.ReadingMinutes}} min{{end}}</p>
+        <h2 class="tu-card-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+        {{if .Excerpt}}<p class="tu-card-ex">{{.Excerpt}}</p>{{end}}
+        {{if .Tags}}<ul class="tu-card-tags">{{range .Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>{{end}}
+      </article>
+      {{end}}
+    </div>
+    {{if or .PrevURL .NextURL}}
+<nav class="tu-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+  </main>
+</div>
 {{template "footer" .}}
 </body>
 </html>

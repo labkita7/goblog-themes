@@ -1,9 +1,9 @@
 {
   "slug": "citrus",
   "name": "Citrus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Bright citrus yellow-green with a zesty accent.",
+  "description": "A horizontal scroll-snap rail for recent posts above a dense single-line archive stack.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#ca8a04"
+      "default": "#a16207"
     },
     {
       "key": "font_heading",
@@ -28,12 +28,6 @@
     {
       "key": "show_reading_time",
       "label": "Show reading time",
-      "type": "bool",
-      "default": true
-    },
-    {
-      "key": "zest",
-      "label": "Zesty accents",
       "type": "bool",
       "default": true
     }

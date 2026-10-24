@@ -1,42 +1,54 @@
 <!doctype html>
 <html lang="{{.Site.Language}}">
 {{template "headPost" .}}
-<body>
+<body class="t-velvet">
 <a class="skip-link" href="#main">Skip to content</a>
 {{template "header" .}}
-<main id="main" class="mx-auto w-full max-w-2xl px-6 pb-24">
-  <article>
-    <header class="pt-12">
-      <h1 class="text-4xl font-bold leading-tight tracking-tight">{{.Post.Title}}</h1>
-      <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-        <a class="hover:text-foreground" href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a>
-        <span aria-hidden="true">·</span>
-        <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>
-        {{if setting "show_reading_time"}}<span aria-hidden="true">·</span><span>{{.Post.ReadingMinutes}} min read</span>{{end}}
+<main id="main" class="ve-art">
+  <div class="ve-art-grid">
+    <aside class="ve-art-side">
+      <div class="ve-art-side-block">
+        <p class="ve-art-side-label">Written by</p>
+        <p class="ve-art-side-value"><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a></p>
       </div>
-      {{if or .Post.CoverURL .Post.OGImageURL}}
-      <img class="mt-8 w-full rounded-lg border border-border" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1200" height="630">
+      <div class="ve-art-side-block">
+        <p class="ve-art-side-label">Published</p>
+        <p class="ve-art-side-value"><time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time></p>
+      </div>
+      {{if setting "show_reading_time"}}
+      <div class="ve-art-side-block">
+        <p class="ve-art-side-label">Reading time</p>
+        <p class="ve-art-side-value">{{.Post.ReadingMinutes}} minutes</p>
+      </div>
       {{end}}
-    </header>
-    <div class="prose mt-10">{{.Post.HTML}}</div>
-    {{if .Post.Tags}}
-    <ul class="mt-10 flex flex-wrap gap-2 text-sm">
-      {{range .Post.Tags}}<li><a class="rounded-md border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground" href="{{.URL}}">#{{.Name}}</a></li>{{end}}
-    </ul>
-    {{end}}
-  </article>
-  {{if or .Prev .Next}}
-  <nav class="mt-16 grid gap-6 border-t border-border pt-8 sm:grid-cols-2" aria-label="Post navigation">
-    <div>
-      {{if .Prev}}<p class="text-sm text-muted-foreground">Previous</p>
-      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Prev.URL}}" rel="prev">{{.Prev.Title}}</a>{{end}}
-    </div>
-    <div class="sm:text-right">
-      {{if .Next}}<p class="text-sm text-muted-foreground">Next</p>
-      <a class="line-clamp-2 font-medium hover:text-primary" href="{{.Next.URL}}" rel="next">{{.Next.Title}}</a>{{end}}
-    </div>
-  </nav>
-  {{end}}
+      {{if .Post.Tags}}
+      <div class="ve-art-side-block">
+        <p class="ve-art-side-label">Filed under</p>
+        <ul class="ve-art-side-tags">{{range .Post.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+      </div>
+      {{end}}
+      {{if .TOC}}
+      <nav class="ve-art-side-block" aria-label="In this piece">
+        <p class="ve-art-side-label">In this piece</p>
+        <ol class="ve-art-toc">{{range .TOC}}<li class="lvl-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}</ol>
+      </nav>
+      {{end}}
+    </aside>
+    <article class="ve-art-body">
+      <h1 class="ve-art-title">{{.Post.Title}}</h1>
+      {{if .Post.Excerpt}}<p class="ve-art-stand">{{.Post.Excerpt}}</p>{{end}}
+      {{if or .Post.CoverURL .Post.OGImageURL}}
+      <img class="ve-art-cover" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1600" height="900">
+      {{end}}
+      <div class="prose ve-art-prose">{{.Post.HTML}}</div>
+      {{if or .Prev .Next}}
+      <nav class="ve-art-nav" aria-label="Post navigation">
+        {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev">← {{.Prev.Title}}</a>{{end}}
+        {{if .Next}}<a href="{{.Next.URL}}" rel="next">{{.Next.Title}} →</a>{{end}}
+      </nav>
+      {{end}}
+    </article>
+  </div>
 </main>
 {{template "footer" .}}
 </body>

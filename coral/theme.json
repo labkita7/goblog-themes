@@ -1,9 +1,9 @@
 {
   "slug": "coral",
   "name": "Coral",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Playful coral reef palette with rounded cards and a bright accent.",
+  "description": "A magazine-style mosaic homepage: one oversized lead tile, tall and wide neighbours, soft coral accents.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -13,7 +13,7 @@
       "key": "accent",
       "label": "Accent color",
       "type": "color",
-      "default": "#ff6b6b"
+      "default": "#e0483f"
     },
     {
       "key": "font_heading",
@@ -30,16 +30,6 @@
       "label": "Show reading time",
       "type": "bool",
       "default": true
-    },
-    {
-      "key": "card_style",
-      "label": "Card style",
-      "type": "select",
-      "options": [
-        "flat",
-        "raised"
-      ],
-      "default": "raised"
     }
   ]
 }

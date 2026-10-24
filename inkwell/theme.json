@@ -1,9 +1,9 @@
 {
   "slug": "inkwell",
   "name": "Inkwell",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "labkita7",
-  "description": "Ink-on-paper editorial with a deep blue accent.",
+  "description": "A broadsheet front page: nameplate, double rules, a lead story column, briefs and an 'also inside' rail.",
   "engines": {
     "goblog": ">=1.0.0 <2.0.0"
   },
@@ -30,16 +30,6 @@
       "label": "Show reading time",
       "type": "bool",
       "default": true
-    },
-    {
-      "key": "ink_style",
-      "label": "Ink style",
-      "type": "select",
-      "options": [
-        "sharp",
-        "soft"
-      ],
-      "default": "sharp"
     }
   ]
 }
