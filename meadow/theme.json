@@ -1,0 +1,35 @@
+{
+  "slug": "meadow",
+  "name": "Meadow",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Fresh meadow greens with a soft organic feel.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#16a34a"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "organic",
+      "label": "Organic curves",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

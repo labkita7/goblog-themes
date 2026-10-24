@@ -1,0 +1,35 @@
+{
+  "slug": "monolith",
+  "name": "Monolith",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Stark monolithic black-and-white with sharp edges.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#000000"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "invert",
+      "label": "Inverted header",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

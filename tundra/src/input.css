@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #f4f8fb;
+  --foreground: #1a2a3a;
+  --card: #f4f8fb;
+  --card-foreground: #1a2a3a;
+  --primary: #2a7de1;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f8fb;
+  --secondary-foreground: #1a2a3a;
+  --muted: #f4f8fb;
+  --muted-foreground: #5a7a9a;
+  --accent: #f4f8fb;
+  --accent-foreground: #1a2a3a;
+  --destructive: #dc2626;
+  --border: #5a7a9a33;
+  --input: #5a7a9a33;
+  --ring: #2a7de1;
+  --radius: 0.625rem;
+}
+.dark {
+  --background: #0d1a26;
+  --foreground: #dce8f5;
+  --card: #0d1a26;
+  --card-foreground: #dce8f5;
+  --primary: #5aa3f0;
+  --primary-foreground: #0d1a26;
+  --secondary: #0d1a26;
+  --secondary-foreground: #dce8f5;
+  --muted: #0d1a26;
+  --muted-foreground: #7a9ac4;
+  --accent: #0d1a26;
+  --accent-foreground: #dce8f5;
+  --destructive: #ef4444;
+  --border: #7a9ac433;
+  --input: #7a9ac433;
+  --ring: #5aa3f0;
+}
+
+body { font-family: Inter, ui-sans-serif, system-ui; font-size: 1.125rem; line-height: 1.7; }

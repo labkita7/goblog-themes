@@ -1,0 +1,35 @@
+{
+  "slug": "porcelain",
+  "name": "Porcelain",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Delicate porcelain whites with a soft rose accent.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#e11d48"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Georgia"
+    },
+    {
+      "key": "delicate",
+      "label": "Delicate borders",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

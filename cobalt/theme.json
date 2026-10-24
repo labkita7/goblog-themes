@@ -1,0 +1,39 @@
+{
+  "slug": "cobalt",
+  "name": "Cobalt",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Bold cobalt blue with a crisp corporate look.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#1d4ed8"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "density",
+      "label": "Density",
+      "type": "select",
+      "options": [
+        "comfortable",
+        "compact"
+      ],
+      "default": "comfortable"
+    }
+  ]
+}

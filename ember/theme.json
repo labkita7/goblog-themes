@@ -1,0 +1,35 @@
+{
+  "slug": "ember",
+  "name": "Ember",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Warm ember palette with serif headings and a glowing orange accent.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#e85d04"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Georgia"
+    },
+    {
+      "key": "glow",
+      "label": "Accent glow",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

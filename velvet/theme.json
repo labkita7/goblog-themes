@@ -1,0 +1,35 @@
+{
+  "slug": "velvet",
+  "name": "Velvet",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Luxurious velvet purples with a gold accent.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#7c3aed"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Georgia"
+    },
+    {
+      "key": "luxury",
+      "label": "Luxury spacing",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

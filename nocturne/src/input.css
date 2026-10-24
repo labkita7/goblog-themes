@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #12121a;
+  --foreground: #e8e8f2;
+  --card: #12121a;
+  --card-foreground: #e8e8f2;
+  --primary: #a855f7;
+  --primary-foreground: #ffffff;
+  --secondary: #12121a;
+  --secondary-foreground: #e8e8f2;
+  --muted: #12121a;
+  --muted-foreground: #8a8aa8;
+  --accent: #12121a;
+  --accent-foreground: #e8e8f2;
+  --destructive: #dc2626;
+  --border: #8a8aa833;
+  --input: #8a8aa833;
+  --ring: #a855f7;
+  --radius: 0.5rem;
+}
+.dark {
+  --background: #08080f;
+  --foreground: #e8e8f2;
+  --card: #08080f;
+  --card-foreground: #e8e8f2;
+  --primary: #c084fc;
+  --primary-foreground: #08080f;
+  --secondary: #08080f;
+  --secondary-foreground: #e8e8f2;
+  --muted: #08080f;
+  --muted-foreground: #8a8aa8;
+  --accent: #08080f;
+  --accent-foreground: #e8e8f2;
+  --destructive: #ef4444;
+  --border: #8a8aa833;
+  --input: #8a8aa833;
+  --ring: #c084fc;
+}
+
+body { font-family: Inter, ui-sans-serif, system-ui; font-size: 1.125rem; line-height: 1.7; }

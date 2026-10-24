@@ -1,0 +1,35 @@
+{
+  "slug": "blush",
+  "name": "Blush",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Soft blush pink with a gentle, friendly tone.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#ec4899"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "soft",
+      "label": "Soft shadows",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

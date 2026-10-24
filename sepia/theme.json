@@ -1,0 +1,39 @@
+{
+  "slug": "sepia",
+  "name": "Sepia",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Aged paper tones with a sepia ink accent for long-form reading.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#8a6d3b"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Georgia"
+    },
+    {
+      "key": "column_width",
+      "label": "Column width",
+      "type": "select",
+      "options": [
+        "narrow",
+        "wide"
+      ],
+      "default": "narrow"
+    }
+  ]
+}

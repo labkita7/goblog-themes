@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headError" .}}
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="mx-auto flex w-full max-w-2xl flex-col items-start px-6 pb-24 pt-24">
+  <p class="text-7xl font-bold tracking-tight text-primary">{{.Code}}</p>
+  <h1 class="mt-4 text-3xl font-semibold tracking-tight">{{.Message}}</h1>
+  <p class="mt-3 text-muted-foreground">The page you are looking for does not exist or has moved.</p>
+  <a class="mt-8 rounded-md border border-border px-4 py-2 text-base hover:bg-muted" href="/">Back to the blog</a>
+</main>
+{{template "footer" .}}
+</body>
+</html>

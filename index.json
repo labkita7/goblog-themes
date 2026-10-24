@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-23T18:06:51Z",
+  "updated": "2026-10-24T06:43:16Z",
   "themes": [
     {
       "slug": "adritian",
@@ -115,6 +115,38 @@
       }
     },
     {
+      "slug": "blush",
+      "name": "Blush",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Soft blush pink with a gentle, friendly tone.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/blush/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/blush-1.0.0/blush-1.0.0.zip",
+      "sha256": "62def5c18fb7fd7cb293c49a4468bc0472d443188052a35452c60427fd6fb480",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "breeze",
+      "name": "Breeze",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Light airy breeze with a sky-blue accent and clean lines.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/breeze/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/breeze-1.0.0/breeze-1.0.0.zip",
+      "sha256": "262e9256db88aabf4daf4ed24fe1edf86d27d8f67a8a58069f6d8459745a1ca9",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
       "slug": "brutal",
       "name": "Neo Brutal",
       "version": "1.0.1",
@@ -148,6 +180,22 @@
       }
     },
     {
+      "slug": "cedar",
+      "name": "Cedar",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Warm cedar wood tones with a deep brown accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/cedar/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/cedar-1.0.0/cedar-1.0.0.zip",
+      "sha256": "f7d2920b16518165c5f43e332fa2ba14194400a8e30fba5eeeeff60f0398b099",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
       "slug": "chalk",
       "name": "Chalk",
       "version": "1.1.0",
@@ -159,6 +207,22 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/chalk/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/chalk-1.1.0/chalk-1.1.0.zip",
       "sha256": "3c945e0991b09ea127af1272bbf928985f09474acc3b236dfec925c0ba862bb3",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "citrus",
+      "name": "Citrus",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Bright citrus yellow-green with a zesty accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/citrus/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/citrus-1.0.0/citrus-1.0.0.zip",
+      "sha256": "0ade14230d6c2f3098829b60bc22175d6a725d17235bc66698589b860e268c76",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -197,6 +261,22 @@
       }
     },
     {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Bold cobalt blue with a crisp corporate look.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/cobalt/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/cobalt-1.0.0/cobalt-1.0.0.zip",
+      "sha256": "055ea2595e6e896397289437e783e39259ec69aeddc9fd48793a2996c5e16b6e",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
       "slug": "coder",
       "name": "Coder",
       "version": "1.1.0",
@@ -224,6 +304,22 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/congo/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/congo-1.1.0/congo-1.1.0.zip",
       "sha256": "dd23294e5f96178da356b0f6cfae9c93a5496596e615f3d365117bda0fe43d03",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "coral",
+      "name": "Coral",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Playful coral reef palette with rounded cards and a bright accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/coral/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/coral-1.0.0/coral-1.0.0.zip",
+      "sha256": "4bf75085a6cf019a48ff4014228b11cb92cba82654121693141a1e9f8260407b",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -278,6 +374,22 @@
       }
     },
     {
+      "slug": "ember",
+      "name": "Ember",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Warm ember palette with serif headings and a glowing orange accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/ember/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/ember-1.0.0/ember-1.0.0.zip",
+      "sha256": "28a3284e0296d52eb3da56be223a459e21e535bbf5a7571219008c4f00e47152",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
       "slug": "frost",
       "name": "Frost Glass",
       "version": "1.0.1",
@@ -305,6 +417,22 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/ghostwriter/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/ghostwriter-1.1.0/ghostwriter-1.1.0.zip",
       "sha256": "e8a65bec863ef6062ae970f5c48790c94aaa8e4963a0396862a20e044cb0b6f8",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "glacier",
+      "name": "Glacier",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Icy glacier whites with a pale blue accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/glacier/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/glacier-1.0.0/glacier-1.0.0.zip",
+      "sha256": "dc8941719af2aff0533c551a40e9a897dc9c0d26e5b4275576ab782c7e5cc57c",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -354,6 +482,22 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/hacker/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/hacker-1.1.0/hacker-1.1.0.zip",
       "sha256": "e772c11ee50bc431541a4ac695ae8158340fcf90af6d79e9c54646dfe3bd9a3d",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "harvest",
+      "name": "Harvest",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Harvest autumn tones with a burnt orange accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/harvest/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/harvest-1.0.0/harvest-1.0.0.zip",
+      "sha256": "778e5f02278bb99146a0064aea3a401c06521940aa7869130f2d1dd7c68df42a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -423,6 +567,38 @@
       }
     },
     {
+      "slug": "indigo",
+      "name": "Indigo",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Deep indigo editorial with a violet accent and serif body.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/indigo/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/indigo-1.0.0/indigo-1.0.0.zip",
+      "sha256": "a1c80173a1ce50973fcbf4e33a1e2379ef9cc3ea3ab5d707b5761cd5fdc8ed0c",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "inkwell",
+      "name": "Inkwell",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Ink-on-paper editorial with a deep blue accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/inkwell/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/inkwell-1.0.0/inkwell-1.0.0.zip",
+      "sha256": "ec2713546738781f3bb8edb2e41a75bd6acaf6c221d7f180d22146c6b53466ed",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
       "slug": "klise",
       "name": "Klise",
       "version": "1.1.0",
@@ -434,6 +610,22 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/klise/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/klise-1.1.0/klise-1.1.0.zip",
       "sha256": "e331bbe6c81ae116bb98ab003a9cc454519d7359aee17e4a2e3f7600f6ea5b6e",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "lagoon",
+      "name": "Lagoon",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Tropical lagoon teals with a calm, airy layout.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/lagoon/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/lagoon-1.0.0/lagoon-1.0.0.zip",
+      "sha256": "213e8699c1776c268057e5cdb373cb3a48eecbdad4d0c7e4191c7cecebc0bcfa",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -498,6 +690,22 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/loveit/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/loveit-1.1.0/loveit-1.1.0.zip",
       "sha256": "e331508b9a6bd4427f8d3febfb8dc3edba13b8fe45dbfeadd92188a007d7d136",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "meadow",
+      "name": "Meadow",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Fresh meadow greens with a soft organic feel.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/meadow/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/meadow-1.0.0/meadow-1.0.0.zip",
+      "sha256": "35fd73c49edb38c18e96082217cd99a93d6379d1e796b7ffd5675ef944624cbe",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -583,6 +791,22 @@
       }
     },
     {
+      "slug": "monolith",
+      "name": "Monolith",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Stark monolithic black-and-white with sharp edges.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/monolith/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/monolith-1.0.0/monolith-1.0.0.zip",
+      "sha256": "cd2d7ac13614aa7cf1284a069364ab9943c67ab8c142d3f04ca9176b0f7b4df9",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
       "slug": "neutral",
       "name": "Neutral",
       "version": "1.0.1",
@@ -595,6 +819,38 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/neutral/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/neutral-1.0.1/neutral-1.0.1.zip",
       "sha256": "c8a217bc0ce19611069bc70e6fd7747dfb3625f76835baeb9e14b14b2a1d5ee5",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "nocturne",
+      "name": "Nocturne",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Dark-first nocturne palette with a violet glow and mono accents.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/nocturne/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/nocturne-1.0.0/nocturne-1.0.0.zip",
+      "sha256": "9d013b5fed67b3595246b2e00f18d2fbe6e51e1294b2fa7c52949bfb03efa9cf",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "obsidian",
+      "name": "Obsidian",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Jet-black obsidian with a sharp amber accent, high contrast.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/obsidian/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/obsidian-1.0.0/obsidian-1.0.0.zip",
+      "sha256": "bbcc3ea3a6417d3870d7cdd8b602cf0af4bffc7bf6077c076887dd94d30edb05",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -666,6 +922,22 @@
       }
     },
     {
+      "slug": "porcelain",
+      "name": "Porcelain",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Delicate porcelain whites with a soft rose accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/porcelain/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/porcelain-1.0.0/porcelain-1.0.0.zip",
+      "sha256": "a941f2132f653f6ee89eb398b9989833b0ed88d7174599399da6408353e9b524",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
       "slug": "sage",
       "name": "Sage Garden",
       "version": "1.0.1",
@@ -678,6 +950,22 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/sage/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/sage-1.0.1/sage-1.0.1.zip",
       "sha256": "1135831ac40d1c9207784ccba6aa2801169f6076d8baf834fc94174ca5cafdf7",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "sepia",
+      "name": "Sepia",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Aged paper tones with a sepia ink accent for long-form reading.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/sepia/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/sepia-1.0.0/sepia-1.0.0.zip",
+      "sha256": "47a09b5fd690e9e9091a81e070da73f4abce60316cb4440c8429310854ebcbe8",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -808,6 +1096,38 @@
       "screenshot": "https://labkita7.github.io/goblog-themes/tokyo/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/tokyo-1.0.1/tokyo-1.0.1.zip",
       "sha256": "4f645d3a34694a3301788d759f9fb77e85dd1f0460fc295d437008f277e4e24e",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "tundra",
+      "name": "Tundra",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Cool frosted blues on a near-white canvas, Tundra-style.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/tundra/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/tundra-1.0.0/tundra-1.0.0.zip",
+      "sha256": "c8b55e718d91422edc370a3d029ac274e022fac5ed5d08bf6c56ca99b1fe9376",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "velvet",
+      "name": "Velvet",
+      "version": "1.0.0",
+      "author": "labkita7",
+      "description": "Luxurious velvet purples with a gold accent.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/velvet/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/velvet-1.0.0/velvet-1.0.0.zip",
+      "sha256": "28525f06061ccf82493c35d8d058cd12b0d178a719ae3919295ec921054c7970",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }

@@ -1,0 +1,35 @@
+{
+  "slug": "harvest",
+  "name": "Harvest",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Harvest autumn tones with a burnt orange accent.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#c2410c"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Georgia"
+    },
+    {
+      "key": "harvest",
+      "label": "Harvest palette",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

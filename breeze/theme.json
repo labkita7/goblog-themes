@@ -1,0 +1,35 @@
+{
+  "slug": "breeze",
+  "name": "Breeze",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Light airy breeze with a sky-blue accent and clean lines.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#0ea5e9"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "airy",
+      "label": "Airy layout",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

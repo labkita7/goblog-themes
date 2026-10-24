@@ -1,0 +1,35 @@
+{
+  "slug": "tundra",
+  "name": "Tundra",
+  "version": "1.0.0",
+  "author": "labkita7",
+  "description": "Cool frosted blues on a near-white canvas, Tundra-style.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#2a7de1"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "frost",
+      "label": "Frost overlay",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "../../_shared/src/base.css";
+@source "../templates";
+@source "../../_shared/src";
+
+:root {
+  --background: #f7f2ec;
+  --foreground: #2a2018;
+  --card: #f7f2ec;
+  --card-foreground: #2a2018;
+  --primary: #92400e;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f2ec;
+  --secondary-foreground: #2a2018;
+  --muted: #f7f2ec;
+  --muted-foreground: #7a6a58;
+  --accent: #f7f2ec;
+  --accent-foreground: #2a2018;
+  --destructive: #dc2626;
+  --border: #7a6a5833;
+  --input: #7a6a5833;
+  --ring: #92400e;
+  --radius: 0.5rem;
+}
+.dark {
+  --background: #1a140e;
+  --foreground: #ece2d4;
+  --card: #1a140e;
+  --card-foreground: #ece2d4;
+  --primary: #d97706;
+  --primary-foreground: #1a140e;
+  --secondary: #1a140e;
+  --secondary-foreground: #ece2d4;
+  --muted: #1a140e;
+  --muted-foreground: #a39484;
+  --accent: #1a140e;
+  --accent-foreground: #ece2d4;
+  --destructive: #ef4444;
+  --border: #a3948433;
+  --input: #a3948433;
+  --ring: #d97706;
+}
+
+body { font-family: Georgia, ui-serif, serif; font-size: 1.125rem; line-height: 1.7; }
