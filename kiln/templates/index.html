@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-kiln">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="kl-wrap">
+  <header class="kl-head">
+    <h1 class="kl-title">{{.Site.Title}}</h1>
+    <div class="kl-head-side">
+      <p class="kl-sub">{{.Site.Description}}</p>
+    </div>
+  </header>
+  <div class="kl-grid">
+    {{range $i, $p := .Posts}}
+    <article class="kl-tile">
+      <a class="kl-tile-link" href="{{$p.URL}}">
+        <p class="kl-tile-idx">{{printf "%02d" $i}}</p>
+        <h2 class="kl-tile-title">{{$p.Title}}</h2>
+        {{if $p.Excerpt}}<p class="kl-tile-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="kl-tile-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if $p.Tags}} · {{range $i2, $t := $p.Tags}}{{if $i2}}, {{end}}{{$t.Name}}{{end}}{{end}}</p>
+      </a>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="kl-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headPost" .}}
+<body class="t-prism">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main">
+  {{if or .Post.CoverURL .Post.OGImageURL}}
+  <section class="pz-art-band">
+    <img class="pz-art-band-img" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1800" height="900">
+    <div class="pz-art-band-in">
+      <p class="pz-art-kicker">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} · {{end}}{{$t.Name}}{{end}}{{end}}</p>
+      <h1 class="pz-art-title">{{.Post.Title}}</h1>
+    </div>
+  </section>
+  {{else}}
+  <header class="pz-art-plain">
+    <p class="pz-art-kicker">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} · {{end}}{{$t.Name}}{{end}}{{end}}</p>
+    <h1 class="pz-art-title">{{.Post.Title}}</h1>
+  </header>
+  {{end}}
+  <div class="pz-art-wrap">
+    <p class="pz-art-meta"><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a> · <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.Post.ReadingMinutes}} min{{end}}</p>
+    {{if .Post.Excerpt}}<p class="pz-art-stand">{{.Post.Excerpt}}</p>{{end}}
+    <div class="prose pz-art-prose">{{.Post.HTML}}</div>
+    {{if or .Prev .Next}}
+    <nav class="pz-art-nav" aria-label="Post navigation">
+      {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><span>Previous</span>{{.Prev.Title}}</a>{{end}}
+      {{if .Next}}<a href="{{.Next.URL}}" rel="next"><span>Next</span>{{.Next.Title}}</a>{{end}}
+    </nav>
+    {{end}}
+  </div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

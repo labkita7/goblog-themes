@@ -2,6 +2,7 @@
   "slug": "mmistakes",
   "name": "Minimal Mistakes",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "A blue masthead over a sticky author-style sidebar. Posts appear as a two-column grid of teaser cards, and each post gets a sticky table of contents on the right and pill tags at the foot.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

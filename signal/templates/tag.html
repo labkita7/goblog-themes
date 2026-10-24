@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headTag" .}}
+<body class="t-signal">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="th-shell">
+  <header class="th-page-head">
+    <p class="th-eyebrow">Tag</p>
+    <h1 class="th-page-title">{{.Tag.Name}}</h1>
+    <p class="th-lede">Posts filed under this tag, newest first.</p>
+  </header>
+  <div class="th-list">
+    {{range .Posts}}
+    <article class="th-row">
+      <p class="th-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.ReadingMinutes}} min{{end}}</p>
+      <h2 class="th-row-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+      {{if .Excerpt}}<p class="th-row-ex">{{.Excerpt}}</p>{{end}}
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -2,6 +2,7 @@
   "slug": "lagrange",
   "name": "Lagrange",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Editorial serif journal: a large serif introduction, then wide image-led entries separated by hairlines. Tags are small capitals, not boxes. Post pages open with a drop cap and a contents list.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

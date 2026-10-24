@@ -1,0 +1,36 @@
+{
+  "slug": "press",
+  "name": "Press",
+  "version": "1.1.0",
+  "added": "2026-10-24",
+  "author": "labkita7",
+  "description": "A broadsheet front page: centred masthead with double rule, one lead story, then a ruled column grid.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#9f1239"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Georgia"
+    },
+    {
+      "key": "show_reading_time",
+      "label": "Show reading time",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

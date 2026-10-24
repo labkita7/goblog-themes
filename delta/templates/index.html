@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-delta">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main">
+  <section class="de-hero">
+    <div class="de-hero-in">
+      <h1 class="de-title">{{.Site.Title}}</h1>
+      <p class="de-sub">{{.Site.Description}}</p>
+    </div>
+  </section>
+  <div class="de-rows">
+    {{range $i, $p := .Posts}}
+    <article class="de-row">
+      <div class="de-row-media" aria-hidden="true">
+        <span class="de-row-mark">{{printf "%02d" $i}}</span>
+      </div>
+      <div class="de-row-text">
+        <p class="de-row-kicker">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}} · {{end}}{{$t.Name}}{{end}}{{end}}</p>
+        <h2 class="de-row-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="de-row-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="de-row-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      </div>
+    </article>
+    {{end}}
+  </div>
+  <div class="de-pager-wrap">{{if or .PrevURL .NextURL}}
+<nav class="de-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}</div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

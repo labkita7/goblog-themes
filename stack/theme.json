@@ -2,6 +2,7 @@
   "slug": "stack",
   "name": "Stack",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Three-column reading layout in the Hugo Stack spirit: a persistent profile sidebar with a round initials badge, tag cloud and menu, wide cards with thumbnails on the right, and an archive-by-year widget on wide screens. Indigo accent on a cool grey page.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

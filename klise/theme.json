@@ -2,6 +2,7 @@
   "slug": "klise",
   "name": "Klise",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Greeting-led personal blog: a sticky blurred navbar, a large 'Hi, I'm' hero, and posts grouped by year under faded year numerals. Rounded type, red accent, switch-style dark mode.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

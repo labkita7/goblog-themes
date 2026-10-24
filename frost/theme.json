@@ -2,6 +2,7 @@
   "slug": "frost",
   "name": "Frost Glass",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Glassmorphism theme — frosted translucent cards floating over a fixed sky-blue gradient mesh, sky accent.",
   "engines": {"goblog": ">=1.0.0 <2.0.0"},

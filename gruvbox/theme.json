@@ -2,6 +2,7 @@
   "slug": "gruvbox",
   "name": "Gruvbox",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Retro editor layout: warm layered panels, numbered buffer lines, rotating colored tag chips and a vim-style status bar.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

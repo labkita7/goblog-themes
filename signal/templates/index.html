@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-signal">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="si-wrap">
+  <div class="si-bar">
+    <span class="si-bar-dot" aria-hidden="true"></span>
+    <span class="si-bar-text">{{.Site.Title}} — {{len .Posts}} entries</span>
+    <span class="si-bar-time">{{.Site.Year}}</span>
+  </div>
+  <header class="si-head">
+    <h1 class="si-title">{{.Site.Title}}</h1>
+    <p class="si-sub">{{.Site.Description}}</p>
+  </header>
+  <div class="si-feed">
+    {{range $i, $p := .Posts}}
+    <article class="si-item">
+      <span class="si-item-idx">{{printf "%03d" $i}}</span>
+      <div class="si-item-main">
+        <h2 class="si-item-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="si-item-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="si-item-meta">
+          <time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>
+          {{if setting "show_reading_time"}}<span>·</span> {{$p.ReadingMinutes}}m{{end}}
+          {{if $p.Tags}}<span>·</span> {{range $i2, $t := $p.Tags}}{{if $i2}}/{{end}}<a href="{{$t.URL}}">{{$t.Name}}</a>{{end}}{{end}}
+        </p>
+      </div>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="si-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

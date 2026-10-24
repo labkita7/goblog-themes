@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-prism">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="pz-wrap">
+  <header class="pz-head">
+    <div class="pz-spectrum" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <h1 class="pz-title">{{.Site.Title}}</h1>
+    <p class="pz-sub">{{.Site.Description}}</p>
+  </header>
+  <div class="pz-list">
+    {{range $i, $p := .Posts}}
+    <article class="pz-item">
+      <div class="pz-item-band" aria-hidden="true"></div>
+      <div class="pz-item-body">
+        <p class="pz-item-kicker">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}} · {{end}}{{$t.Name}}{{end}}{{else}}Entry{{end}}</p>
+        <h2 class="pz-item-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="pz-item-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="pz-item-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      </div>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="pz-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

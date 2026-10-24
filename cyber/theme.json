@@ -2,6 +2,7 @@
   "slug": "cyber",
   "name": "Cyberpunk Neon",
   "version": "1.0.0",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Dark navy base with neon cyan and magenta accents, glow shadows and a hero featured post over a compact recent list.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

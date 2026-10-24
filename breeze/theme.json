@@ -2,6 +2,7 @@
   "slug": "breeze",
   "name": "Breeze",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "A very airy single column: huge ghost numerals beside each entry, light display type, wide vertical rhythm.",
   "engines": {

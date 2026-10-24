@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-cascade">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="ca-wrap">
+  <header class="ca-head">
+    <h1 class="ca-title">{{.Site.Title}}</h1>
+    <p class="ca-sub">{{.Site.Description}}</p>
+  </header>
+  <div class="ca-stack">
+    {{range $i, $p := .Posts}}
+    <article class="ca-slab">
+      <div class="ca-slab-in">
+        <p class="ca-slab-kicker">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}} · {{end}}{{$t.Name}}{{end}}{{else}}Entry{{end}}</p>
+        <h2 class="ca-slab-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="ca-slab-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="ca-slab-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      </div>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="ca-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

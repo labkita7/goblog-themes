@@ -2,6 +2,7 @@
   "slug": "congo",
   "name": "Congo",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Profile-led reading layout in the Congo spirit: a centered hero with a large initials circle, horizontal article cards with small square thumbnails and thin rings, serif headings on a sans body, and a sticky table of contents with an author footer on posts. Green accent.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

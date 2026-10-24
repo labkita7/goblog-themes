@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headArchive" .}}
+<body class="t-mercator">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="th-shell">
+  <header class="th-page-head">
+    <h1 class="th-page-title">{{if .Year}}Posts from {{.Year}}{{else}}Archive{{end}}</h1>
+    {{if .Site.ArchiveYears}}
+    <ul class="th-years">{{range .Site.ArchiveYears}}<li><a href="{{.URL}}">{{.Year}} <span>{{.Count}}</span></a></li>{{end}}</ul>
+    {{end}}
+  </header>
+  <div class="th-list">
+    {{range .Posts}}
+    <article class="th-row">
+      <p class="th-meta"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
+      <h2 class="th-row-title"><a href="{{.URL}}">{{.Title}}</a></h2>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

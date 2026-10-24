@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+<head>
+{{template "headCore" .}}
+<title>{{.Head.Title}}</title>
+<meta name="description" content="{{.Head.Description}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{.Head.Title}}">
+<meta property="og:description" content="{{.Head.Description}}">
+</head>
+<body class="t-press">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="th-shell th-prose">
+  <h1 class="th-page-title">Contact</h1>
+  {{if .Sent}}
+  <p class="th-notice th-notice--ok" role="status">Thanks — your message was received.</p>
+  {{else}}
+  {{if .Message}}<p class="th-notice th-notice--err" role="alert">{{.Message}}</p>{{end}}
+  <form method="post" action="/contact" class="th-form">
+    <label for="c-name">Name
+      <input id="c-name" name="name" required maxlength="100" value="{{.Values.Name}}">
+    </label>
+    <label for="c-email">Email
+      <input id="c-email" name="email" type="email" required maxlength="200" value="{{.Values.Email}}">
+    </label>
+    <label for="c-subject">Subject
+      <input id="c-subject" name="subject" maxlength="150" value="{{.Values.Subject}}">
+    </label>
+    <label for="c-message">Message
+      <textarea id="c-message" name="message" rows="6" required minlength="10" maxlength="5000">{{.Values.Message}}</textarea>
+    </label>
+    <label for="c-captcha">{{.Question}} <span class="th-hint">spam check</span>
+      <input id="c-captcha" name="captcha" required inputmode="numeric" autocomplete="off">
+    </label>
+    <input type="hidden" name="captcha_token" value="{{.Token}}">
+    <input class="th-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="th-btn">Send message</button>
+  </form>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

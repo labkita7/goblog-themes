@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-alcove">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="al-wrap">
+  <header class="al-head">
+    <p class="al-head-mark" aria-hidden="true">❦</p>
+    <h1 class="al-title">{{.Site.Title}}</h1>
+    <p class="al-sub">{{.Site.Description}}</p>
+  </header>
+  <div class="al-plates">
+    {{range $i, $p := .Posts}}
+    <article class="al-plate">
+      <div class="al-plate-frame">
+        <div class="al-plate-inner">
+          <p class="al-plate-no">Plate {{printf "%02d" $i}}</p>
+          <h2 class="al-plate-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+          {{if $p.Excerpt}}<p class="al-plate-ex">{{$p.Excerpt}}</p>{{end}}
+          <p class="al-plate-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+        </div>
+      </div>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="al-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

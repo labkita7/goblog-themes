@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-roster">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="ro-wrap">
+  <header class="ro-head">
+    <h1 class="ro-title">{{.Site.Title}}</h1>
+    <p class="ro-sub">{{.Site.Description}}</p>
+    <dl class="ro-counts">
+      <div><dt>Entries</dt><dd>{{len .Posts}}</dd></div>
+      <div><dt>Subjects</dt><dd>{{len .Site.Tags}}</dd></div>
+    </dl>
+  </header>
+  <section class="ro-dir" aria-label="Directory">
+    {{range .Site.Tags}}
+    <div class="ro-group">
+      <h2 class="ro-group-letter">{{.Name}}</h2>
+      <ul class="ro-group-list">
+        <li><a href="{{.URL}}">All posts in {{.Name}}</a></li>
+      </ul>
+    </div>
+    {{end}}
+  </section>
+  <section class="ro-list" aria-label="All entries">
+    <h2 class="ro-list-head">All entries</h2>
+    {{range $i, $p := .Posts}}
+    <article class="ro-item">
+      <span class="ro-item-num">{{printf "%02d" $i}}</span>
+      <div class="ro-item-main">
+        <h3 class="ro-item-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h3>
+        {{if $p.Excerpt}}<p class="ro-item-ex">{{$p.Excerpt}}</p>{{end}}
+      </div>
+      <p class="ro-item-date"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></p>
+    </article>
+    {{end}}
+  </section>
+  {{if or .PrevURL .NextURL}}
+<nav class="ro-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

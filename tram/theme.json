@@ -1,0 +1,36 @@
+{
+  "slug": "tram",
+  "name": "Tram",
+  "version": "1.1.0",
+  "added": "2026-10-24",
+  "author": "labkita7",
+  "description": "A transit-map index: a route line across the top, each post a numbered stop on a coloured grid.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#c2410c"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "show_reading_time",
+      "label": "Show reading time",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

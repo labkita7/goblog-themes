@@ -2,6 +2,7 @@
   "slug": "archie",
   "name": "Archie",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Archive ledger: a framed masthead, monospace date column and one-line entries instead of cards. Serif reading text, ink-blue accent.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

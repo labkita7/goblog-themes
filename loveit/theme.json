@@ -2,6 +2,7 @@
   "slug": "loveit",
   "name": "LoveIt",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Dated timeline in the LoveIt spirit: a blurred sticky navbar with a switch toggle, summaries marked by a cyan left rule with inline SVG meta icons, and a sticky table of contents beside posts.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

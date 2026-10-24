@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headPage" .}}
+<body class="t-cascade">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="ca-art">
+  <header class="ca-art-head">
+    <div class="ca-art-head-text">
+      <p class="ca-art-kicker">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} · {{end}}{{$t.Name}}{{end}}{{else}}Reading{{end}}</p>
+      <h1 class="ca-art-title">{{.Post.Title}}</h1>
+      {{if .Post.Excerpt}}<p class="ca-art-stand">{{.Post.Excerpt}}</p>{{end}}
+      <p class="ca-art-meta"><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a> · <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.Post.ReadingMinutes}} min{{end}}</p>
+    </div>
+    {{if or .Post.CoverURL .Post.OGImageURL}}
+    <img class="ca-art-head-img" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="800" height="600">
+    {{end}}
+  </header>
+  <div class="prose ca-art-prose">{{.Post.HTML}}</div>
+  {{if .Post.Tags}}<ul class="ca-art-tags">{{range .Post.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>{{end}}
+  {{if or .Prev .Next}}
+  <nav class="ca-art-nav" aria-label="Post navigation">
+    {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><span>Previous</span>{{.Prev.Title}}</a>{{end}}
+    {{if .Next}}<a href="{{.Next.URL}}" rel="next"><span>Next</span>{{.Next.Title}}</a>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -2,6 +2,7 @@
   "slug": "mint",
   "name": "Mint Fresh",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Airy mint-teal minimal theme — generous whitespace, pill tags, animated underlines, calm dark mode.",
   "engines": {"goblog": ">=1.0.0 <2.0.0"},

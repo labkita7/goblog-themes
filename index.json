@@ -1,11 +1,12 @@
 {
   "version": 1,
-  "updated": "2026-10-24T09:37:10Z",
+  "updated": "2026-10-24T12:08:04Z",
   "themes": [
     {
       "slug": "adritian",
       "name": "Adritian",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Portfolio-blog: a tall hero with a thin, oversized site name, a featured grid of the three newest posts, then a dated list of older writing. Gold accent, humanist sans.",
       "tags": [
@@ -13,7 +14,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/adritian/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/adritian-1.1.0/adritian-1.1.0.zip",
-      "sha256": "b34dc615bd85f9a9425bcf6f7331473938d2b56b9d84629baadaf741554b3830",
+      "sha256": "1fc0016d65ac8fd063b58ba63987f6fd2e3b870f1a4e39644190802ef674cc2a",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "alcove",
+      "name": "Alcove",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "Every post is a framed plate: a hairline frame inside a tinted border, centred and symmetrical like a gallery label.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/alcove/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/alcove-1.1.0/alcove-1.1.0.zip",
+      "sha256": "037b21a98bbb2c75b91765f20d964cb7128abd653b211f748eb8fd458bdd7b20",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -22,6 +40,7 @@
       "slug": "ananke",
       "name": "Ananke",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Full-bleed accent hero with a large serif title, a two-column latest list with big editorial dates, and serif display type over a sans body.",
       "tags": [
@@ -29,7 +48,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/ananke/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/ananke-1.1.0/ananke-1.1.0.zip",
-      "sha256": "14ea10a5c34a640cc62e01a23b4bfdc6de4a274190d2953090a4d66f08c7a1e2",
+      "sha256": "0b80dbb077a28e2b634b37d067d607ed39f5ec4da61128fc6a6d675e6f0cd6d1",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -38,6 +57,7 @@
       "slug": "archie",
       "name": "Archie",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Archive ledger: a framed masthead, monospace date column and one-line entries instead of cards. Serif reading text, ink-blue accent.",
       "tags": [
@@ -45,7 +65,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/archie/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/archie-1.1.0/archie-1.1.0.zip",
-      "sha256": "3be32f8958cd95442098fe97e00279edb2f19d5c491a899029878a046bc75a88",
+      "sha256": "1d89da3bfaef7738997728e3d1926e9103c9648309b02cbabcb04ed24c967a7e",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "atlas",
+      "name": "Atlas",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "An index-style theme: a sticky subject rail beside dated, hairline-separated entries. Cool slate blue.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/atlas/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/atlas-1.1.0/atlas-1.1.0.zip",
+      "sha256": "8d3a9a3874259b0f0eacb3d43e8fdaae887bdbd5a8538365a596a4bf70194ff0",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -54,6 +91,7 @@
       "slug": "aurora",
       "name": "Aurora Holo",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Iridescent modern theme — violet accent, gradient display headings, aurora glow hero and pill tags.",
       "tags": [
@@ -61,7 +99,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/aurora/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/aurora-1.0.1/aurora-1.0.1.zip",
-      "sha256": "2ba7570255a9f1e023d0531e43623f550516350d9d5477dba58e2b5668cfc69e",
+      "sha256": "4a87d38596bb0ecc62139ba674b27025172fb6586c571b0171fed57603bae043",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "beacon",
+      "name": "Beacon",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A warm spotlight hero over a card feed, with a sticky subject rail. Amber accents on cream.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/beacon/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/beacon-1.1.0/beacon-1.1.0.zip",
+      "sha256": "9e9fdf932392c314734ac07ca2057c4e41faace85fc63b4503f68fd1578fbb18",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -70,6 +125,7 @@
       "slug": "bear",
       "name": "Bear",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Nearly unstyled typographic blog: system fonts, a narrow reading column, a plain date and title list, and classic underlined links. No cards, no tags on the home list.",
       "tags": [
@@ -77,7 +133,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/bear/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/bear-1.1.0/bear-1.1.0.zip",
-      "sha256": "71e2db0d55c9946e164a70a0092b899c98a07e8495451c62ea67d41743057597",
+      "sha256": "2ff882504b157be87070af77bb0322f7a4d29385e2111189a0f0561642dffd93",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -86,6 +142,7 @@
       "slug": "bento",
       "name": "Bento Grid",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "App-like bento grid home — posts as rounded cards, near-black accent, soft layered shadows.",
       "tags": [
@@ -93,7 +150,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/bento/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/bento-1.0.1/bento-1.0.1.zip",
-      "sha256": "3d835ae0a8e171c4280e3a91bc451c850ecb5e1b0fcd48a76c3cce99710a7df6",
+      "sha256": "cb4928545e3300c35cc95148e24326add6a4ae268f53ef432f3a7f746f5793d3",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -102,6 +159,7 @@
       "slug": "blowfish",
       "name": "Blowfish",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Gradient hero with a floating pill navigation, then image-top cards that cast colored shadows. Thumbnails are generated in CSS when a post has no cover.",
       "tags": [
@@ -109,7 +167,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/blowfish/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/blowfish-1.1.0/blowfish-1.1.0.zip",
-      "sha256": "37074010d5aeb1d6425ad72efd9883dd13ffb95941a50c2128db7447988128ba",
+      "sha256": "5a4b6a8368e11f75854a112a7620d46dea53760d1b8ff86a1596146248fb6abc",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -118,6 +176,7 @@
       "slug": "blush",
       "name": "Blush",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A soft, friendly layout: a large rounded hero card over a pair of lighter cards, pill tags, gentle shadows.",
       "tags": [
@@ -125,7 +184,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/blush/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/blush-1.1.0/blush-1.1.0.zip",
-      "sha256": "e4ae6130cf2d918db3b72f1fb139a02ba2fd27856669f0652fada9df2e3c6397",
+      "sha256": "382119058ff5d876cdb52023564b536216ef2260bfd2121a421ca2403c297086",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -134,6 +193,7 @@
       "slug": "breeze",
       "name": "Breeze",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A very airy single column: huge ghost numerals beside each entry, light display type, wide vertical rhythm.",
       "tags": [
@@ -141,7 +201,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/breeze/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/breeze-1.1.0/breeze-1.1.0.zip",
-      "sha256": "1979a46283f621bc375d86826876fbadfe68898b7cb7e7deb83560f2669fba4c",
+      "sha256": "6898048c51da93425f3f543509bd1703f423a0608ebf0af631a331756122c2ac",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -150,6 +210,7 @@
       "slug": "brutal",
       "name": "Neo Brutal",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Neo-brutalist card grid — 2px black borders, hard offset shadows, chunky uppercase tags and heavy grotesque display type.",
       "tags": [
@@ -158,7 +219,41 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/brutal/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/brutal-1.0.1/brutal-1.0.1.zip",
-      "sha256": "b15bbca6f6ef00cd96193354ff8a923335735aa228947ee21a96c30684750e00",
+      "sha256": "c0e80190b22fbb48f3f39bae804d4557e6a8671f72b3553bf6456e6fb65ba074",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "bulletin",
+      "name": "Bulletin",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "Posts as pinned notices: lightly rotated cards with a pin dot and a dashed tear line, like a real board.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/bulletin/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/bulletin-1.1.0/bulletin-1.1.0.zip",
+      "sha256": "b485af4b8278ef4067f08e34b939f2b614a9744989e7c0495e49e25dd0bcc09a",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "cascade",
+      "name": "Cascade",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "Cards stagger down the page, each nudged sideways from the last, like sheets sliding off a stack.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/cascade/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/cascade-1.1.0/cascade-1.1.0.zip",
+      "sha256": "f84f465551bece4e72c684b05855bba429d133ea65b213054a6cf08bc76c5640",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -167,6 +262,7 @@
       "slug": "casper",
       "name": "Casper",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Dark full-bleed cover with a centered title, a three-column card grid with cover images or accent gradients, and a sans-serif display over a serif reading column.",
       "tags": [
@@ -174,7 +270,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/casper/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/casper-1.1.0/casper-1.1.0.zip",
-      "sha256": "3f19d9dbf7d9059ffc80deb666357fe72f41b196c5ee82dcd3b8a73b3eb11f0a",
+      "sha256": "231ac377b512dc5dc41f2f088bd3047e2d3681558e5424a7ee4480e991e10fe0",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -183,6 +279,7 @@
       "slug": "cedar",
       "name": "Cedar",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A split-screen theme: a full-height inverted panel carries the identity and topics, the feed scrolls beside it.",
       "tags": [
@@ -190,7 +287,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/cedar/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/cedar-1.1.0/cedar-1.1.0.zip",
-      "sha256": "c8d9cd2a277f51ba8b3d85cb5cb5f992ef61a79a00ab200d7edc6bd356ef9058",
+      "sha256": "26c99780d9f3769f592f139dbe34e29b984582f287d95d78306c771e2fa86b1f",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -199,6 +296,7 @@
       "slug": "chalk",
       "name": "Chalk",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Two-column layout with a fixed, near-black sidebar (title, menu, tags, archive years) and a light reading column. Entries show a mono date, a bold title and a short pink rule. On small screens the sidebar becomes a CSS-only drawer.",
       "tags": [
@@ -206,7 +304,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/chalk/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/chalk-1.1.0/chalk-1.1.0.zip",
-      "sha256": "3c945e0991b09ea127af1272bbf928985f09474acc3b236dfec925c0ba862bb3",
+      "sha256": "6474c52625cde24343ef89a03aee811f2dd6b6394f02e998df269fb59385756b",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "chapbook",
+      "name": "Chapbook",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "Reads like a printed chapbook: running heads, an imprint line, and a numbered table of contents instead of cards.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/chapbook/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/chapbook-1.1.0/chapbook-1.1.0.zip",
+      "sha256": "db5dd39932fba1b71c24d35a087188392f9ef26d8e845eadb6f9024f0c5a6bb2",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -215,6 +330,7 @@
       "slug": "citrus",
       "name": "Citrus",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A horizontal scroll-snap rail for recent posts above a dense single-line archive stack.",
       "tags": [
@@ -222,7 +338,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/citrus/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/citrus-1.1.0/citrus-1.1.0.zip",
-      "sha256": "afb891c0ee9abf56244ab72fa7118a75719da7bbde6939bc8f118f4bc8f70338",
+      "sha256": "d0b30de9d006adc9096e93a2385b8ec944c13d1f4afa8b79b47185491ddff88f",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -231,6 +347,7 @@
       "slug": "claude",
       "name": "Claude Warm",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Warm cream-and-terracotta single column with a friendly author header, hairline post dividers and serif headings.",
       "tags": [
@@ -239,7 +356,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/claude/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/claude-1.0.1/claude-1.0.1.zip",
-      "sha256": "bfa3b0feb835c5d45460d32156a16472076df72d5ed6d2d011daccff021332e8",
+      "sha256": "b93790e1bc640d55fe6a1a29c5a30ba16e163ba5aee19b244da0f0e2ea8d0fab",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -248,6 +365,7 @@
       "slug": "cleanblog",
       "name": "Clean Blog",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Full-width slate masthead with a centered title over a narrow column of large post previews, each with a byline, a hairline rule and a text-only theme switch.",
       "tags": [
@@ -255,7 +373,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/cleanblog/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/cleanblog-1.1.0/cleanblog-1.1.0.zip",
-      "sha256": "fb32f9f6005b7ce410c3b8071aafdf29dc9b7cc690d2e9340fdb16ad5139e92e",
+      "sha256": "b1234f71ac7b27ffb7b5722e551481631ffb2e959654020971f02c90b86426ae",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -264,6 +382,7 @@
       "slug": "cobalt",
       "name": "Cobalt",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A dense, businesslike layout: a stat bar under the masthead, a feature column and a compact archive sidebar.",
       "tags": [
@@ -271,7 +390,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/cobalt/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/cobalt-1.1.0/cobalt-1.1.0.zip",
-      "sha256": "c1ae8601338ab8c4bea4b6abff07b65496b24bdaed9a9ffa9173293ed3f9e084",
+      "sha256": "c783ceec648ee23206db88f2b8e88248ad1d820855121cf02fede24516736f8e",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -280,6 +399,7 @@
       "slug": "coder",
       "name": "Coder",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Friendly centered developer homepage: a badge with the site initial, a centered lede, numbered-style '//' section title and '\u003e' post rows over a sans body with monospace headings. Amber accent, chip tags and prev/next cards.",
       "tags": [
@@ -287,7 +407,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/coder/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/coder-1.1.0/coder-1.1.0.zip",
-      "sha256": "a79920638dde49a51953a536d4053078c1858411a3d79c883129cabfc6510d85",
+      "sha256": "6c168a9b48a551a47ce162409496ec3027c7ca0ef4cc683d89494c6cdd5e211c",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -296,6 +416,7 @@
       "slug": "congo",
       "name": "Congo",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Profile-led reading layout in the Congo spirit: a centered hero with a large initials circle, horizontal article cards with small square thumbnails and thin rings, serif headings on a sans body, and a sticky table of contents with an author footer on posts. Green accent.",
       "tags": [
@@ -303,7 +424,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/congo/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/congo-1.1.0/congo-1.1.0.zip",
-      "sha256": "dd23294e5f96178da356b0f6cfae9c93a5496596e615f3d365117bda0fe43d03",
+      "sha256": "f40ff881d22217f5a6abc7f4fc8757e8e362c4398e29cb9c0f400e296f91f02d",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -312,6 +433,7 @@
       "slug": "coral",
       "name": "Coral",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A magazine-style mosaic homepage: one oversized lead tile, tall and wide neighbours, soft coral accents.",
       "tags": [
@@ -319,7 +441,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/coral/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/coral-1.1.0/coral-1.1.0.zip",
-      "sha256": "88b6b0f9b10e6b695b0e282a25d28afc138cacbeabe8e54e9381cc81b8d96f00",
+      "sha256": "0d11ca289567ebda572f4e892404952c77b01b3006d6262561d066f4f265462e",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -328,6 +450,7 @@
       "slug": "cyber",
       "name": "Cyberpunk Neon",
       "version": "1.0.0",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Dark navy base with neon cyan and magenta accents, glow shadows and a hero featured post over a compact recent list.",
       "tags": [
@@ -336,7 +459,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/cyber/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/cyber-1.0.0/cyber-1.0.0.zip",
-      "sha256": "320427fe4f634cfc4813796470e76c9c539238108695b0cc8ed1e2e15e82d487",
+      "sha256": "edd227190c1a92f240bd215967a57ad76b69e5d608606b2c237c6d2bfbf9c32b",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "Inverted hero then alternating media/text rows — each entry gets a full band of the page.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/delta/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/delta-1.1.0/delta-1.1.0.zip",
+      "sha256": "24ef1a63333bd43a5028eaaa53fe0c6dd10ca11d340c7c6fd9e318c5fa4c60f6",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -345,6 +485,7 @@
       "slug": "diary",
       "name": "Diary",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Journal layout: calendar-style date tiles beside cream entry cards, tilted sticker tags and a dotted notebook background.",
       "tags": [
@@ -352,7 +493,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/diary/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/diary-1.1.0/diary-1.1.0.zip",
-      "sha256": "6789d5eede50a6cdcead7d68f74855096a9e30864b6fca20044bbbb1519fe453",
+      "sha256": "14a3d9ae5544713e518bf375f3619c012f19bcea72e8f6c1614e808f468bff26",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -361,6 +502,7 @@
       "slug": "dusk",
       "name": "Dusk Lo-fi",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Moody lavender-indigo theme — lo-fi calm tones, soft indigo accent, gradient subheads, quiet dark mode.",
       "tags": [
@@ -368,7 +510,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/dusk/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/dusk-1.0.1/dusk-1.0.1.zip",
-      "sha256": "b9f518ba77a17f982187b5e5a299f6379ca163c7e1b5597c5abc1bd4c6f588dc",
+      "sha256": "1a22a5666d3f2a8294ee1432dbb489b89ffbc539c0d1dd182ff474bd1278fc38",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -377,6 +519,7 @@
       "slug": "ember",
       "name": "Ember",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "Warm ember palette with a split hero, oversized numerals and a serif reading column.",
       "tags": [
@@ -384,7 +527,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/ember/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/ember-1.1.0/ember-1.1.0.zip",
-      "sha256": "6555975f927139fc6d87c5b280e8f6205cd6b2956debc09ecd3fa7ed18a4832f",
+      "sha256": "330f0d714053f8d1cc93b00c1fdafbbae31ef089c23f5ab943ab64adfe26e475",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "ferry",
+      "name": "Ferry",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A departure board: a fixed date column on the left, schedule-style rows on the right, hairline separators.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/ferry/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/ferry-1.1.0/ferry-1.1.0.zip",
+      "sha256": "75eeba6e89212188497c529b5722688a53c40f54467e8f444d1dcd591c9b4bbc",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -393,6 +553,7 @@
       "slug": "frost",
       "name": "Frost Glass",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Glassmorphism theme — frosted translucent cards floating over a fixed sky-blue gradient mesh, sky accent.",
       "tags": [
@@ -400,7 +561,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/frost/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/frost-1.0.1/frost-1.0.1.zip",
-      "sha256": "02afc3785f9f3ebd2661ea8083a40ccdbc73b57d1d156a5f489ad5f58649c552",
+      "sha256": "c24639ea814819285c1f178eae43955d6c918453366b21b4bce323899a626f5d",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -409,6 +570,7 @@
       "slug": "ghostwriter",
       "name": "Ghostwriter",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Literary layout: centered serif masthead between double rules, roman-numbered contents, a 38rem reading column with drop caps and a closing ornament.",
       "tags": [
@@ -416,7 +578,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/ghostwriter/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/ghostwriter-1.1.0/ghostwriter-1.1.0.zip",
-      "sha256": "e8a65bec863ef6062ae970f5c48790c94aaa8e4963a0396862a20e044cb0b6f8",
+      "sha256": "e33912d9869f4d306e11c0bdffd83a83fdc70dbb825c64e8b89026c4f769b68a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -425,6 +587,7 @@
       "slug": "glacier",
       "name": "Glacier",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A timeline theme: entries ride a vertical hairline with year-and-date gutters and small accent nodes.",
       "tags": [
@@ -432,7 +595,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/glacier/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/glacier-1.1.0/glacier-1.1.0.zip",
-      "sha256": "a0c97215ad1a57fb517af25e2741730a7e8e8b042edc58526f667e08ef85b21b",
+      "sha256": "794a853e82be294a313103d346e4e15cec11861d6cb25b3217f7f90c5425393c",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -441,6 +604,7 @@
       "slug": "graphite",
       "name": "Graphite Dev",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Dark-first developer blog — zinc ramp, cyan accent, sticky table of contents and code blocks with a language header bar.",
       "tags": [
@@ -449,7 +613,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/graphite/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/graphite-1.0.1/graphite-1.0.1.zip",
-      "sha256": "b881a2aa2475791d358d295b8ae968120adc7fbfbd4bb407d0f5bb612cf940a1",
+      "sha256": "e008439c07880636e0f62b9d7c57932d60d29a4f213d039f1fcc379a6de971df",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -458,6 +622,7 @@
       "slug": "gruvbox",
       "name": "Gruvbox",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Retro editor layout: warm layered panels, numbered buffer lines, rotating colored tag chips and a vim-style status bar.",
       "tags": [
@@ -465,7 +630,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/gruvbox/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/gruvbox-1.1.0/gruvbox-1.1.0.zip",
-      "sha256": "5d6dca03799dca6b15032733e207ff67d5ece55a1d4f9c63be922ce40c186610",
+      "sha256": "112fa478c0dd257624569d6152694c25520410e7fb7d7d0ec8709a7e59e16fc3",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -474,6 +639,7 @@
       "slug": "hacker",
       "name": "Hacker",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Full-width ls -l listing: the homepage is a framed table of mode, size, modified date and slug with the title beside it, under a '$ cat posts/' heading. Green accent with red warning flags on a neutral charcoal, a power-icon toggle, and posts laid out as framed documents with a sectioned contents list.",
       "tags": [
@@ -481,7 +647,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/hacker/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/hacker-1.1.0/hacker-1.1.0.zip",
-      "sha256": "e772c11ee50bc431541a4ac695ae8158340fcf90af6d79e9c54646dfe3bd9a3d",
+      "sha256": "e12468ba81618d6ec66d5e4d1f54fb3b5d153c17d27c96bfdb6a5f70cf7c83b8",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -490,6 +656,7 @@
       "slug": "harvest",
       "name": "Harvest",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A magazine layout: a split lead story on top, a two-column card run below, and a sticky utility sidebar.",
       "tags": [
@@ -497,7 +664,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/harvest/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/harvest-1.1.0/harvest-1.1.0.zip",
-      "sha256": "be1f4014b6e4f144f714cf5d6671d81bfd2eea5dc04949c46a2cec37f2a28c2c",
+      "sha256": "99783efc5efe2c1400d9e067ebad8fe18dbc3aaba771343e323c8b56f5b9f22f",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -506,6 +673,7 @@
       "slug": "hello",
       "name": "Hello Friend",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Centered lowercase logo block, dotted-underline titles and a single-column stream of short entries with plain #tags.",
       "tags": [
@@ -513,7 +681,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/hello/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/hello-1.1.0/hello-1.1.0.zip",
-      "sha256": "4a3028c6157b6e738a171294a520026182893be569029f28f22bdf42243daca5",
+      "sha256": "39adaf61d366c8d99063d58cb36e161df01cf484449429932c3a31bdf5fbcc21",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -522,6 +690,7 @@
       "slug": "hermit",
       "name": "Hermit",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Quiet dark-first writing room: one narrow column, a small teal-glowing title, and every list drawn as title, dotted leader and right-aligned date. No cards and no tag boxes; tags are plain '· tag' text. Serif body with monospace dates.",
       "tags": [
@@ -529,7 +698,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/hermit/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/hermit-1.1.0/hermit-1.1.0.zip",
-      "sha256": "2d4dcfbaeb520428adab0b7603351657bdcfbe9097989395590e242f318129ce",
+      "sha256": "c7643558a6256a8337f08a2f2e4a6defd5ba16406b0ccd69716b6418dd717392",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -538,6 +707,7 @@
       "slug": "hpstr",
       "name": "HPSTR",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Photo-essay layout: a huge title band, alternating image and text rows in old-print frames with grain, spaced capitals for tags, and a drop cap on posts.",
       "tags": [
@@ -545,7 +715,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/hpstr/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/hpstr-1.1.0/hpstr-1.1.0.zip",
-      "sha256": "57f764cf96e8bb1ed8e861084921df2ca728f03f77a02ebbef3e60316e2de68c",
+      "sha256": "5917fd98d88e3fce9e2dcf8da8301487ee0acbc286c64b0d3ab8d6ea4beed134",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -554,6 +724,7 @@
       "slug": "hyde",
       "name": "Hyde",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "A full-height accent sidebar holds the site identity, menu and tags; the posts run in a classic serif column beside it. The sidebar can sit on the left or the right.",
       "tags": [
@@ -561,7 +732,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/hyde/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/hyde-1.1.0/hyde-1.1.0.zip",
-      "sha256": "f5d40b4ae07ae5e2fd649f7d916f16d00f643915dc608dff238d06420e0bae03",
+      "sha256": "ce632ff0bbc9006b001de6e8bdd02b0102c28520129355529938ac0cab806826",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -570,6 +741,7 @@
       "slug": "indigo",
       "name": "Indigo",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "Centered editorial layout with a hairline masthead rule, numbered entries and a drop cap in the reading column.",
       "tags": [
@@ -577,7 +749,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/indigo/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/indigo-1.1.0/indigo-1.1.0.zip",
-      "sha256": "4086b1f360a5632de8f82cdba3fb3ad4ef808260c8a00041ee5b46a34e7c4764",
+      "sha256": "bcc77ef50bbcf384c1495aecda2034c681fd84e613017d474da037b46bd1485a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -586,6 +758,7 @@
       "slug": "inkwell",
       "name": "Inkwell",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A broadsheet front page: nameplate, double rules, a lead story column, briefs and an 'also inside' rail.",
       "tags": [
@@ -593,7 +766,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/inkwell/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/inkwell-1.1.0/inkwell-1.1.0.zip",
-      "sha256": "687c10fa55e1b9929f164a8eb068deae8b77b8fa4d2f439b3150356eaf45284e",
+      "sha256": "a4f534ad03ceebfbcf25de6cda4caf988acc380fae124d4e2c5b2ede0a8a3ed0",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "kiln",
+      "name": "Kiln",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A ceramic-toned mosaic: tall, wide and square tiles interlock into an irregular but balanced grid.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/kiln/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/kiln-1.1.0/kiln-1.1.0.zip",
+      "sha256": "e4e760136902747d1b49fe928ad8a4f4fd136b84a27f7cc0be85f6d8052594a1",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -602,6 +792,7 @@
       "slug": "klise",
       "name": "Klise",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Greeting-led personal blog: a sticky blurred navbar, a large 'Hi, I'm' hero, and posts grouped by year under faded year numerals. Rounded type, red accent, switch-style dark mode.",
       "tags": [
@@ -609,7 +800,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/klise/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/klise-1.1.0/klise-1.1.0.zip",
-      "sha256": "e331bbe6c81ae116bb98ab003a9cc454519d7359aee17e4a2e3f7600f6ea5b6e",
+      "sha256": "d3942ffdc79ef1482aa8a5d0b4b0e53fce5d2448d3e5812e20fbe6f8597bc447",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -618,6 +809,7 @@
       "slug": "lagoon",
       "name": "Lagoon",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A hierarchical magazine grid: one hero across the top, a divided pair beneath, then a three-up trio.",
       "tags": [
@@ -625,7 +817,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/lagoon/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/lagoon-1.1.0/lagoon-1.1.0.zip",
-      "sha256": "b1a51f5f135dc0bbc4871858af70a22a7300ee2596e1879e6842bd54357ed126",
+      "sha256": "ab09e7db911b464cf3ad74afb8d99dcbd632f4561d69054805e032122720437c",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -634,6 +826,7 @@
       "slug": "lagrange",
       "name": "Lagrange",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Editorial serif journal: a large serif introduction, then wide image-led entries separated by hairlines. Tags are small capitals, not boxes. Post pages open with a drop cap and a contents list.",
       "tags": [
@@ -641,7 +834,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/lagrange/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/lagrange-1.1.0/lagrange-1.1.0.zip",
-      "sha256": "419e0e9c2516d41fd724029e98ba04bd2127a86e02e016fc5fd9538b89d46709",
+      "sha256": "ffd5d098670d931be4df68e755021f78d0daba1eefe79602d619a537cf4cf37f",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -650,6 +843,7 @@
       "slug": "lanyon",
       "name": "Lanyon",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Oversized heavy grotesque headlines on a white roll of posts. The site menu lives in a slide-out drawer opened from a hamburger, built with a checkbox and CSS only. The drawer can open from the left or the right.",
       "tags": [
@@ -657,7 +851,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/lanyon/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/lanyon-1.1.0/lanyon-1.1.0.zip",
-      "sha256": "4bd689fa92e3a873b76b8ee87c381967f43271b3636c9b0989c4db202f21e9ca",
+      "sha256": "fb0233af838abcc755caf5f022225132ac1e5023f61545a429f25e1d5db555b2",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "ledger",
+      "name": "Ledger",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "An accountant's register: a real ruled table with tabular numerals, alternating rows and a totals footer.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/ledger/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/ledger-1.1.0/ledger-1.1.0.zip",
+      "sha256": "21a055b7c531fa824779b1e817ac756f995bfea3c47b303759ccc293c2d2ad08",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -666,6 +877,7 @@
       "slug": "longhaul",
       "name": "Long Haul",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "A long-form reading list. Each post is a numbered entry with its reading time set large in the margin. Posts read in a serif column on warm paper, with a numbered table of contents that sticks to the left margin and a reading progress rule along the top.",
       "tags": [
@@ -673,7 +885,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/longhaul/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/longhaul-1.1.0/longhaul-1.1.0.zip",
-      "sha256": "94b47f52a9b1179f5606e299428dd4553713ca4e0d6dc2449f9af5e842adfa75",
+      "sha256": "10b58139d3d5cacd1bcad4bba6c54ee69d03483822f2ccb65830e22aaf96f8f8",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -682,6 +894,7 @@
       "slug": "loveit",
       "name": "LoveIt",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Dated timeline in the LoveIt spirit: a blurred sticky navbar with a switch toggle, summaries marked by a cyan left rule with inline SVG meta icons, and a sticky table of contents beside posts.",
       "tags": [
@@ -689,7 +902,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/loveit/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/loveit-1.1.0/loveit-1.1.0.zip",
-      "sha256": "e331508b9a6bd4427f8d3febfb8dc3edba13b8fe45dbfeadd92188a007d7d136",
+      "sha256": "c70529c32caf81b4e6e7526c3365a480a711a5832ca1645ab9b611f481ca8f6b",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "lumen",
+      "name": "Lumen",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "Gallery minimalism: giant display type, a single narrow column, and entries that reveal themselves on hover.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/lumen/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/lumen-1.1.0/lumen-1.1.0.zip",
+      "sha256": "8e6a4ec5319eab448ffb392f5d9a21bdd4a64ce12ccc4ac76b024fc6918812ee",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -698,6 +928,7 @@
       "slug": "meadow",
       "name": "Meadow",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A bento grid homepage with tinted cells of different weights, plus a matching article layout.",
       "tags": [
@@ -705,7 +936,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/meadow/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/meadow-1.1.0/meadow-1.1.0.zip",
-      "sha256": "a34338951aa7ac620aef1a2e153c540d1cce46028f229e95085282c4eaf2600d",
+      "sha256": "8bff5e97e63754e8bf8429cb8993747f3723eb40297e82af2984b252203096c5",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -714,6 +945,7 @@
       "slug": "meditor",
       "name": "Meditor",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Editorial front page: a huge lead headline with two side stories, a numbered Topics column and a dense dated list. Deep blue accent and sharp Bodoni-style serif headlines.",
       "tags": [
@@ -721,7 +953,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/meditor/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/meditor-1.1.0/meditor-1.1.0.zip",
-      "sha256": "7ee281bba1f4d4e6691c1c4e6c055651a0850cd41ef9b280d4a8d753f1e2934e",
+      "sha256": "9ef36136e607911f34d71cbf924441e470be5d4c167cc2d70dd556af59078176",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -730,6 +962,7 @@
       "slug": "mediumish",
       "name": "Mediumish",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Medium-style home: a featured story beside two stacked cards, then a three-column grid with author and date meta. Green accent, sans UI with serif reading text.",
       "tags": [
@@ -737,7 +970,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/mediumish/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/mediumish-1.1.0/mediumish-1.1.0.zip",
-      "sha256": "e8f9fd0d348a0425e3d5a82adca70fb4fef2ffc7908b86e0b0106380b46e13dd",
+      "sha256": "4fefab3392c84b63cb9b87101a15530d340c9a706d13918b2155d960515a8203",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "mercator",
+      "name": "Mercator",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A split-screen poster: a dark fixed column holds the masthead while the index scrolls past it.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/mercator/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/mercator-1.1.0/mercator-1.1.0.zip",
+      "sha256": "916de71e185cbd8ad7c5b27e4581857026baf0d3371872bd44fdf0289f061bef",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -746,6 +996,7 @@
       "slug": "minima",
       "name": "Minima",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Jekyll-classic layout: title and underlined menu in a thin header, bold small dates above post titles, a serif reading face and a cool blue-grey palette, with a three-column footer.",
       "tags": [
@@ -753,7 +1004,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/minima/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/minima-1.1.0/minima-1.1.0.zip",
-      "sha256": "3bc7aeb438f419820c624c6069a5d1164eea4616d8c42a84edefb1aa245c9e14",
+      "sha256": "0dea169141a1d9f7c0bf900d61395ee48a9ba2d20f8e7319a819820766296e51",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -762,6 +1013,7 @@
       "slug": "mint",
       "name": "Mint Fresh",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Airy mint-teal minimal theme — generous whitespace, pill tags, animated underlines, calm dark mode.",
       "tags": [
@@ -769,7 +1021,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/mint/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/mint-1.0.1/mint-1.0.1.zip",
-      "sha256": "edd0da4cfa726a64b0c2eed6d00fdfad5520fc5a3bc95d9f87b89613a73b58a4",
+      "sha256": "c85ff9c6394ea1f88c8b12cacaa4592f3c68ddd83b096a78f861172b32e488ea",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -778,6 +1030,7 @@
       "slug": "mmistakes",
       "name": "Minimal Mistakes",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "A blue masthead over a sticky author-style sidebar. Posts appear as a two-column grid of teaser cards, and each post gets a sticky table of contents on the right and pill tags at the foot.",
       "tags": [
@@ -785,7 +1038,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/mmistakes/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/mmistakes-1.1.0/mmistakes-1.1.0.zip",
-      "sha256": "d131e9fdbd3248800f91a3a34aaaeac3b308bbad764cca3f0acfcc440397d18a",
+      "sha256": "126205798403ed3b177d71a157dbbeb2291796416cc687ead06581fae09ec645",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -794,6 +1047,7 @@
       "slug": "monolith",
       "name": "Monolith",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A brutalist theme: an inverted title block, oversized uppercase entries, heavy rules and zero rounding.",
       "tags": [
@@ -801,7 +1055,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/monolith/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/monolith-1.1.0/monolith-1.1.0.zip",
-      "sha256": "988dd0f350ee3c51341c8a6f382b5a0cffdfcabd14200737e81299896f87952f",
+      "sha256": "c950710ade80e8089aaadb1d873a05cebd486ccfa2dd4be184b11ec319d17640",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -810,6 +1064,7 @@
       "slug": "neutral",
       "name": "Neutral",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Minimal single-column blog theme — true grays, near-white background, generous whitespace, one accent.",
       "tags": [
@@ -818,7 +1073,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/neutral/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/neutral-1.0.1/neutral-1.0.1.zip",
-      "sha256": "c8a217bc0ce19611069bc70e6fd7747dfb3625f76835baeb9e14b14b2a1d5ee5",
+      "sha256": "83938d73f40b2c2a7fbcd5981433ce1391e80d66f6367143c806b08276d0577e",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -827,6 +1082,7 @@
       "slug": "nocturne",
       "name": "Nocturne",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "Dark-first theme built around a glowing stage for the latest post, then a two-column stream of everything else.",
       "tags": [
@@ -834,7 +1090,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/nocturne/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/nocturne-1.1.0/nocturne-1.1.0.zip",
-      "sha256": "d6c9159072d6990000e544b682ae00525895031c7a8d2eb15f0a8159a249ca9d",
+      "sha256": "aaaea5cb47ab7db01def25a90258d78c55073a02b37a39f58fddf4e04098d743",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -843,6 +1099,7 @@
       "slug": "obsidian",
       "name": "Obsidian",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A stark, high-contrast index rendered as a real table: numbers, titles, tags and dates in aligned columns.",
       "tags": [
@@ -850,7 +1107,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/obsidian/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/obsidian-1.1.0/obsidian-1.1.0.zip",
-      "sha256": "7aa2c24f3526766084d0d18f825ea91bc8e90af879b226fb578ad629d8e459eb",
+      "sha256": "bedf4eb9e95510a4745cdc6a0ac09faed7a84bd701e65f20c0be52a277b5d1b7",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "orchard",
+      "name": "Orchard",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A symmetrical three-column journal: every entry gets equal weight under a rule, centred masthead above.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/orchard/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/orchard-1.1.0/orchard-1.1.0.zip",
+      "sha256": "167dbb8ab17bcc2c1a50bf61b3b9127f27e1e24f7c00b5816d823340ce8950b1",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -859,6 +1133,7 @@
       "slug": "paper",
       "name": "Vintage Paper",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Personal journal — cream paper texture, ink-brown serif text, left archive sidebar and italic pull-quotes.",
       "tags": [
@@ -867,7 +1142,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/paper/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/paper-1.0.1/paper-1.0.1.zip",
-      "sha256": "cedaa6aa4f2b473b310ed2acaddec8a16b5bcd4be98ec4bead08ee77b3d603bd",
+      "sha256": "3d4a91a44d36fb62c34a1e86c9fb51a10135cf128c88f2fe48c6c5e103b7002b",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -876,6 +1151,7 @@
       "slug": "papermod",
       "name": "PaperMod",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Compact single-column blog in the PaperMod spirit: a home-info block, short bold entry cards with two-line summaries, a collapsible table of contents on posts, and one red-orange accent on a system sans.",
       "tags": [
@@ -883,7 +1159,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/papermod/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/papermod-1.1.0/papermod-1.1.0.zip",
-      "sha256": "ed98ba54e05500426050607b04af1ad3384565b050d1451e84cd41dc97b28d36",
+      "sha256": "7e34210b02cce498bdf7727c6ce0ded76e0898c81aed9020a81377fd86ce8e19",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -892,6 +1168,7 @@
       "slug": "pastel",
       "name": "Catppuccin Soft",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Newsletter-style centered column on Catppuccin latte/mocha — author card, dated entries and a subscribe CTA.",
       "tags": [
@@ -900,7 +1177,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/pastel/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/pastel-1.0.1/pastel-1.0.1.zip",
-      "sha256": "339a5bf0d9a317b00b0b5fe963dbfd0f51bd33f668a70af2b2590f0c0e8eb030",
+      "sha256": "2f00577f5d77284a34c7d67b3ada6261f4983333a067e3b3843bd51a0bb2ef0c",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -909,6 +1186,7 @@
       "slug": "pop",
       "name": "Pop Play",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Playful pop theme — chunky rounded cards, thick ink borders, hard offset shadows, vivid pink-and-yellow palette.",
       "tags": [
@@ -916,7 +1194,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/pop/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/pop-1.0.1/pop-1.0.1.zip",
-      "sha256": "43fd978715f7022e1a2365e1a7dfc70628d34c9f76b4bf7de3b7dafb7b4ea682",
+      "sha256": "fee7afb3c2f0f5bea0c1361e859f242bf010765b6e983f25a782a478680bb176",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -925,6 +1203,7 @@
       "slug": "porcelain",
       "name": "Porcelain",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A gallery-like index: hairline rules, a left date gutter and generous porcelain whitespace.",
       "tags": [
@@ -932,7 +1211,75 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/porcelain/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/porcelain-1.1.0/porcelain-1.1.0.zip",
-      "sha256": "2d861ee716df1110b093919bb92ecaab763f91766343c6ba41b68c4827ee52e7",
+      "sha256": "4fd1251885defae1dddcde7d1f54926d50ed66c8217b09b58fe8504a335ab0d8",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "press",
+      "name": "Press",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A broadsheet front page: centred masthead with double rule, one lead story, then a ruled column grid.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/press/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/press-1.1.0/press-1.1.0.zip",
+      "sha256": "45d20d4595ad2ebfc24774939339b325424b38a852b430d8de3147924b82f04e",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "prism",
+      "name": "Prism",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "Each entry carries a colour band from a six-step spectrum, so the feed reads as a continuous light spectrum.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/prism/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/prism-1.1.0/prism-1.1.0.zip",
+      "sha256": "7975da1263185293eb1e8f51933f9fa4cdbdc0a0732b5f31cd3a19debe50382e",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "quarry",
+      "name": "Quarry",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "Each post is a stone slab: a bordered card with an oversized numeral, stacked with tight rhythm.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/quarry/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/quarry-1.1.0/quarry-1.1.0.zip",
+      "sha256": "a186f41163be218e2dd3a2518f1670e922861a593429dcaea045f05e3b267c1f",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "roster",
+      "name": "Roster",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A directory, not a feed: subject groups up top like an index, a numbered roster of entries below.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/roster/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/roster-1.1.0/roster-1.1.0.zip",
+      "sha256": "4c146ae9ac3b16783a1583742f4995eb8d8ebb06ffc4769f547cadb40b801d99",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -941,6 +1288,7 @@
       "slug": "sage",
       "name": "Sage Garden",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Classic blog layout with a right sidebar — search, recent posts and an about card on soft forest greens.",
       "tags": [
@@ -949,7 +1297,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/sage/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/sage-1.0.1/sage-1.0.1.zip",
-      "sha256": "1135831ac40d1c9207784ccba6aa2801169f6076d8baf834fc94174ca5cafdf7",
+      "sha256": "1a2ef52146e1d49a6acd8a66f57d86dc40c2cee94a8d7af33472aa52583f7d15",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -958,6 +1306,7 @@
       "slug": "sepia",
       "name": "Sepia",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A manuscript layout: chapter-numbered index with margin facts, and a post page with a sticky marginal contents rail.",
       "tags": [
@@ -965,7 +1314,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/sepia/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/sepia-1.1.0/sepia-1.1.0.zip",
-      "sha256": "f9a7e5c6a583e625ee0c3c2f1f845daebdee265a7034fa9e64e21460ba5d99da",
+      "sha256": "3505d6ca381fe30b805c854c9c39e96451be568c6ee226127637992733ce9a65",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -974,6 +1323,7 @@
       "slug": "serif",
       "name": "Elegant Editorial",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Newspaper-style editorial — centered serif masthead with rules, dateline, and a featured grid on ivory with muted gold.",
       "tags": [
@@ -982,7 +1332,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/serif/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/serif-1.0.1/serif-1.0.1.zip",
-      "sha256": "e64395dbee6f977301cd72a87520cae935fc0a69b759700e1b49912fc372b10d",
+      "sha256": "672cf932b4179cbede80c10eee87534f1b6c2b8fd0af9bc7cd94c48eb2a0d813",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "signal",
+      "name": "Signal",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A dark, instrument-panel theme: a status bar, mono metadata and a numbered feed of transmissions.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/signal/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/signal-1.1.0/signal-1.1.0.zip",
+      "sha256": "147cfbab27ee1136aec9266b97773cf2cbf8d64cdf5fcd9d54fd5a510a3a974a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -991,6 +1358,7 @@
       "slug": "slate",
       "name": "Clean Slate Magazine",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Magazine split layout — oversized masthead, lead story with 16:9 cover, and a hairline latest list on cool professional blues.",
       "tags": [
@@ -999,7 +1367,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/slate/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/slate-1.0.1/slate-1.0.1.zip",
-      "sha256": "928e22e2ddfcde839af236700d8d44ba5e7918e328f4c02f88e4963ee1fd3847",
+      "sha256": "797e6254ecf457e96da61ce21505ef9c1cbdd172990877dff8758b3c51ae9165",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1008,6 +1376,7 @@
       "slug": "stack",
       "name": "Stack",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Three-column reading layout in the Hugo Stack spirit: a persistent profile sidebar with a round initials badge, tag cloud and menu, wide cards with thumbnails on the right, and an archive-by-year widget on wide screens. Indigo accent on a cool grey page.",
       "tags": [
@@ -1015,7 +1384,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/stack/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/stack-1.1.0/stack-1.1.0.zip",
-      "sha256": "cfa9e56c5d93f4e16b825d18062b2394ff0a8c617ff8a0a470f0e17474b32a9b",
+      "sha256": "8db1a33dd3d0f2de8644bc93a540d3621e04ecfea7dc5b3096e276f3a58883b7",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1024,6 +1393,7 @@
       "slug": "studio",
       "name": "Studio Grid",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Clean modern studio look — wide measure, uppercase micro-labels, indigo accent, precise hairlines and calm grays.",
       "tags": [
@@ -1031,7 +1401,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/studio/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/studio-1.0.1/studio-1.0.1.zip",
-      "sha256": "0999d042ca771441f8139db161fcb5eb03123a3b9f98cc4b4ffd7ac4c20af158",
+      "sha256": "9416afe8b9ecd6aa866821ee7af31ea80fb3d8831221d6d32767d50e6450dce1",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1040,6 +1410,7 @@
       "slug": "sunset",
       "name": "Sunset Fade",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Warm modern gradient theme — coral-orange accent, gradient hero heading, soft shadows on cream.",
       "tags": [
@@ -1047,7 +1418,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/sunset/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/sunset-1.0.1/sunset-1.0.1.zip",
-      "sha256": "6d9154388c5b9cac08779265aef7fd337dabcfd7a945394f93d2179821e93d32",
+      "sha256": "88fa309acd814c8abd3f41ad8b3267478d832b91fc58fc1322915e4adf2dc494",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1056,6 +1427,7 @@
       "slug": "swiss",
       "name": "Swiss Typo",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "International typographic style — black on white, zero radius, heavy rules, uppercase display headings and a red accent.",
       "tags": [
@@ -1063,7 +1435,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/swiss/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/swiss-1.0.1/swiss-1.0.1.zip",
-      "sha256": "0e7fb5211c27af8cbbad58f1659eaf37ae81c120e8539ffd86010f18c986cfa6",
+      "sha256": "448c2472eff404e33963c9c3320235d8b2d766e20718e86c8b57afe051cf97f4",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1072,6 +1444,7 @@
       "slug": "terminal",
       "name": "Terminal",
       "version": "1.1.0",
+      "added": "2026-09-08",
       "author": "goblog",
       "description": "Phosphor-green shell session on black: a reader@host prompt with a blinking cursor, [ bracketed ] navigation, post lists printed like command output and a '# ' heading on every post. Optional CRT scanlines.",
       "tags": [
@@ -1079,7 +1452,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/terminal/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/terminal-1.1.0/terminal-1.1.0.zip",
-      "sha256": "5fd075696ce4d1fb975144bc9c48d878544eb3c6a6146e350c31652626d7d117",
+      "sha256": "498cf4a71caa1b23f0b0311c435e70f5056a7f66c8863a4cde747a2ffdf7299a",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1088,6 +1461,7 @@
       "slug": "tokyo",
       "name": "Tokyo Night",
       "version": "1.0.1",
+      "added": "2026-09-04",
       "author": "goblog",
       "description": "Dark-first neon theme from the Tokyo Night palette — blue/cyan glow accents, mono metadata, glowing post cards.",
       "tags": [
@@ -1095,7 +1469,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/tokyo/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/tokyo-1.0.1/tokyo-1.0.1.zip",
-      "sha256": "4f645d3a34694a3301788d759f9fb77e85dd1f0460fc295d437008f277e4e24e",
+      "sha256": "4aebb0e091d3842c7805e3af21c3a8814a35e7f0f319ee357aed8b0703264818",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "tram",
+      "name": "Tram",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A transit-map index: a route line across the top, each post a numbered stop on a coloured grid.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/tram/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/tram-1.1.0/tram-1.1.0.zip",
+      "sha256": "fbc2151349fcec3a2104a2f564aacaa7f8e3f001f7c77d68562dfd1326844e70",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1104,6 +1495,7 @@
       "slug": "tundra",
       "name": "Tundra",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "Cool tundra blues with a sticky navigation rail and a two-column card grid.",
       "tags": [
@@ -1111,7 +1503,24 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/tundra/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/tundra-1.1.0/tundra-1.1.0.zip",
-      "sha256": "41d264ae8a9ebeb61dfdd94d1cb9c43cbc15b8102543e49a8d00f19a98f53282",
+      "sha256": "5b96bc9f04862af4e5c9eef18efc9374622f1f243af15106d860a4f73c6a0c7f",
+      "engines": {
+        "goblog": "\u003e=1.0.0 \u003c2.0.0"
+      }
+    },
+    {
+      "slug": "vantage",
+      "name": "Vantage",
+      "version": "1.1.0",
+      "added": "2026-10-24",
+      "author": "labkita7",
+      "description": "A dark blueprint hero with a faint grid, then a four-across card strip. Cold, architectural, precise.",
+      "tags": [
+        "blog"
+      ],
+      "screenshot": "https://labkita7.github.io/goblog-themes/vantage/screenshot.png",
+      "download": "https://github.com/labkita7/goblog-themes/releases/download/vantage-1.1.0/vantage-1.1.0.zip",
+      "sha256": "3e61cb8b1bcedb1000b096d3456f3614a06e3b0d2c30e734b7460293386fe0db",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }
@@ -1120,6 +1529,7 @@
       "slug": "velvet",
       "name": "Velvet",
       "version": "1.1.0",
+      "added": "2026-10-24",
       "author": "labkita7",
       "description": "A book-like theme: a centred cover block over an asymmetric spread that pairs an opening piece with a numbered list.",
       "tags": [
@@ -1127,7 +1537,7 @@
       ],
       "screenshot": "https://labkita7.github.io/goblog-themes/velvet/screenshot.png",
       "download": "https://github.com/labkita7/goblog-themes/releases/download/velvet-1.1.0/velvet-1.1.0.zip",
-      "sha256": "c8c8ca9ec0e1488facddd845e031e387a92652db5911d38cd0a6610b033798e9",
+      "sha256": "6c025e9f5bc893fdc101d93b9074bb9faf149fc13ae680f10e470321b2188dc6",
       "engines": {
         "goblog": "\u003e=1.0.0 \u003c2.0.0"
       }

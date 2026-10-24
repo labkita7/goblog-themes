@@ -1,0 +1,36 @@
+{
+  "slug": "delta",
+  "name": "Delta",
+  "version": "1.1.0",
+  "added": "2026-10-24",
+  "author": "labkita7",
+  "description": "Inverted hero then alternating media/text rows — each entry gets a full band of the page.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#0369a1"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "show_reading_time",
+      "label": "Show reading time",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

@@ -2,6 +2,7 @@
   "slug": "bento",
   "name": "Bento Grid",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "App-like bento grid home — posts as rounded cards, near-black accent, soft layered shadows.",
   "engines": {"goblog": ">=1.0.0 <2.0.0"},

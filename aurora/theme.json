@@ -2,6 +2,7 @@
   "slug": "aurora",
   "name": "Aurora Holo",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Iridescent modern theme — violet accent, gradient display headings, aurora glow hero and pill tags.",
   "engines": {"goblog": ">=1.0.0 <2.0.0"},

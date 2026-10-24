@@ -2,6 +2,7 @@
   "slug": "coral",
   "name": "Coral",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "A magazine-style mosaic homepage: one oversized lead tile, tall and wide neighbours, soft coral accents.",
   "engines": {

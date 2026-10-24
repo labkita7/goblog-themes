@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-press">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="pr-wrap">
+  <div class="pr-mast">
+    <p class="pr-mast-line">Established · {{.Site.Year}}</p>
+    <h1 class="pr-mast-title">{{.Site.Title}}</h1>
+    <p class="pr-mast-sub">{{.Site.Description}}</p>
+    <div class="pr-mast-rule" aria-hidden="true"></div>
+  </div>
+  <div class="pr-grid">
+    {{range $i, $p := .Posts}}
+    <article class="pr-story{{if eq $i 0}} pr-story--lead{{end}}">
+      <p class="pr-story-kicker">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}} · {{end}}{{$t.Name}}{{end}}{{else}}News{{end}}</p>
+      <h2 class="pr-story-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+      {{if $p.Excerpt}}<p class="pr-story-ex">{{$p.Excerpt}}</p>{{end}}
+      <p class="pr-story-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min read{{end}}</p>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="pr-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

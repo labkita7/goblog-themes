@@ -2,6 +2,7 @@
   "slug": "lanyon",
   "name": "Lanyon",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Oversized heavy grotesque headlines on a white roll of posts. The site menu lives in a slide-out drawer opened from a hamburger, built with a checkbox and CSS only. The drawer can open from the left or the right.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

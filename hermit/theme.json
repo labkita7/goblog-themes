@@ -2,6 +2,7 @@
   "slug": "hermit",
   "name": "Hermit",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Quiet dark-first writing room: one narrow column, a small teal-glowing title, and every list drawn as title, dotted leader and right-aligned date. No cards and no tag boxes; tags are plain '· tag' text. Serif body with monospace dates.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

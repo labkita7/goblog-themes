@@ -2,6 +2,7 @@
   "slug": "chalk",
   "name": "Chalk",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Two-column layout with a fixed, near-black sidebar (title, menu, tags, archive years) and a light reading column. Entries show a mono date, a bold title and a short pink rule. On small screens the sidebar becomes a CSS-only drawer.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

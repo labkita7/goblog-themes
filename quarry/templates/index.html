@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-quarry">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="qu-wrap">
+  <section class="qu-hero">
+    <div class="qu-hero-line" aria-hidden="true"></div>
+    <h1 class="qu-title">{{.Site.Title}}</h1>
+    <p class="qu-sub">{{.Site.Description}}</p>
+  </section>
+  <section class="qu-blocks" aria-label="Posts">
+    {{range $i, $p := .Posts}}
+    <article class="qu-block">
+      <div class="qu-block-num">{{printf "%02d" $i}}</div>
+      <div class="qu-block-in">
+        <h2 class="qu-block-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="qu-block-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="qu-block-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}{{if $p.Tags}} · {{range $i2, $t := $p.Tags}}{{if $i2}}, {{end}}{{$t.Name}}{{end}}{{end}}</p>
+      </div>
+    </article>
+    {{end}}
+  </section>
+  {{if or .PrevURL .NextURL}}
+<nav class="qu-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

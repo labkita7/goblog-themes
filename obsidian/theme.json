@@ -2,6 +2,7 @@
   "slug": "obsidian",
   "name": "Obsidian",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "A stark, high-contrast index rendered as a real table: numbers, titles, tags and dates in aligned columns.",
   "engines": {

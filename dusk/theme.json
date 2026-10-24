@@ -2,6 +2,7 @@
   "slug": "dusk",
   "name": "Dusk Lo-fi",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Moody lavender-indigo theme — lo-fi calm tones, soft indigo accent, gradient subheads, quiet dark mode.",
   "engines": {"goblog": ">=1.0.0 <2.0.0"},

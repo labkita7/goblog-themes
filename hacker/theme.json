@@ -2,6 +2,7 @@
   "slug": "hacker",
   "name": "Hacker",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Full-width ls -l listing: the homepage is a framed table of mode, size, modified date and slug with the title beside it, under a '$ cat posts/' heading. Green accent with red warning flags on a neutral charcoal, a power-icon toggle, and posts laid out as framed documents with a sectioned contents list.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

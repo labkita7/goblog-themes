@@ -2,6 +2,7 @@
   "slug": "minima",
   "name": "Minima",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Jekyll-classic layout: title and underlined menu in a thin header, bold small dates above post titles, a serif reading face and a cool blue-grey palette, with a three-column footer.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

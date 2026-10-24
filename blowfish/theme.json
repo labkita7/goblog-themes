@@ -2,6 +2,7 @@
   "slug": "blowfish",
   "name": "Blowfish",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Gradient hero with a floating pill navigation, then image-top cards that cast colored shadows. Thumbnails are generated in CSS when a post has no cover.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

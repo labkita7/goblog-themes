@@ -2,6 +2,7 @@
   "slug": "studio",
   "name": "Studio Grid",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Clean modern studio look — wide measure, uppercase micro-labels, indigo accent, precise hairlines and calm grays.",
   "engines": {"goblog": ">=1.0.0 <2.0.0"},

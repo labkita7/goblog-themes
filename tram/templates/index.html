@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-tram">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="tr-wrap">
+  <header class="tr-head">
+    <p class="tr-route">Line 01</p>
+    <h1 class="tr-title">{{.Site.Title}}</h1>
+    <p class="tr-sub">{{.Site.Description}}</p>
+  </header>
+  <div class="tr-line" aria-hidden="true"></div>
+  <div class="tr-stops">
+    {{range $i, $p := .Posts}}
+    <article class="tr-stop">
+      <div class="tr-stop-dot" aria-hidden="true"></div>
+      <p class="tr-stop-num">Stop {{printf "%02d" $i}}</p>
+      <h2 class="tr-stop-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+      {{if $p.Excerpt}}<p class="tr-stop-ex">{{$p.Excerpt}}</p>{{end}}
+      <p class="tr-stop-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></p>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="tr-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

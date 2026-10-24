@@ -2,6 +2,7 @@
   "slug": "pop",
   "name": "Pop Play",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Playful pop theme — chunky rounded cards, thick ink borders, hard offset shadows, vivid pink-and-yellow palette.",
   "engines": {"goblog": ">=1.0.0 <2.0.0"},

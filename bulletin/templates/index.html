@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-bulletin">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="bu-wrap">
+  <header class="bu-head">
+    <p class="bu-head-label">Notices</p>
+    <h1 class="bu-title">{{.Site.Title}}</h1>
+    <p class="bu-sub">{{.Site.Description}}</p>
+  </header>
+  <div class="bu-board">
+    {{range $i, $p := .Posts}}
+    <article class="bu-note">
+      <span class="bu-pin" aria-hidden="true"></span>
+      <p class="bu-note-kicker">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}} · {{end}}{{$t.Name}}{{end}}{{else}}Notice{{end}}</p>
+      <h2 class="bu-note-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+      {{if $p.Excerpt}}<p class="bu-note-ex">{{$p.Excerpt}}</p>{{end}}
+      <p class="bu-note-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></p>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="bu-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

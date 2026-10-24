@@ -2,6 +2,7 @@
   "slug": "ghostwriter",
   "name": "Ghostwriter",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Literary layout: centered serif masthead between double rules, roman-numbered contents, a 38rem reading column with drop caps and a closing ornament.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

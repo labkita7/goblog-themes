@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headError" .}}
+<body class="t-vantage">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="th-shell th-404">
+  <p class="th-404-code">{{.Code}}</p>
+  <h1 class="th-page-title">{{.Message}}</h1>
+  <p class="th-lede">That page does not exist or has moved.</p>
+  <a class="th-btn" href="/">Back to the blog</a>
+</main>
+{{template "footer" .}}
+</body>
+</html>

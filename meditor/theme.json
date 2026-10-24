@@ -2,6 +2,7 @@
   "slug": "meditor",
   "name": "Meditor",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Editorial front page: a huge lead headline with two side stories, a numbered Topics column and a dense dated list. Deep blue accent and sharp Bodoni-style serif headlines.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

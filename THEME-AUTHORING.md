@@ -44,6 +44,7 @@ mytheme/
   "slug": "neutral",
   "name": "Neutral",
   "version": "1.0.0",
+  "added": "2026-09-04",
   "author": "you",
   "description": "Minimal single-column blog theme",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
@@ -61,6 +62,11 @@ Rules: `slug` matches the directory name; `engines.goblog` is a Go-style
 semver range; **every setting needs a `default`** (the theme must look right
 with zero saved settings). Declared settings are rendered as a form in the
 admin and stored as JSON per theme.
+
+`added` is the ISO date (`YYYY-MM-DD`) the theme first entered this registry.
+`go run ./build` copies it into `index.json`, and the admin's "Newest first"
+sort reads it. Set it once at first publish and leave it alone afterwards —
+bump `version` for releases, not `added`.
 
 ## 3. Template data + FuncMap
 

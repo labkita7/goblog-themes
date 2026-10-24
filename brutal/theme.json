@@ -2,6 +2,7 @@
   "slug": "brutal",
   "name": "Neo Brutal",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Neo-brutalist card grid — 2px black borders, hard offset shadows, chunky uppercase tags and heavy grotesque display type.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

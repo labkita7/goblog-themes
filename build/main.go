@@ -43,6 +43,7 @@ type manifest struct {
 	Slug        string `json:"slug"`
 	Name        string `json:"name"`
 	Version     string `json:"version"`
+	Added       string `json:"added"`
 	Author      string `json:"author"`
 	Description string `json:"description"`
 	Engines     struct {
@@ -54,6 +55,7 @@ type indexEntry struct {
 	Slug        string   `json:"slug"`
 	Name        string   `json:"name"`
 	Version     string   `json:"version"`
+	Added       string   `json:"added"`
 	Author      string   `json:"author"`
 	Description string   `json:"description"`
 	Tags        []string `json:"tags"`
@@ -156,7 +158,7 @@ func main() {
 			tags = []string{"blog"}
 		}
 		e := indexEntry{
-			Slug: slug, Name: m.Name, Version: m.Version, Author: m.Author,
+			Slug: slug, Name: m.Name, Version: m.Version, Added: m.Added, Author: m.Author,
 			Description: m.Description, Tags: tags,
 			Screenshot: strings.TrimSuffix(*pagesBase, "/") + "/" + slug + "/screenshot.png",
 			Download:   downloadURL(*downloadTpl, slug, m.Version),

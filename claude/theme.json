@@ -2,6 +2,7 @@
   "slug": "claude",
   "name": "Claude Warm",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Warm cream-and-terracotta single column with a friendly author header, hairline post dividers and serif headings.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

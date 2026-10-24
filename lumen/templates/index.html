@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-lumen">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="lu-wrap">
+  <header class="lu-head">
+    <h1 class="lu-title">{{.Site.Title}}</h1>
+    <p class="lu-sub">{{.Site.Description}}</p>
+  </header>
+  <div class="lu-list">
+    {{range $i, $p := .Posts}}
+    <article class="lu-item">
+      <a class="lu-item-link" href="{{$p.URL}}">
+        <h2 class="lu-item-title">{{$p.Title}}</h2>
+        {{if $p.Excerpt}}<p class="lu-item-ex">{{$p.Excerpt}}</p>{{end}}
+      </a>
+      <p class="lu-item-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if $p.Tags}} · {{range $i2, $t := $p.Tags}}{{if $i2}}, {{end}}{{$t.Name}}{{end}}{{end}}</p>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="lu-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

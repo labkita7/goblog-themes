@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-mercator">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="me-shell">
+  <aside class="me-poster">
+    <div class="me-poster-in">
+      <p class="me-poster-label">{{.Site.Title}}</p>
+      <h1 class="me-poster-title">{{.Site.Title}}</h1>
+      <p class="me-poster-sub">{{.Site.Description}}</p>
+      <ul class="me-poster-nav">
+        <li><a href="/archive/">Archive</a></li>
+        <li><a href="/rss.xml">RSS</a></li>
+      </ul>
+    </div>
+  </aside>
+  <div class="me-index">
+    {{range $i, $p := .Posts}}
+    <article class="me-row">
+      <p class="me-row-idx">{{printf "%02d" $i}}</p>
+      <div class="me-row-main">
+        <h2 class="me-row-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="me-row-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="me-row-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      </div>
+    </article>
+    {{end}}
+    {{if or .PrevURL .NextURL}}
+<nav class="me-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+  </div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -2,6 +2,7 @@
   "slug": "lagoon",
   "name": "Lagoon",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "A hierarchical magazine grid: one hero across the top, a divided pair beneath, then a three-up trio.",
   "engines": {

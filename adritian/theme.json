@@ -2,6 +2,7 @@
   "slug": "adritian",
   "name": "Adritian",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Portfolio-blog: a tall hero with a thin, oversized site name, a featured grid of the three newest posts, then a dated list of older writing. Gold accent, humanist sans.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

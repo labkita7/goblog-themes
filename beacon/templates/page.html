@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headPage" .}}
+<body class="t-beacon">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="be-art">
+  <article>
+    <header class="be-art-head">
+      <p class="be-art-kicker">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} / {{end}}{{$t.Name}}{{end}}{{end}}</p>
+      <h1 class="be-art-title">{{.Post.Title}}</h1>
+      {{if .Post.Excerpt}}<p class="be-art-stand">{{.Post.Excerpt}}</p>{{end}}
+    </header>
+    {{if or .Post.CoverURL .Post.OGImageURL}}
+    <img class="be-art-cover" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1600" height="900">
+    {{end}}
+    <div class="be-art-body">
+      <aside class="be-art-side">
+        <p class="be-art-side-label">Details</p>
+        <dl class="be-art-facts">
+          <div><dt>Author</dt><dd><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a></dd></div>
+          <div><dt>Published</dt><dd><time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time></dd></div>
+          {{if setting "show_reading_time"}}<div><dt>Reading</dt><dd>{{.Post.ReadingMinutes}} min</dd></div>{{end}}
+          {{if .Post.Tags}}<div><dt>Tags</dt><dd>{{range $i, $t := .Post.Tags}}{{if $i}} · {{end}}{{$t.Name}}{{end}}</dd></div>{{end}}
+        </dl>
+        {{if .TOC}}
+        <p class="be-art-side-label be-art-side-label--gap">Contents</p>
+        <ol class="be-art-toc">{{range .TOC}}<li class="lvl-{{.Level}}"><a href="#{{.ID}}">{{.Text}}</a></li>{{end}}</ol>
+        {{end}}
+      </aside>
+      <div class="prose be-art-prose">{{.Post.HTML}}</div>
+    </div>
+  </article>
+  {{if or .Prev .Next}}
+  <nav class="be-art-nav" aria-label="Post navigation">
+    {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev">← {{.Prev.Title}}</a>{{end}}
+    {{if .Next}}<a href="{{.Next.URL}}" rel="next">{{.Next.Title}} →</a>{{end}}
+  </nav>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

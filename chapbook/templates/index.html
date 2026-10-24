@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-chapbook">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="cb-wrap">
+  <div class="cb-page">
+    <div class="cb-running" aria-hidden="true"><span>{{.Site.Title}}</span><span>Contents</span></div>
+    <header class="cb-head">
+      <p class="cb-imprint">A small journal</p>
+      <h1 class="cb-title">{{.Site.Title}}</h1>
+      <p class="cb-sub">{{.Site.Description}}</p>
+    </header>
+    <ol class="cb-toc">
+      {{range $i, $p := .Posts}}
+      <li class="cb-toc-item">
+        <a href="{{$p.URL}}">
+          <span class="cb-toc-num">{{printf "%02d" $i}}</span>
+          <span class="cb-toc-body">
+            <span class="cb-toc-title">{{$p.Title}}</span>
+            {{if $p.Excerpt}}<span class="cb-toc-ex">{{$p.Excerpt}}</span>{{end}}
+          </span>
+          <span class="cb-toc-page"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></span>
+        </a>
+      </li>
+      {{end}}
+    </ol>
+    {{if or .PrevURL .NextURL}}
+<nav class="cb-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+  </div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "slug": "signal",
+  "name": "Signal",
+  "version": "1.1.0",
+  "added": "2026-10-24",
+  "author": "labkita7",
+  "description": "A dark, instrument-panel theme: a status bar, mono metadata and a numbered feed of transmissions.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#0f766e"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Inter"
+    },
+    {
+      "key": "show_reading_time",
+      "label": "Show reading time",
+      "type": "bool",
+      "default": true
+    },
+    {
+      "key": "default_mode",
+      "label": "Default mode",
+      "type": "select",
+      "options": [
+        "system",
+        "dark",
+        "light"
+      ],
+      "default": "dark"
+    }
+  ]
+}

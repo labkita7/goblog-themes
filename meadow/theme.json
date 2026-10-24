@@ -2,6 +2,7 @@
   "slug": "meadow",
   "name": "Meadow",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "A bento grid homepage with tinted cells of different weights, plus a matching article layout.",
   "engines": {

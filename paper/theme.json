@@ -2,6 +2,7 @@
   "slug": "paper",
   "name": "Vintage Paper",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "Personal journal — cream paper texture, ink-brown serif text, left archive sidebar and italic pull-quotes.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

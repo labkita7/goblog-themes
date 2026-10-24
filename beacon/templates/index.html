@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-beacon">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main">
+  <section class="be-hero">
+    <div class="be-hero-in">
+      <p class="be-hero-label">Latest writing</p>
+      <h1 class="be-title">{{.Site.Title}}</h1>
+      <p class="be-sub">{{.Site.Description}}</p>
+    </div>
+  </section>
+  <div class="be-wrap">
+    <div class="be-grid">
+      <div class="be-main">
+        {{range $i, $p := .Posts}}
+        <article class="be-card">
+          <p class="be-card-kicker">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}} / {{end}}{{$t.Name}}{{end}}{{end}}</p>
+          <h2 class="be-card-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+          {{if $p.Excerpt}}<p class="be-card-ex">{{$p.Excerpt}}</p>{{end}}
+          <p class="be-card-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+        </article>
+        {{end}}
+        {{if or .PrevURL .NextURL}}
+<nav class="be-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+      </div>
+      <aside class="be-side">
+        <p class="be-side-label">Subjects</p>
+        <ul class="be-side-tags">{{range .Site.Tags}}<li><a href="{{.URL}}">{{.Name}}</a></li>{{end}}</ul>
+        <p class="be-side-label be-side-label--gap">Feeds</p>
+        <ul class="be-side-tags"><li><a href="/rss.xml">RSS</a></li><li><a href="/atom.xml">Atom</a></li></ul>
+      </aside>
+    </div>
+  </div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

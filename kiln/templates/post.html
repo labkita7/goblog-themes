@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headPost" .}}
+<body class="t-kiln">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main">
+  {{if or .Post.CoverURL .Post.OGImageURL}}
+  <section class="kl-art-band">
+    <img class="kl-art-band-img" src="{{if .Post.CoverURL}}{{.Post.CoverURL}}{{else}}{{.Post.OGImageURL}}{{end}}" alt="" width="1800" height="900">
+    <div class="kl-art-band-in">
+      <p class="kl-art-kicker">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} · {{end}}{{$t.Name}}{{end}}{{end}}</p>
+      <h1 class="kl-art-title">{{.Post.Title}}</h1>
+    </div>
+  </section>
+  {{else}}
+  <header class="kl-art-plain">
+    <p class="kl-art-kicker">{{if .Post.Tags}}{{range $i, $t := .Post.Tags}}{{if $i}} · {{end}}{{$t.Name}}{{end}}{{end}}</p>
+    <h1 class="kl-art-title">{{.Post.Title}}</h1>
+  </header>
+  {{end}}
+  <div class="kl-art-wrap">
+    <p class="kl-art-meta"><a href="{{.Post.Author.URL}}">{{.Post.Author.Name}}</a> · <time datetime="{{isoDate .Post.PublishedAt}}">{{formatDate .Post.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{.Post.ReadingMinutes}} min{{end}}</p>
+    {{if .Post.Excerpt}}<p class="kl-art-stand">{{.Post.Excerpt}}</p>{{end}}
+    <div class="prose kl-art-prose">{{.Post.HTML}}</div>
+    {{if or .Prev .Next}}
+    <nav class="kl-art-nav" aria-label="Post navigation">
+      {{if .Prev}}<a href="{{.Prev.URL}}" rel="prev"><span>Previous</span>{{.Prev.Title}}</a>{{end}}
+      {{if .Next}}<a href="{{.Next.URL}}" rel="next"><span>Next</span>{{.Next.Title}}</a>{{end}}
+    </nav>
+    {{end}}
+  </div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

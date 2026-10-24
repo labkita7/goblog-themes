@@ -2,6 +2,7 @@
   "slug": "cobalt",
   "name": "Cobalt",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "A dense, businesslike layout: a stat bar under the masthead, a feature column and a compact archive sidebar.",
   "engines": {

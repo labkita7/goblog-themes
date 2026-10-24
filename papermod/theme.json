@@ -2,6 +2,7 @@
   "slug": "papermod",
   "name": "PaperMod",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Compact single-column blog in the PaperMod spirit: a home-info block, short bold entry cards with two-line summaries, a collapsible table of contents on posts, and one red-orange accent on a system sans.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

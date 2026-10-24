@@ -2,6 +2,7 @@
   "slug": "bear",
   "name": "Bear",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Nearly unstyled typographic blog: system fonts, a narrow reading column, a plain date and title list, and classic underlined links. No cards, no tags on the home list.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

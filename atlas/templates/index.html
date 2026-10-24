@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-atlas">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="at-wrap">
+  <header class="at-head">
+    <h1 class="at-title">{{.Site.Title}}</h1>
+    <p class="at-sub">{{.Site.Description}}</p>
+  </header>
+  <div class="at-body">
+    <nav class="at-rail" aria-label="Jump to letter">
+      <p class="at-rail-label">Index</p>
+      <ul>
+        {{range .Site.Tags}}<li><a href="#tag-{{.Slug}}">{{.Name}}</a></li>{{end}}
+        <li><a href="#all">All</a></li>
+      </ul>
+    </nav>
+    <div class="at-entries">
+      <h2 class="at-entries-head" id="all">All entries</h2>
+      {{range .Posts}}
+      <article class="at-entry">
+        <p class="at-entry-date"><time datetime="{{isoDate .PublishedAt}}">{{formatDate .PublishedAt}}</time></p>
+        <div class="at-entry-body">
+          <h3 class="at-entry-title"><a href="{{.URL}}">{{.Title}}</a></h3>
+          {{if .Excerpt}}<p class="at-entry-ex">{{.Excerpt}}</p>{{end}}
+          <p class="at-entry-meta">{{if .Tags}}{{range $i, $t := .Tags}}{{if $i}} · {{end}}<a href="{{$t.URL}}">{{$t.Name}}</a>{{end}}{{end}}{{if setting "show_reading_time"}} · {{.ReadingMinutes}} min{{end}}</p>
+        </div>
+      </article>
+      {{end}}
+    </div>
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="at-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

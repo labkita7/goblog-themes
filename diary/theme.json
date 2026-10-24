@@ -2,6 +2,7 @@
   "slug": "diary",
   "name": "Diary",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Journal layout: calendar-style date tiles beside cream entry cards, tilted sticker tags and a dotted notebook background.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

@@ -1,0 +1,20 @@
+{{define "header"}}
+<header class="qu-hdr">
+  <div class="qu-hdr-inner">
+    <a class="qu-hdr-brand" href="/">{{.Site.Title}}</a>
+    <div class="qu-hdr-right">
+      {{if .Nav.Items}}
+      <nav aria-label="Main navigation" class="qu-hdr-nav">
+        {{range .Nav.Items}}<a href="{{.URL}}">{{.Label}}</a>{{end}}
+      </nav>
+      {{end}}
+      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class="qu-hdr-toggle">◐</button>
+    </div>
+  </div>
+</header>
+<script>
+document.addEventListener("click",function(e){var b=e.target.closest("[data-theme-toggle]");if(!b)return;
+var d=document.documentElement.classList.toggle("dark");
+try{localStorage.setItem("goblog-theme",d?"dark":"light")}catch(_){}});
+</script>
+{{end}}

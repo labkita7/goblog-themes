@@ -2,6 +2,7 @@
   "slug": "hyde",
   "name": "Hyde",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "A full-height accent sidebar holds the site identity, menu and tags; the posts run in a classic serif column beside it. The sidebar can sit on the left or the right.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

@@ -2,6 +2,7 @@
   "slug": "swiss",
   "name": "Swiss Typo",
   "version": "1.0.1",
+  "added": "2026-09-04",
   "author": "goblog",
   "description": "International typographic style — black on white, zero radius, heavy rules, uppercase display headings and a red accent.",
   "engines": {"goblog": ">=1.0.0 <2.0.0"},

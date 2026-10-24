@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-vantage">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main">
+  <section class="va-hero">
+    <div class="va-hero-grid" aria-hidden="true"></div>
+    <div class="va-hero-in">
+      <h1 class="va-title">{{.Site.Title}}</h1>
+      <p class="va-sub">{{.Site.Description}}</p>
+    </div>
+  </section>
+  <div class="va-strip-wrap">
+    <div class="va-strip">
+      {{range $i, $p := .Posts}}
+      <article class="va-card">
+        <p class="va-card-idx">{{printf "%02d" $i}}</p>
+        <h2 class="va-card-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="va-card-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="va-card-meta"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time>{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      </article>
+      {{end}}
+    </div>
+  </div>
+  <div class="va-pager-wrap">{{if or .PrevURL .NextURL}}
+<nav class="va-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}</div>
+</main>
+{{template "footer" .}}
+</body>
+</html>

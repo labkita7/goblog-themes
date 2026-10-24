@@ -2,6 +2,7 @@
   "slug": "nocturne",
   "name": "Nocturne",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "Dark-first theme built around a glowing stage for the latest post, then a two-column stream of everything else.",
   "engines": {

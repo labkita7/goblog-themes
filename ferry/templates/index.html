@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-ferry">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="fe-wrap">
+  <header class="fe-head">
+    <div class="fe-head-left">
+      <h1 class="fe-title">{{.Site.Title}}</h1>
+      <p class="fe-sub">{{.Site.Description}}</p>
+    </div>
+    <p class="fe-head-note">Departures<br><span>{{len .Posts}} on this page</span></p>
+  </header>
+  <div class="fe-timeline">
+    {{range $i, $p := .Posts}}
+    <article class="fe-dep">
+      <div class="fe-dep-when">
+        <p class="fe-dep-year">{{formatDate $p.PublishedAt}}</p>
+        <p class="fe-dep-order">{{printf "%02d" $i}}</p>
+      </div>
+      <div class="fe-dep-what">
+        <h2 class="fe-dep-title"><a href="{{$p.URL}}">{{$p.Title}}</a></h2>
+        {{if $p.Excerpt}}<p class="fe-dep-ex">{{$p.Excerpt}}</p>{{end}}
+        <p class="fe-dep-tags">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}} · {{end}}<a href="{{$t.URL}}">{{$t.Name}}</a>{{end}}{{end}}{{if setting "show_reading_time"}} · {{$p.ReadingMinutes}} min{{end}}</p>
+      </div>
+    </article>
+    {{end}}
+  </div>
+  {{if or .PrevURL .NextURL}}
+<nav class="fe-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

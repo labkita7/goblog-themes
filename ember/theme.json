@@ -2,6 +2,7 @@
   "slug": "ember",
   "name": "Ember",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "Warm ember palette with a split hero, oversized numerals and a serif reading column.",
   "engines": {

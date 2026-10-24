@@ -2,6 +2,7 @@
   "slug": "harvest",
   "name": "Harvest",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "A magazine layout: a split lead story on top, a two-column card run below, and a sticky utility sidebar.",
   "engines": {

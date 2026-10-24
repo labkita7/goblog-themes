@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{.Site.Language}}">
+{{template "headIndex" .}}
+<body class="t-ledger">
+<a class="skip-link" href="#main">Skip to content</a>
+{{template "header" .}}
+<main id="main" class="lg-wrap">
+  <header class="lg-head">
+    <div>
+      <p class="lg-head-label">Accounts of</p>
+      <h1 class="lg-title">{{.Site.Title}}</h1>
+    </div>
+    <p class="lg-sub">{{.Site.Description}}</p>
+  </header>
+  <table class="lg-table">
+    <caption class="lg-caption">All entries, most recent first</caption>
+    <thead>
+      <tr><th scope="col">No.</th><th scope="col">Entry</th><th scope="col">Filed</th><th scope="col">Subject</th></tr>
+    </thead>
+    <tbody>
+      {{range $i, $p := .Posts}}
+      <tr>
+        <td class="lg-num">{{printf "%03d" $i}}</td>
+        <td class="lg-entry">
+          <a href="{{$p.URL}}">{{$p.Title}}</a>
+          {{if $p.Excerpt}}<span class="lg-ex">{{$p.Excerpt}}</span>{{end}}
+        </td>
+        <td class="lg-date"><time datetime="{{isoDate $p.PublishedAt}}">{{formatDate $p.PublishedAt}}</time></td>
+        <td class="lg-tag">{{if $p.Tags}}{{range $i2, $t := $p.Tags}}{{if $i2}}, {{end}}{{$t.Name}}{{end}}{{end}}</td>
+      </tr>
+      {{end}}
+    </tbody>
+    <tfoot>
+      <tr><td colspan="4" class="lg-foot">{{len .Posts}} entries on this page</td></tr>
+    </tfoot>
+  </table>
+  {{if or .PrevURL .NextURL}}
+<nav class="lg-pager" aria-label="Pagination">
+  {{if .PrevURL}}<a href="{{.PrevURL}}" rel="prev">← Newer</a>{{else}}<span aria-disabled="true">← Newer</span>{{end}}
+  {{if .NextURL}}<a href="{{.NextURL}}" rel="next">Older →</a>{{else}}<span aria-disabled="true">Older →</span>{{end}}
+</nav>
+{{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

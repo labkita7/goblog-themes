@@ -1,0 +1,36 @@
+{
+  "slug": "alcove",
+  "name": "Alcove",
+  "version": "1.1.0",
+  "added": "2026-10-24",
+  "author": "labkita7",
+  "description": "Every post is a framed plate: a hairline frame inside a tinted border, centred and symmetrical like a gallery label.",
+  "engines": {
+    "goblog": ">=1.0.0 <2.0.0"
+  },
+  "screenshot": "screenshot.png",
+  "settings": [
+    {
+      "key": "accent",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#8a6a3f"
+    },
+    {
+      "key": "font_heading",
+      "label": "Heading font",
+      "type": "select",
+      "options": [
+        "Inter",
+        "Georgia"
+      ],
+      "default": "Georgia"
+    },
+    {
+      "key": "show_reading_time",
+      "label": "Show reading time",
+      "type": "bool",
+      "default": true
+    }
+  ]
+}

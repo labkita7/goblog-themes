@@ -2,6 +2,7 @@
   "slug": "ananke",
   "name": "Ananke",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Full-bleed accent hero with a large serif title, a two-column latest list with big editorial dates, and serif display type over a sans body.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

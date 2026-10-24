@@ -2,6 +2,7 @@
   "slug": "terminal",
   "name": "Terminal",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Phosphor-green shell session on black: a reader@host prompt with a blinking cursor, [ bracketed ] navigation, post lists printed like command output and a '# ' heading on every post. Optional CRT scanlines.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },

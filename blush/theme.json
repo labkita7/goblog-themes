@@ -2,6 +2,7 @@
   "slug": "blush",
   "name": "Blush",
   "version": "1.1.0",
+  "added": "2026-10-24",
   "author": "labkita7",
   "description": "A soft, friendly layout: a large rounded hero card over a pair of lighter cards, pill tags, gentle shadows.",
   "engines": {

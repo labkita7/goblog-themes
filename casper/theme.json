@@ -2,6 +2,7 @@
   "slug": "casper",
   "name": "Casper",
   "version": "1.1.0",
+  "added": "2026-09-08",
   "author": "goblog",
   "description": "Dark full-bleed cover with a centered title, a three-column card grid with cover images or accent gradients, and a sans-serif display over a serif reading column.",
   "engines": { "goblog": ">=1.0.0 <2.0.0" },
